@@ -33,6 +33,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/dada.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/grunge.html</loc>
     <priority>0.8</priority>
   </url>
@@ -73,6 +77,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/pop_art.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/saccharine.html</loc>
     <priority>0.8</priority>
   </url>
@@ -98,6 +106,10 @@
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/typodriven.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/vaporwave.html</loc>
     <priority>0.8</priority>
   </url>
   <url>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaporwave</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0a0020 0%, #1a0040 30%, #2a0050 60%, #0a0020 100%);
+      color: #d0b0ff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(255,100,200,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(100,100,255,0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,100,200,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,200,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      perspective: 400px;
+    }
+    .sun {
+      position: fixed;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 120px;
+      background: linear-gradient(180deg, #ff6a88 0%, #ff99ac 30%, #ffcc99 60%, transparent 100%);
+      border-radius: 50%;
+      z-index: 2;
+      filter: blur(2px);
+      opacity: 0.6;
+      animation: sun-pulse 6s ease-in-out infinite;
+    }
+    @keyframes sun-pulse {
+      0%,100% { opacity: 0.4; transform: translateX(-50%) scaleY(1); }
+      50% { opacity: 0.8; transform: translateX(-50%) scaleY(1.1); }
+    }
+    .sun::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; height: 80px;
+      background: linear-gradient(180deg, #ffcc99, transparent);
+      filter: blur(20px);
+    }
+    .statue {
+      position: fixed;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      font-size: 8rem;
+      opacity: 0.08;
+      filter: blur(1px);
+      animation: statue-glow 8s ease-in-out infinite;
+    }
+    @keyframes statue-glow {
+      0%,100% { opacity: 0.06; }
+      50% { opacity: 0.12; }
+    }
+    .container {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 5rem 0 2rem;
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ff6a88, #ff99ac, #a88bff, #6ad0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px rgba(255,100,150,0.2));
+      position: relative;
+    }
+    header h1::after {
+      content: 'VAPORWAVE';
+      position: absolute;
+      top: 2px; left: 2px;
+      font-size: 4rem;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,100,200,0.1);
+      z-index: -1;
+    }
+    header .sub {
+      font-size: 0.8rem;
+      color: #7a5a9a;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+    .glitch-text {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 10px;
+      color: #ff6a88;
+      margin: 2rem 0;
+      animation: glitch 3s infinite;
+    }
+    @keyframes glitch {
+      0%,90%,100% { opacity: 0.6; transform: skew(0deg); }
+      92% { opacity: 1; transform: skew(-3deg); }
+      94% { opacity: 0.3; transform: skew(3deg); }
+      96% { opacity: 0.8; transform: skew(-1deg); }
+    }
+    .aesthetic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+    .card {
+      border: 1px solid rgba(255,100,200,0.08);
+      background: rgba(10,0,32,0.5);
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, #ff6a88, #a88bff, transparent);
+    }
+    .card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      filter: hue-rotate(20deg);
+    }
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff99ac;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.8rem;
+      color: #8a6aaa;
+      line-height: 1.6;
+    }
+    .scanline-bar {
+      height: 4px;
+      background: repeating-linear-gradient(90deg, #ff6a88, #a88bff, #6ad0ff, #a88bff, #ff6a88);
+      width: 60%;
+      margin: 3rem auto;
+      opacity: 0.3;
+    }
+    .vhs-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+    .vhs-block {
+      padding: 1rem 2rem;
+      border: 1px solid rgba(255,100,200,0.06);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      color: #7a5a9a;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.2);
+    }
+    .vhs-block.pink { border-color: rgba(255,100,200,0.15); color: #ff99ac; }
+    .vhs-block.blue { border-color: rgba(100,200,255,0.15); color: #6ad0ff; }
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 700px;
+      margin: 3rem auto;
+    }
+    .price-card {
+      border: 1px solid rgba(255,100,200,0.06);
+      padding: 2rem 1rem;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .price-card .amount {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ff6a88, #a88bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .price-card .label {
+      font-size: 0.55rem;
+      letter-spacing: 4px;
+      color: #5a3a7a;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+    .style-specs { margin: 3rem auto; max-width: 900px; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(255,100,200,0.1); background: rgba(10,0,32,0.3); backdrop-filter: blur(4px); }
+    .spec-card h3 { font-family: 'Orbitron', sans-serif; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; color: #ff99ac; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #8a6aaa; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.6rem;
+      letter-spacing: 6px;
+      color: #3a1a5a;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(255,100,200,0.05);
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header h1::after { font-size: 2.2rem; }
+      .aesthetic-grid { grid-template-columns: 1fr 1fr; }
+      .pricing { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .aesthetic-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+  <div class="sun"></div>
+  <div class="statue">🏛️</div>
+  <div class="container">
+    <header>
+      <h1>VAPORWAVE</h1>
+      <div class="sub">a e s t h e t i c</div>
+    </header>
+    <div class="glitch-text">─── ＦＵＴＵＲＥ ＣＯＬＬＡＰＳＥ ───</div>
+    <div class="aesthetic-grid">
+      <div class="card">
+        <div class="icon">🌴</div>
+        <h3>PALM TREES</h3>
+        <p>Silhouetted against a neon sunset. The eternal 80s evening that never ends.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📼</div>
+        <h3>VHS TAPE</h3>
+        <p>Degraded analog video. Tracking errors. The warmth of magnetic tape.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏛️</div>
+        <h3>GRECO-ROMAN</h3>
+        <p>Classical busts and columns — the ancient world reimagined through a CRT screen.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🖥️</div>
+        <h3>CRT TERMINAL</h3>
+        <p>DOS prompts and early internet ephemera. Computing as retro-future artifact.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛒</div>
+        <h3>MALL SOFT</h3>
+        <p>The liminal space of the 80s shopping mall. Escalators, fountains, neon signs.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌀</div>
+        <h3>GLITCH ART</h3>
+        <p>Databending, pixel sorting, corrupted files as aesthetic. Chaos as beauty.</p>
+      </div>
+    </div>
+    <div class="scanline-bar"></div>
+    <div class="vhs-row">
+      <div class="vhs-block pink">✦  L O - F I  ✦</div>
+      <div class="vhs-block blue">✦  C H I L L  ✦</div>
+      <div class="vhs-block pink">✦  S Y N T H  ✦</div>
+      <div class="vhs-block blue">✦  W A V E  ✦</div>
+    </div>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="amount">$9.99</div>
+        <div class="label">nostalgia pack</div>
+      </div>
+      <div class="price-card">
+        <div class="amount">$19.99</div>
+        <div class="label">aesthetic bundle</div>
+      </div>
+      <div class="price-card">
+        <div class="amount">$∞</div>
+        <div class="label">vaporwave.exe</div>
+      </div>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Nostalgic, melancholic, dreamlike — the future as imagined by the 1980s. Consumer utopia turned digital artifact.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2010s–present. Born from the internet music scene (Macintosh Plus, 2814). Rooted in 80s/90s nostalgia and cyberculture.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Purple/pink (#ff6a88), cyan (#6ad0ff), deep violet (#0a0020). Neon gradients, the "dark mode" sunset palette.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Orbitron (geometric sans). Full-width bold lettering (ＦＵＴＵＲＥ). Glitch effects, tracking errors, retro-digital.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>CRT scanlines, grid perspective, VHS tracking, classical busts, palm tree silhouettes, glitch art, lo-fi/chillwave.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>─── リサフランク420 / 現代のコンピュー ───</span>
+    </footer>
+  </div>
+</body>
+</html>

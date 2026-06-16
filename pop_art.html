@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop Art</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+      min-height: 100vh;
+    }
+    .container { width: 100%; padding: 0; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+    }
+    .hero-left {
+      background: #ffde00;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      top: -20%; right: -20%;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,0,0,0.08);
+    }
+    .hero-left .badge {
+      display: inline-block;
+      background: #111;
+      color: #ffde00;
+      padding: 0.3rem 1rem;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero-left h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 6rem;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 0.9;
+      color: #111;
+      text-shadow: 6px 6px 0 rgba(255,0,0,0.15);
+    }
+    .hero-left h1 .red { color: #e60000; text-shadow: none; }
+    .hero-left p {
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      max-width: 35ch;
+      color: #333;
+      font-weight: 400;
+    }
+    .hero-right {
+      background: #e60000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right .dots-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+      background-size: 12px 12px;
+    }
+    .hero-right .marilyn {
+      font-size: 10rem;
+      position: relative;
+      z-index: 1;
+      filter: saturate(1.5) contrast(1.1);
+    }
+    .comic-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .comic-panel {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .comic-panel .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      background: rgba(255,255,255,0.9);
+      font-size: 0.55rem;
+      font-family: 'Inter', sans-serif;
+      padding: 0.3rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .comic-panel:nth-child(1) { background: #ffde00; color: #e60000; }
+    .comic-panel:nth-child(2) { background: #111; color: #fff; }
+    .comic-panel:nth-child(3) { background: #e60000; color: #fff; }
+    .comic-panel:nth-child(4) { background: #0057b8; color: #ffde00; }
+    .comic-panel:nth-child(5) { background: #fff; color: #e60000; border: 3px solid #111; }
+    .comic-panel:nth-child(6) { background: #ffde00; color: #111; }
+    .comic-panel:nth-child(7) { background: #111; color: #ffde00; }
+    .comic-panel:nth-child(8) { background: #e60000; color: #ffde00; }
+    .ben-day {
+      position: relative;
+      overflow: hidden;
+    }
+    .ben-day::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+    }
+    .celebrity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 4px solid #111;
+      border-bottom: 4px solid #111;
+      margin: 3rem 0;
+    }
+    .celeb {
+      padding: 2rem 1rem;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      border-right: 2px solid rgba(0,0,0,0.1);
+    }
+    .celeb:last-child { border-right: none; }
+    .celeb .emoji { font-size: 3rem; display: block; margin-bottom: 0.5rem; font-family: initial; }
+    .celeb:nth-child(1) { background: #ffde00; color: #e60000; }
+    .celeb:nth-child(2) { background: #e60000; color: #fff; }
+    .celeb:nth-child(3) { background: #fff; color: #111; }
+    .celeb:nth-child(4) { background: #0057b8; color: #fff; }
+    .banner {
+      text-align: center;
+      padding: 2rem;
+      background: repeating-linear-gradient(45deg, #e60000, #e60000 20px, #ffde00 20px, #ffde00 40px);
+      margin: 3rem 0;
+    }
+    .banner p {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 4px 4px 0 #111;
+      letter-spacing: 4px;
+    }
+    .campbells {
+      max-width: 500px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .can {
+      background: #e60000;
+      color: #fff;
+      padding: 1.5rem 0.5rem;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      position: relative;
+    }
+    .can .label {
+      display: block;
+      background: #fff;
+      color: #e60000;
+      padding: 0.25rem;
+      font-size: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+    .can .gold { background: #d4af37; color: #111; }
+    .style-specs { margin: 3rem auto; max-width: 900px; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 2px solid #111; background: #fff; }
+    .spec-card h3 { font-family: 'Anton', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #e60000; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #333; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 4px solid #111;
+      font-family: 'Anton', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left h1 { font-size: 3rem; }
+      .comic-strip { grid-template-columns: 1fr 1fr; }
+      .celebrity-grid { grid-template-columns: 1fr 1fr; }
+      .campbells { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="badge">1950s–1960s</div>
+        <h1>POP!<br><span class="red">ART</span></h1>
+        <p>Everyday objects become high art. Celebrity faces become icons. The line between mass culture and fine art dissolves.</p>
+      </div>
+      <div class="hero-right">
+        <div class="dots-overlay"></div>
+        <div class="marilyn">🎨</div>
+      </div>
+    </div>
+    <div class="ben-day">
+      <div class="celebrity-grid">
+        <div class="celeb"><span class="emoji">🥫</span>WARHOL</div>
+        <div class="celeb"><span class="emoji">🎯</span>LICHTENSTEIN</div>
+        <div class="celeb"><span class="emoji">🇺🇸</span>JOHNS</div>
+        <div class="celeb"><span class="emoji">💬</span>ROSQUIST</div>
+      </div>
+    </div>
+    <div class="comic-strip">
+      <div class="comic-panel ben-day">WHAAM!<div class="caption">Lichtenstein, 1963</div></div>
+      <div class="comic-panel ben-day">⭐<div class="caption">celebrity</div></div>
+      <div class="comic-panel ben-day">POP!<div class="caption">mass culture</div></div>
+      <div class="comic-panel ben-day">💰<div class="caption">consumerism</div></div>
+      <div class="comic-panel ben-day">BAM!<div class="caption">comic style</div></div>
+      <div class="comic-panel ben-day">🍔<div class="caption">everyday</div></div>
+      <div class="comic-panel ben-day">OH...<div class="caption">repetition</div></div>
+      <div class="comic-panel ben-day">WOW!<div class="caption">bold color</div></div>
+    </div>
+    <div class="campbells">
+      <div class="can">TOMATO<div class="label">CAMPBELL'S</div></div>
+      <div class="can">CHICKEN<div class="label">CAMPBELL'S</div></div>
+      <div class="can gold">GOLD<div class="label">CAMPBELL'S</div></div>
+    </div>
+    <div class="banner">
+      <p>★ art for everyone ★</p>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Bold, playful, ironic — high art meets low culture. Celebrity worship, consumerism, and repetition as commentary.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1950s–1960s UK/US. Key figures: Andy Warhol, Roy Lichtenstein, Jasper Johns, James Rosenquist, Claes Oldenburg.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Bright primaries — red (#e60000), yellow (#ffde00), blue (#0057b8), black, white. High contrast, Ben-Day dots texture.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Bold comic-style sans (Anton). Speech bubbles, onomatopoeia (WHAAM!, POP!), bold caps, comic book lettering.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Ben-Day dots, comic panels, celebrity imagery, repetition, appropriation of commercial art, bold outlines, flat color.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>POP ART · 1955–1965 · WARHOL · LICHTENSTEIN</span>
+    </footer>
+  </div>
+</body>
+</html>

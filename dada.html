@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dada</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: #f0ead8;
+      color: #1a1a1a;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container { width: 100%; padding: 1rem; }
+    .chaos-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto;
+      gap: 1rem;
+      align-items: start;
+    }
+    .torn-card {
+      border: 2px dashed #1a1a1a;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.4);
+      position: relative;
+      transform: rotate(var(--rot, 0deg));
+    }
+    .torn-card:nth-child(1) { --rot: -2deg; }
+    .torn-card:nth-child(2) { --rot: 1deg; }
+    .torn-card:nth-child(3) { --rot: -1deg; margin-top: 3rem; }
+    .torn-card:nth-child(4) { --rot: 2deg; }
+    .torn-card:nth-child(5) { --rot: -3deg; grid-column: 2; }
+    .torn-card:nth-child(6) { --rot: 0.5deg; }
+    .torn-card:nth-child(7) { --rot: -1.5deg; grid-column: 1 / -1; text-align: center; }
+    .torn-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(0,0,0,0.05);
+      pointer-events: none;
+    }
+    .torn-card h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -2px;
+      line-height: 0.9;
+      color: #1a1a1a;
+      position: relative;
+    }
+    .torn-card h1 .strike {
+      text-decoration: line-through;
+      color: #cc0000;
+    }
+    .torn-card .sub {
+      font-size: 0.7rem;
+      letter-spacing: 6px;
+      margin-top: 0.5rem;
+      color: #666;
+    }
+    .random-text {
+      font-size: 0.75rem;
+      line-height: 1.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #444;
+    }
+    .random-text .red { color: #cc0000; }
+    .random-text .cut {
+      display: inline-block;
+      background: rgba(0,0,0,0.05);
+      padding: 0 0.3rem;
+      text-decoration: line-through;
+    }
+    .found-object {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      flex-wrap: wrap;
+    }
+    .found-object .box {
+      display: inline-block;
+      width: 20px; height: 20px;
+      border: 2px solid #1a1a1a;
+      margin: 0 0.25rem;
+    }
+    .found-object .box.filled { background: #1a1a1a; }
+    .collage-area {
+      position: relative;
+      min-height: 200px;
+      border: 1px dashed rgba(0,0,0,0.15);
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+    .collage-piece {
+      position: absolute;
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      transform: rotate(var(--r, 0deg));
+    }
+    .manifesto {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: #333;
+    }
+    .manifesto .big {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+      float: left;
+      margin-right: 0.5rem;
+    }
+    .manifesto .upside {
+      display: inline-block;
+      transform: rotate(180deg);
+      font-size: 0.6rem;
+    }
+    .chaos-line {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chaos-line span {
+      font-size: 0.6rem;
+      padding: 0.2rem 0.4rem;
+      border: 1px solid #1a1a1a;
+      background: rgba(255,255,255,0.3);
+    }
+    .chaos-line .invert {
+      background: #1a1a1a;
+      color: #f0ead8;
+    }
+    .stamp {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border: 3px solid #cc0000;
+      color: #cc0000;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transform: rotate(-8deg);
+      opacity: 0.7;
+      font-family: 'Playfair Display', serif;
+    }
+    .banner-dada {
+      text-align: center;
+      padding: 2rem;
+      border-top: 2px solid #1a1a1a;
+      border-bottom: 2px solid #1a1a1a;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .banner-dada p {
+      font-size: 0.8rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+    }
+    .banner-dada .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 4px;
+    }
+    .style-specs { margin: 3rem 0; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 2px dashed #1a1a1a; background: rgba(255,255,255,0.3); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #cc0000; font-weight: 700; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #444; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      color: #999;
+      border-top: 2px solid #1a1a1a;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .chaos-grid { grid-template-columns: 1fr; }
+      .torn-card:nth-child(5) { grid-column: 1; }
+      .torn-card:nth-child(7) { grid-column: 1; }
+      .torn-card h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chaos-grid">
+      <div class="torn-card">
+        <h1>DA<br><span class="strike">DA</span></h1>
+        <div class="sub">ANTI-ART · 1916–1923</div>
+      </div>
+      <div class="torn-card" style="grid-column:2/4;">
+        <div class="found-object">
+          <span>☐</span> <span class="box"></span> <span class="box filled"></span> <span>✂</span>
+          <span style="text-decoration:line-through;">REASON</span>
+          <span style="transform:rotate(180deg);display:inline-block;">☂</span>
+          <span>∅</span>
+          <span class="stamp">VOID</span>
+        </div>
+        <div class="random-text" style="margin-top:1rem;">
+          THE <span class="red">DESTRUCTION</span> OF ART IS <span class="cut">ALSO</span> THE CREATION OF ART
+        </div>
+      </div>
+      <div class="torn-card">
+        <div class="collage-area">
+          <div class="collage-piece" style="top:10%;left:5%;--r:-5deg;">★</div>
+          <div class="collage-piece" style="top:30%;right:10%;--r:10deg;">1916</div>
+          <div class="collage-piece" style="bottom:20%;left:15%;--r:-15deg;">ZURICH</div>
+          <div class="collage-piece" style="top:50%;left:30%;--r:20deg;font-size:1.5rem;">¿</div>
+          <div class="collage-piece" style="bottom:10%;right:5%;--r:-8deg;">CABARET VOLTAIRE</div>
+        </div>
+      </div>
+      <div class="torn-card" style="grid-column:1/3;">
+        <div class="manifesto">
+          <span class="big">D</span>ada is not an art movement. Dada is a <span style="text-decoration:line-through;">state of mind</span> slap in the face. Dada is <span class="upside">senseless</span> like nature. Dada is for the <span style="font-style:italic;">sense-less</span>. 
+          <span style="display:inline-block;margin-top:0.5rem;">— Hugo Ball, 1916</span>
+        </div>
+      </div>
+      <div class="torn-card">
+        <div class="chaos-line">
+          <span>CHANCE</span>
+          <span class="invert">COLLAGE</span>
+          <span>READYMADE</span>
+          <span class="invert">ABSURD</span>
+          <span>PROVOCATION</span>
+          <span class="invert">NONSENSE</span>
+          <span>PHOTOMONTAGE</span>
+        </div>
+      </div>
+      <div class="torn-card" style="grid-column:1/4;">
+        <div class="found-object" style="justify-content:center;gap:1rem;">
+          <span>✂</span> <span>📰</span> <span>🎭</span> <span>🃏</span>
+          <span style="font-size:1.2rem;">⚡</span>
+          <span style="text-decoration:line-through;font-size:0.6rem;">MEANING</span>
+          <span style="font-size:1.2rem;transform:rotate(90deg);display:inline-block;">⏤</span>
+        </div>
+      </div>
+      <div class="torn-card">
+        <div class="random-text" style="text-align:center;">
+          "TRUE ART IS <span class="red">DEAD</span>.<br>
+          LONG LIVE <span class="red">DADA</span>."<br>
+          <span style="font-size:0.55rem;color:#888;">— Tristan Tzara</span>
+        </div>
+      </div>
+    </div>
+    <div class="banner-dada">
+      <p>DADA <span class="mono">∅</span> DOES NOT <span style="text-decoration:line-through;">MEAN</span> ANYTHING</p>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Absurd, provocative, nihilistic — art that rejects art. Anti-establishment, anti-war, anti-everything-including-itself.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1916–1923. Born in Zurich's Cabaret Voltaire during WWI. Key figures: Hugo Ball, Tristan Tzara, Marcel Duchamp, Hans Arp, Kurt Schwitters.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Monochrome — black, white, newspaper beige. Red for provocative accents. Found materials in their natural state.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Mixed, chaotic — serif and sans-serif mixed, random sizes, upside-down text, cut-and-paste lettering. No rules.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Photomontage, readymade (found objects), collage, chance operations, nonsense poetry, provocative juxtaposition, anti-art.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>DADA · CABARET VOLTAIRE · ZURICH 1916 · ★</span>
+    </footer>
+  </div>
+</body>
+</html>
