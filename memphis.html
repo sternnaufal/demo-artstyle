@@ -77,7 +77,12 @@
     .square { width:100px; height:100px; background:#00c2ff; top:70%; left:15%; transform: rotate(-20deg);}
     .small-circle { width:70px; height:70px; background:#ffeb3b; border-radius:50%; top:75%; left:5%; }
     .rectangle { width:180px; height:30px; background:#ff5722; top:40%; left:40%; transform: rotate(10deg);}
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
 
@@ -103,5 +108,15 @@
 <div class="shape x3">X</div>
 <div class="shape o3">O</div>
 
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Playful, irreverent, boldly colorful — design that refuses to take itself seriously.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1980–1987. Founded by Ettore Sottsass in Milan. A revolt against the black-box minimalism of 1970s design.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Bright yellow background, pink, blue, red, black squiggles. The "Memphis palette" is instantly recognizable.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Fredoka One (rounded bold). Playful, childish, sans-serif — no sharp edges, no seriousness.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Geometric shapes with patterns, squiggly lines, polka dots, laminate textures, asymmetrical arrangements, kitsch energy.</p></div>
+      </div>
+    </section>
 </body>
 </html>
+

@@ -112,6 +112,11 @@
     background: #f0f4f8;
     color: #333;
   }
+    .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
 </style>
 </head>
 <body>
@@ -138,10 +143,20 @@
   </div>
 </main>
 
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Soft, tactile, playful — interfaces that feel like they could be squished in your hand.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2020–2022. Popularized by the 3D design community and embraced by early-adopter tech brands. A neumorphism evolution.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Warm pastels — coral, pink, cream, soft brown. The palette of Play-Doh and modeling clay.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Rounded sans-serif (Montserrat). Soft letterforms match the soft tactile feel of the interface.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Large border-radius, dual-layer box-shadows (light top-left, dark bottom-right), warm matte colors, pill-shaped buttons.</p></div>
+      </div>
+    </section>
 <footer>
   Â© 2025 â€¢ Inspired by Claymorphism Design Trends
 </footer>
 
 </body>
 </html>
+
 

@@ -186,6 +186,11 @@
     .b5{ grid-column:3 / span 2 }
     .b6{ padding:12px; gap:8px }
   }
+    .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
 </style>
 </head>
 <body>
@@ -247,10 +252,20 @@
       </div>
     </main>
 
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Rational, functional, geometric — design as a tool for social progress. Form follows function.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1919–1933. Founded by Walter Gropius in Weimar, Germany. Banned by Nazis, exiled teachers spread it worldwide.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Primary colors — red (#e63946), yellow (#f4a261), blue (#457bcd) — plus black and white. No decoration, only structure.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Geometric sans-serif (Futura, Kabel). Lowercase preference. Type as a graphic element, not just text.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Geometric shapes, primary colors, grid systems, asymmetric balance, functional minimalism, industrial materials.</p></div>
+      </div>
+    </section>
+<footer>
       <div>Â© 1919â€“2025 Bauhaus Geometric</div>
       <div style="opacity:.9">Grid â€” Shapes â€” Primary Colors</div>
     </footer>
   </div>
 </body>
 </html>
+

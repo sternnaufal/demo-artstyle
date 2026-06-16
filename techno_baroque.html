@@ -247,6 +247,11 @@
     nav{ display:none; }
     .hero h1{ font-size:32px }
   }
+    .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
 </style>
 </head>
 <body>
@@ -341,10 +346,20 @@
     </div>
   </main>
 
-  <footer>
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Opulent, ceremonial, futuristic — digital-age luxury. Ornament meets circuit board.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2015–present. A postmodern fusion of historical ornament with digital aesthetics. Reaction against flat design.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Dark backgrounds, gold (#d4af37), deep burgundy, neon accents. The palette of velvet, gold leaf, and OLED screens.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Playfair Display (serif) for elegance, Montserrat (sans) for contrast. Old-world refinement with new-world precision.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Ornate borders, filigree patterns, circuit overlay motifs, gold accents, dark opulence, ceremonial layout, luxury tech.</p></div>
+      </div>
+    </section>
+<footer>
     <div>Â© 2025 Techno-Baroque Atelier</div>
     <div style="opacity:.9">Luxury meets circuitry â€” design as ceremony.</div>
   </footer>
 </body>
 </html>
+
 

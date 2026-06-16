@@ -86,7 +86,12 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
   <header>
@@ -110,9 +115,19 @@
     </div>
   </main>
 
-  <footer>
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Cyber-optimistic, futuristic, maximal — the future looked like a rave. Metallics, neons, and optimism.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1997–2003. The Y2K aesthetic — dot-com boom, bubbly fonts, silver metallics, The Matrix, TRL, iMac G3 colors.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Cyan, magenta, silver/chrome, black. The "cyber" palette. Gradients between electric blue and hot pink.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Bold techno fonts, bubbly lettering, chrome effects. Blink tags and marquee for motion.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Chrome textures, stardust backgrounds, animated cursors, glowing gradients, custom scrollbars, futuristic UI panels.</p></div>
+      </div>
+    </section>
+<footer>
     <p>Â© 2002 - Hosted on <span class="blink">GeoCities</span> â€¢ Best viewed in Netscape 4.7</p>
   </footer>
 </body>
 </html>
+
 

@@ -222,7 +222,12 @@
       .logo{ width:52px; height:52px; }
       .panel-large h1{ font-size:32px; }
     }
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
   <header>
@@ -297,7 +302,16 @@
     </div>
   </main>
 
-  <footer style="padding:24px 36px; display:flex; justify-content:space-between; align-items:center; gap:12px; background:linear-gradient(90deg,#fff,#fffdf8); border-top:6px solid rgba(0,0,0,0.06)">
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Abundant, layered, celebratory — more is more. Joy through visual density and deliberate excess.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1970s (Memphis Group), revived 2010s–present as a reaction to flat minimalism. Digital maximalism: pattern-drenching, bold color.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Hot pink, amber, cyan, deep purple — bold, clashing, unapologetic. Simultaneous contrast and deliberate disharmony.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Multiple weights and styles — Anton (ultra-bold), Montserrat, Playfair Display. Clashing typography is part of the aesthetic.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Layered textures, mosaics, overlapping elements, collage composition, pattern-on-pattern, bold typography, visual density.</p></div>
+      </div>
+    </section>
+<footer style="padding:24px 36px; display:flex; justify-content:space-between; align-items:center; gap:12px; background:linear-gradient(90deg,#fff,#fffdf8); border-top:6px solid rgba(0,0,0,0.06)">
     <div style="font-weight:700">Â© 2025 Maximalism Studio</div>
     <div style="opacity:.85">Layer. Clash. Celebrate.</div>
   </footer>
@@ -305,4 +319,5 @@
   <div class="confetti" aria-hidden="true"></div>
 </body>
 </html>
+
 

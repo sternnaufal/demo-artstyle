@@ -94,7 +94,12 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
   <header>
@@ -121,8 +126,18 @@
     </div>
   </main>
 
-  <footer>
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Raw, unapologetic, anti-smooth — intentionally ugly by conventional standards. Honesty over beauty.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1950s–1970s (architectural brutalism). Web brutalism: 2010s–present, a reaction against overly polished web design.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>High-contrast, clashing — bright yellow (#ff0), cyan (#0ff), magenta, black. No subtlety, no gradients, no mercy.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Default system fonts (Arial/Helvetica). No web fonts, no elegance. Typography serves function, not aesthetics.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Raw HTML defaults, thick borders, heavy box-shadows, clashing colors, no subtle transitions, intentionally crude layout.</p></div>
+      </div>
+    </section>
+<footer>
     Brutalist Web Â© 2025
   </footer>
 </body>
 </html>
+

@@ -87,7 +87,12 @@
       border-top: 1px solid #ddd;
       color: #666;
     }
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
   <header>
@@ -110,9 +115,19 @@
     </div>
   </main>
 
-  <footer>
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Pure, minimal, intentional � where typography IS the design. No images, no decoration, only letterforms.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1920s (Swiss typography) ? 2010s digital revival. The principle: type alone can carry meaning and aesthetic weight.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Black and white primarily. Maybe one accent. Color is a typographic tool, not a decorative one.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Playfair Display (serif) for elegance, Inter (sans) for readability. Contrast in weight, size, and tracking creates hierarchy.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>No images, no gradients, pure typographic hierarchy, generous whitespace, uppercase letter-spacing, expressive scale contrast.</p></div>
+      </div>
+    </section>
+<footer>
     © 2025 • Typography is the design itself.
   </footer>
 </body>
 </html>
+
 

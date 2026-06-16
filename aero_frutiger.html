@@ -173,7 +173,12 @@
       color: #004080;
       box-shadow: 0 -3px 15px rgba(0,0,0,0.2);
     }
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
   <!-- floating bubbles -->
@@ -206,9 +211,19 @@
     </div>
   </main>
 
-  <footer>
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Fresh, glossy, optimistic — the future as seen from 2007. Clean transparency meets nature-inspired harmony.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>Mid-2000s. Named after Frutiger Aero (a font) + Windows Vista's "Aero" glass interface. Peak skeuomorphic UI era.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Sky blues, aqua teals, soft whites. Transparent glass overlays. Nature-inspired gradients — water, sky, leaves.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Segoe UI (Vista system font). Clear, readable sans-serif with ClearType rendering. Optimized for screen legibility.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Glassmorphism, glossy reflections, swoosh shapes, floating bubbles, skeuomorphic shine, nature-meets-tech aesthetic.</p></div>
+      </div>
+    </section>
+<footer>
     Â© 2007â€“2025 â€¢ Inspired by Windows Vista & Frutiger Aero
   </footer>
 </body>
 </html>
+
 

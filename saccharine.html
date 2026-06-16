@@ -151,7 +151,12 @@
       color: #ff3399;
       box-shadow: 0 -4px 12px rgba(255, 100, 150, 0.4);
     }
-  </style>
+      .style-specs { margin: 3rem 0; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
   <!-- floating hearts -->
@@ -184,9 +189,19 @@
     </div>
   </main>
 
-  <footer>
+      <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Sweet, cloying, aggressively cute — kawaii culture turned up to maximum. Too much is exactly the right amount.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2010s–present. Rooted in Japanese kawaii culture (Hello Kitty, Sanrio), amplified by Instagram and digital illustration.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Pastel pink, baby blue, lavender, mint, cream. Gradient backgrounds with heart motifs. The palette of dessert.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Comic Neue (rounded casual). Friendly, informal, handwritten feel. Nothing sharp or serious.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Floating hearts, dotted borders, radial gradient buttons, candy-colored everything, animated sparkles, cuteness overload.</p></div>
+      </div>
+    </section>
+<footer>
     Â© 2025 â€¢ Made with ðŸ’– Sugar & Sparkles
   </footer>
 </body>
 </html>
+
 
