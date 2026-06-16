@@ -1,164 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Swiss Style Extreme Landing</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Helvetica', Arial, sans-serif;
-    background: #f9f9f9;
-    color: #111;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  header {
-    padding: 3rem 5rem;
-    border-bottom: 2px solid #000;
-  }
-
-  header h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-  }
-
-  header p {
-    font-size: 1.4rem;
-    color: #555;
-    margin-top: 0.5rem;
-  }
-
-  nav {
-    margin-top: 2rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin-right: 2rem;
-    font-weight: 700;
-    color: #000;
-    transition: color 0.3s;
-    font-size: 1rem;
-  }
-
-  nav a:hover {
-    color: #0077cc;
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 4rem 5rem;
-  }
-
-  .panel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 900px;
-    width: 100%;
-    background: #fff;
-    padding: 3rem;
-    border: 2px solid #000;
-  }
-
-  .panel h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #000;
-    grid-column: span 2;
-  }
-
-  .panel p {
-    font-size: 1.15rem;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  .panel .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    background: #0077cc;
-    text-decoration: none;
-    border: none;
-    margin-top: 1rem;
-    transition: background 0.3s;
-  }
-
-  .panel .btn:hover {
-    background: #005fa3;
-  }
-
-  footer {
-    text-align: center;
-    padding: 3rem 5rem;
-    font-size: 0.9rem;
-    border-top: 2px solid #000;
-    background: #f9f9f9;
-    color: #111;
-  }
-
-  /* Accent lines inside panel */
-  .accent-line {
-    height: 3px;
-    background: #0077cc;
-    width: 50px;
-    margin: 1rem 0;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiss Style</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.4;
+    }
+    .grid-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      position: relative;
+    }
+    .grid-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 1px;
+      height: 100%;
+      background: #111;
+    }
+    .span-2 {
+      grid-column: 1 / -1;
+      border-bottom: 3px solid #111;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .span-2 h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 0.95;
+    }
+    .span-2 h1 .red {
+      color: #e2001a;
+    }
+    .span-2 .sub {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 400;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+    .col-left {
+      padding-right: 2rem;
+      border-right: 1px solid #ddd;
+    }
+    .col-right {
+      padding-left: 2rem;
+    }
+    .block {
+      margin-bottom: 2.5rem;
+    }
+    .block .label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: #e2001a;
+      margin-bottom: 0.5rem;
+    }
+    .block h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .block h2 + .meta {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+    .block p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #333;
+      max-width: 40ch;
+    }
+    .block p .highlight {
+      background: #e2001a;
+      color: #fff;
+      padding: 0 0.2em;
+    }
+    .photo-block {
+      width: 100%;
+      height: 200px;
+      background: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-block::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 30%; height: 100%;
+      background: #e2001a;
+      opacity: 0.1;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .grid-2col .mini-block {
+      border-top: 2px solid #111;
+      padding-top: 0.5rem;
+    }
+    .grid-2col .mini-block .num {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -3px;
+      line-height: 1;
+      color: #e2001a;
+    }
+    .grid-2col .mini-block .desc {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #555;
+    }
+    .bar-chart {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      height: 80px;
+      margin-top: 1rem;
+    }
+    .bar-chart .bar {
+      flex: 1;
+      background: #111;
+      min-height: 8px;
+    }
+    .bar-chart .bar:nth-child(1) { height: 28px; }
+    .bar-chart .bar:nth-child(2) { height: 55px; }
+    .bar-chart .bar:nth-child(3) { height: 40px; }
+    .bar-chart .bar:nth-child(4) { height: 70px; }
+    .bar-chart .bar:nth-child(5) { height: 35px; }
+    .bar-chart .bar:nth-child(6) { height: 60px; }
+    .bar-chart .bar:nth-child(7) { height: 20px; }
+    .bar-chart .bar:nth-child(8) { height: 50px; }
+    .bar-chart .bar:nth-child(9) { height: 45px; }
+    .bar-chart .bar:nth-child(10) { height: 75px; }
+    .bar-chart .bar:nth-child(11) { height: 30px; }
+    .bar-chart .bar:nth-child(12) { height: 65px; }
+    .bar-chart .bar.red { background: #e2001a; }
+    .full-width {
+      grid-column: 1 / -1;
+      border-top: 3px solid #111;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .full-width .info-block {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.8;
+    }
+    .full-width .info-block strong {
+      font-size: 0.8rem;
+      letter-spacing: 0;
+    }
+    footer {
+      grid-column: 1 / -1;
+      border-top: 1px solid #ddd;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (max-width: 768px) {
+      .grid-container { grid-template-columns: 1fr; padding: 1.5rem; }
+      .grid-container::before { display: none; }
+      .col-left { padding-right: 0; border-right: none; }
+      .col-right { padding-left: 0; }
+      .span-2 h1 { font-size: 2.5rem; }
+      .col-left, .col-right { grid-column: 1 / -1; }
+      .full-width { flex-direction: column; gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>SWISS STYLE EXTREME</h1>
-  <p>Grid • Typography • Precision</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Experience Swiss Precision</h2>
-    <div>
-      <p>
-        Welcome to the world of <strong>Swiss Style</strong> design. Clear grids, bold typography, and precise alignment.
-      </p>
-      <div class="accent-line"></div>
-      <p>
-        Minimalism meets order — every element has a place. Focus is on clarity and readability.
-      </p>
-      <a href="#" class="btn">Get Started</a>
+  <div class="grid-container">
+    <div class="span-2">
+      <h1>International<br>Typographic <span class="red">Style</span></h1>
+      <div class="sub">Grid · Asymmetry · Clarity · 1950s–Present</div>
     </div>
-    <div>
-      <p>
-        Using whitespace strategically, typography becomes the hero. Color is limited, only to emphasize hierarchy.
-      </p>
-      <div class="accent-line"></div>
-      <p>
-        The design feels structured yet elegant. Perfect for showcasing content with precision.
-      </p>
+    <div class="col-left">
+      <div class="block">
+        <div class="label">Manifesto</div>
+        <p>Typography must be <span class="highlight">clear</span>, objective, and universally legible. The grid is not a cage — it is a liberating structure that brings order to information. We reject decorative excess. We embrace functional beauty.</p>
+      </div>
+      <div class="block">
+        <div class="label">Grid System</div>
+        <div class="photo-block">[ modular grid — photograph placeholder ]</div>
+        <p>The modular grid divides space into consistent units. Content flows freely within its structure, creating dynamic asymmetry while maintaining visual coherence.</p>
+      </div>
+      <div class="block">
+        <div class="label">Key Figures</div>
+        <div class="grid-2col">
+          <div class="mini-block">
+            <div class="num">1914</div>
+            <div class="desc">Josef Müller‑Brockmann born</div>
+          </div>
+          <div class="mini-block">
+            <div class="num">188</div>
+            <div class="desc">Grid Systems — pages</div>
+          </div>
+          <div class="mini-block">
+            <div class="num">58</div>
+            <div class="desc">Years of influence</div>
+          </div>
+          <div class="mini-block">
+            <div class="num">12</div>
+            <div class="desc">Column grid standard</div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="col-right">
+      <div class="block">
+        <div class="label">Data / Form</div>
+        <h2>Verhältnis</h2>
+        <div class="meta">Proportion & structure in typographic systems</div>
+        <div class="bar-chart">
+          <div class="bar"></div>
+          <div class="bar red"></div>
+          <div class="bar"></div>
+          <div class="bar red"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar red"></div>
+          <div class="bar"></div>
+          <div class="bar red"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar red"></div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="label">Color</div>
+        <h2>Rot · Schwarz · Weiss</h2>
+        <div class="meta">The Swiss palette — reductive and deliberate</div>
+        <p>Red <span style="color:#e2001a;">■</span> for emphasis. Black <span style="color:#111;">■</span> for structure. White <span style="background:#111;color:#fff;padding:0 0.2em;">■</span> for breathing room. Three colors are enough.</p>
+      </div>
+      <div class="block">
+        <div class="label">Type</div>
+        <h2>Akzidenz Grotesk</h2>
+        <div class="meta">The voice of Swiss modernism</div>
+        <p>Neue Haas Grotesk (1957–58) by Max Miedinger. Later licensed as Helvetica. Clean, neutral, universal. The typeface that became the world's default.</p>
+      </div>
+      <div class="block">
+        <div class="label">Principle</div>
+        <p style="font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;">Asymmetrical <span style="color:#e2001a;">composition</span> creates tension · tension creates <span style="color:#e2001a;">interest</span> · interest creates <span style="color:#e2001a;">clarity</span></p>
+      </div>
+    </div>
+    <div class="full-width">
+      <div class="info-block">
+        <strong>Neue Grafik</strong><br>
+        Journal · 1958–1965<br>
+        Published by Brockmann, Lohse, etc.
+      </div>
+      <div class="info-block">
+        <strong>Grid Systems</strong><br>
+        Müller‑Brockmann · 1981<br>
+        The definitive text
+      </div>
+      <div class="info-block">
+        <strong>Legacy</strong><br>
+        Influenced every<br>
+        major design movement since
+      </div>
+    </div>
+    <footer>
+      <span>Swiss Style · International Typographic Style</span>
+      <span>Designed with Helvetica · 2025</span>
+    </footer>
   </div>
-</main>
-
-<footer>
-  © 2025 • Inspired by Swiss / International Typographic Style
-</footer>
-
 </body>
 </html>

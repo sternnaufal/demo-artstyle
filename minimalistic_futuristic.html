@@ -1,146 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Minimalist Futuristic</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #0a0a0a;
-    color: #e0e0e0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-    border-bottom: 1px solid #1a1a1a;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    font-weight: 500;
-    color: #00ffff;
-  }
-
-  header p {
-    font-size: 1rem;
-    color: #a0a0a0;
-    margin-top: 0.5rem;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    color: #00ffff;
-    border: 1px solid #00ffff;
-    border-radius: 6px;
-    transition: all 0.3s;
-  }
-
-  nav a:hover {
-    background: #00ffff;
-    color: #0a0a0a;
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-  }
-
-  .panel {
-    background: rgba(15,15,15,0.85);
-    border: 1px solid #00ffff;
-    border-radius: 12px;
-    padding: 3rem;
-    max-width: 600px;
-    text-align: center;
-  }
-
-  .panel h2 {
-    font-size: 2rem;
-    color: #00ffff;
-    margin-bottom: 1rem;
-  }
-
-  .panel p {
-    font-size: 1rem;
-    color: #c0c0c0;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 500;
-    font-size: 1rem;
-    color: #0a0a0a;
-    background: #00ffff;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn:hover {
-    background: #0a0a0a;
-    color: #00ffff;
-    border: 1px solid #00ffff;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    border-top: 1px solid #1a1a1a;
-    background: #0a0a0a;
-    color: #707070;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Futuristic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0c;
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .particle-field {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(120,200,255,0.3);
+      border-radius: 50%;
+      animation: particle-drift linear infinite;
+    }
+    @keyframes particle-drift {
+      0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+    }
+    .holographic-ring {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(100,200,255,0.03);
+      z-index: 0;
+      pointer-events: none;
+      animation: ring-pulse 6s ease-in-out infinite;
+    }
+    .holographic-ring::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 50%;
+      border: 1px solid rgba(100,200,255,0.02);
+      animation: ring-rotate 10s linear infinite;
+    }
+    @keyframes ring-pulse {
+      0%,100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+      50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.6; }
+    }
+    @keyframes ring-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    header {
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    header .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: #4a8aaa;
+      text-transform: uppercase;
+      border: 1px solid rgba(100,200,255,0.1);
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    header h1 {
+      font-size: 4rem;
+      font-weight: 200;
+      letter-spacing: -2px;
+      color: #f0f0f0;
+      line-height: 1;
+    }
+    header h1 .accent {
+      font-weight: 300;
+      color: #60b8e0;
+      text-shadow: 0 0 30px rgba(100,200,255,0.1);
+    }
+    header p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #5a5a6a;
+      margin-top: 1rem;
+      letter-spacing: 2px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-bottom: 4rem;
+      border-top: 1px solid rgba(100,200,255,0.05);
+      border-bottom: 1px solid rgba(100,200,255,0.05);
+    }
+    .metric {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-right: 1px solid rgba(100,200,255,0.03);
+    }
+    .metric:last-child { border-right: none; }
+    .metric .val {
+      font-size: 2rem;
+      font-weight: 200;
+      color: #80c8e8;
+    }
+    .metric .label {
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: #4a5a6a;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(100,200,255,0.03);
+      border: 1px solid rgba(100,200,255,0.03);
+      margin-bottom: 4rem;
+    }
+    .grid-card {
+      background: #0a0a0c;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .grid-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(100,200,255,0.08), transparent);
+    }
+    .grid-card .num {
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: #2a4a5a;
+      letter-spacing: 3px;
+      margin-bottom: 0.75rem;
+    }
+    .grid-card h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #c0d8e8;
+      margin-bottom: 0.75rem;
+    }
+    .grid-card p {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #5a6a7a;
+      line-height: 1.7;
+    }
+    .grid-card .glow {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(100,200,255,0.03);
+      filter: blur(20px);
+    }
+    .terminal-line {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(100,200,255,0.03);
+    }
+    .terminal-line .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #2a4a5a;
+    }
+    .terminal-line .dot.active {
+      background: #60b8e0;
+      box-shadow: 0 0 10px rgba(100,200,255,0.2);
+      animation: dot-pulse 2s ease-in-out infinite;
+    }
+    @keyframes dot-pulse {
+      0%,100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .btn-futuristic {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.8rem 2.5rem;
+      background: transparent;
+      border: 1px solid rgba(100,200,255,0.15);
+      color: #80c8e8;
+      cursor: pointer;
+      transition: all 0.4s;
+    }
+    .btn-futuristic:hover {
+      background: rgba(100,200,255,0.05);
+      border-color: rgba(100,200,255,0.3);
+      box-shadow: 0 0 30px rgba(100,200,255,0.05);
+    }
+    .btn-futuristic.primary {
+      border-color: rgba(100,200,255,0.25);
+      color: #c0e8f8;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.6rem;
+      font-weight: 300;
+      color: #2a3a4a;
+      letter-spacing: 4px;
+      border-top: 1px solid rgba(100,200,255,0.03);
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .grid-cards { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>FUTURE MINIMAL</h1>
-  <p>Clean • Modern • Neon Accent</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Features</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Welcome to Minimalist Future</h2>
-    <p>
-      Explore a clean, futuristic interface.<br>
-      Focused on clarity, simplicity, and modern aesthetics.<br>
-      Minimal design with subtle neon accents guides your experience.
-    </p>
-    <a href="#" class="btn">Get Started</a>
+  <div class="particle-field">
+    <div class="particle" style="left:10%;animation-duration:12s;animation-delay:0s;"></div>
+    <div class="particle" style="left:20%;animation-duration:15s;animation-delay:2s;width:3px;height:3px;"></div>
+    <div class="particle" style="left:35%;animation-duration:10s;animation-delay:4s;"></div>
+    <div class="particle" style="left:50%;animation-duration:14s;animation-delay:1s;"></div>
+    <div class="particle" style="left:65%;animation-duration:11s;animation-delay:3s;width:3px;height:3px;"></div>
+    <div class="particle" style="left:80%;animation-duration:13s;animation-delay:5s;"></div>
+    <div class="particle" style="left:90%;animation-duration:16s;animation-delay:0.5s;"></div>
   </div>
-</main>
-
-<footer>
-  © 2025 • Minimalist Futuristic Inspired
-</footer>
-
+  <div class="holographic-ring"></div>
+  <div class="container">
+    <header>
+      <div class="badge">s/2026</div>
+      <h1>VERSE.<span class="accent">OS</span></h1>
+      <p>Interface for the next generation</p>
+    </header>
+    <div class="metrics">
+      <div class="metric">
+        <div class="val">0.3ms</div>
+        <div class="label">latency</div>
+      </div>
+      <div class="metric">
+        <div class="val">99.97%</div>
+        <div class="label">uptime</div>
+      </div>
+      <div class="metric">
+        <div class="val">∞</div>
+        <div class="label">scalable</div>
+      </div>
+      <div class="metric">
+        <div class="val">12</div>
+        <div class="label">nodes</div>
+      </div>
+    </div>
+    <div class="grid-cards">
+      <div class="grid-card">
+        <div class="num">/01</div>
+        <h3>Neural Interface</h3>
+        <p>Direct thought-to-machine transduction. No peripherals required. Your intent becomes instruction at the speed of synapse.</p>
+        <div class="glow"></div>
+      </div>
+      <div class="grid-card">
+        <div class="num">/02</div>
+        <h3>Quantum Core</h3>
+        <p>Distributed computation across entangled processing units. Classical limits do not apply. Solve the unsolvable.</p>
+        <div class="glow"></div>
+      </div>
+      <div class="grid-card">
+        <div class="num">/03</div>
+        <h3>Adaptive Mesh</h3>
+        <p>Self-healing network topology. Each node is a relay. The system grows stronger with every connection.</p>
+        <div class="glow"></div>
+      </div>
+      <div class="grid-card">
+        <div class="num">/04</div>
+        <h3>Void Cooling</h3>
+        <p>Thermal management through quantum dissipation. Zero moving parts. Zero noise. Zero thermal signature.</p>
+        <div class="glow"></div>
+      </div>
+    </div>
+    <div class="terminal-line">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot active" style="animation-delay:0.5s;"></div>
+      <div class="dot"></div>
+      <div class="dot active" style="animation-delay:1s;"></div>
+    </div>
+    <div class="cta-row">
+      <button class="btn-futuristic">deploy</button>
+      <button class="btn-futuristic primary">initiate</button>
+    </div>
+    <footer>
+      <span>// VERSION 2.4.1 // BUILD 2049 //</span>
+    </footer>
+  </div>
 </body>
 </html>

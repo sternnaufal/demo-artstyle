@@ -1,155 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Surreal Landing</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #ff77ff, #7799ff, #ffcc88);
-    background-size: 600% 600%;
-    animation: gradientShift 20s ease infinite;
-    min-height: 100vh;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-
-  @keyframes gradientShift {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-    backdrop-filter: blur(5px);
-  }
-
-  header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-shadow: 0 0 15px #fff, 0 0 25px #ff88ff;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-    text-shadow: 0 0 10px #fff;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    color: #fff;
-    font-weight: 700;
-    border: 2px solid #fff;
-    border-radius: 12px;
-    transition: all 0.3s;
-  }
-
-  nav a:hover {
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(2px);
-    transform: translateY(-2px);
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-  }
-
-  .panel {
-    background: rgba(0,0,0,0.3);
-    border-radius: 30px;
-    padding: 3rem;
-    max-width: 650px;
-    text-align: center;
-    box-shadow: 0 0 50px rgba(255,255,255,0.3);
-  }
-
-  .panel h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px #ffccff;
-  }
-
-  .panel p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #f0f0ff;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #fff;
-    background: linear-gradient(45deg, #ff77ff, #88ccff);
-    border-radius: 25px;
-    text-decoration: none;
-    box-shadow: 0 0 15px #ff77ff, 0 0 25px #88ccff;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 0 25px #ff77ff, 0 0 35px #88ccff;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    background: rgba(0,0,0,0.2);
-    color: #fff;
-    border-top: 1px solid rgba(255,255,255,0.3);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surreal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5efe6;
+      color: #2a2420;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .scene {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .sky {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, #c8e0e8 0%, #f5efe6 60%, #e8ddd0 100%);
+      z-index: 0;
+    }
+    .melt-clock {
+      position: fixed;
+      top: 8%;
+      right: 10%;
+      width: 200px;
+      height: 100px;
+      z-index: 2;
+      animation: melt 6s ease-in-out infinite;
+    }
+    .melt-clock .face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #f0e8d8;
+      border: 2px solid #8a7a6a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .melt-clock .face::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 40%;
+      background: #2a2420;
+      top: 10%;
+      left: 50%;
+      transform-origin: bottom center;
+      animation: tick 10s linear infinite;
+    }
+    .melt-clock .face::before {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 30%;
+      background: #8a7a6a;
+      top: 20%;
+      left: 50%;
+      transform-origin: bottom center;
+      animation: tick 120s linear infinite;
+    }
+    @keyframes melt {
+      0%, 100% { transform: translateY(0) rotate(0deg) scaleX(1); }
+      25% { transform: translateY(10px) rotate(5deg) scaleX(0.85); }
+      50% { transform: translateY(20px) rotate(0deg) scaleX(0.7); }
+      75% { transform: translateY(10px) rotate(-5deg) scaleX(0.85); }
+    }
+    @keyframes tick {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .floating-bowler {
+      position: fixed;
+      top: 30%;
+      left: 5%;
+      z-index: 2;
+      font-size: 6rem;
+      opacity: 0.2;
+      animation: float-bowler 8s ease-in-out infinite;
+      transform-origin: center;
+    }
+    @keyframes float-bowler {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(-5deg); }
+      66% { transform: translateY(10px) rotate(3deg); }
+    }
+    .apple-face {
+      position: fixed;
+      bottom: 10%;
+      left: 15%;
+      z-index: 2;
+      width: 80px;
+      height: 80px;
+      background: #4a6a4a;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2);
+      animation: apple-float 7s ease-in-out infinite;
+    }
+    .apple-face::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 12px;
+      background: #3a4a2a;
+    }
+    @keyframes apple-float {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+    .container {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #2a2420;
+      letter-spacing: -1px;
+    }
+    header h1 span {
+      display: inline-block;
+      animation: letter-melt 4s ease-in-out infinite;
+    }
+    header h1 span:nth-child(odd) { animation-delay: 0.5s; }
+    header h1 span:nth-child(even) { animation-delay: 1s; }
+    @keyframes letter-melt {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+    header p {
+      font-size: 0.9rem;
+      color: #8a7a6a;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 2rem;
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: scale(1.02) rotate(-1deg); }
+    .card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #5a4a3a;
+    }
+    .card .impossible {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #8a7a6a;
+      opacity: 0.3;
+    }
+    .penrose {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 3rem;
+    }
+    .penrose div {
+      position: absolute;
+      width: 0; height: 0;
+      border-style: solid;
+    }
+    .penrose div:nth-child(1) {
+      border-width: 0 60px 104px 60px;
+      border-color: transparent transparent #d4c8b8 transparent;
+    }
+    .penrose div:nth-child(2) {
+      border-width: 104px 60px 0 60px;
+      border-color: #c0b0a0 transparent transparent transparent;
+      top: 0;
+    }
+    .penrose div:nth-child(3) {
+      top: 35px; left: -20px;
+      width: 80px;
+      height: 2px;
+      background: #8a7a6a;
+      transform: rotate(-30deg);
+    }
+    .quote {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      padding: 2rem;
+      border-top: 1px solid rgba(138,122,106,0.3);
+      border-bottom: 1px solid rgba(138,122,106,0.3);
+    }
+    .quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: #4a3a2a;
+      line-height: 1.6;
+    }
+    .quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #8a7a6a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #8a7a6a;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+    }
+    .eye-ball {
+      position: fixed;
+      bottom: 20%;
+      right: 8%;
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      border-radius: 50%;
+      border: 2px solid #2a2420;
+      z-index: 2;
+      animation: eye-blink 4s ease-in-out infinite;
+    }
+    .eye-ball::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: #2a2420;
+      border-radius: 50%;
+      animation: eye-move 6s ease-in-out infinite;
+    }
+    @keyframes eye-blink {
+      0%,45%,55%,100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.1); }
+    }
+    @keyframes eye-move {
+      0%,100% { transform: translate(-50%, -50%); }
+      25% { transform: translate(-60%, -40%); }
+      75% { transform: translate(-40%, -60%); }
+    }
+    .falling-leaves {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .leaf {
+      position: absolute;
+      top: -20px;
+      width: 15px;
+      height: 15px;
+      background: #c8b8a8;
+      border-radius: 0 50% 50% 0;
+      animation: leaf-fall linear infinite;
+      opacity: 0.3;
+    }
+    @keyframes leaf-fall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .cards { grid-template-columns: 1fr; }
+      .melt-clock { width: 120px; height: 60px; top: 5%; right: 5%; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>DREAMSCAPE</h1>
-  <p>Surreal • Mystical • Floating</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">Stories</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Step Into the Surreal World</h2>
-    <p>
-      Welcome to <strong>Dreamscape</strong>.<br>
-      Floating colors, dreamy gradients, and magical forms.<br>
-      Explore a place where reality bends and imagination thrives.
-    </p>
-    <a href="#" class="btn">Enter the Dream</a>
+  <div class="sky"></div>
+  <div class="melt-clock"><div class="face"></div></div>
+  <div class="floating-bowler">🎩</div>
+  <div class="apple-face"></div>
+  <div class="eye-ball"></div>
+  <div class="falling-leaves">
+    <div class="leaf" style="left:10%;animation-duration:12s;animation-delay:0s;"></div>
+    <div class="leaf" style="left:30%;animation-duration:15s;animation-delay:2s;"></div>
+    <div class="leaf" style="left:55%;animation-duration:10s;animation-delay:4s;"></div>
+    <div class="leaf" style="left:75%;animation-duration:14s;animation-delay:1s;"></div>
+    <div class="leaf" style="left:90%;animation-duration:11s;animation-delay:3s;"></div>
   </div>
-</main>
-
-<footer>
-  © 2025 • Surreal / Dreamlike Inspired
-</footer>
-
+  <div class="container">
+    <header>
+      <h1>
+        <span>T</span><span>h</span><span>e</span>
+        <span> </span>
+        <span>U</span><span>n</span><span>c</span><span>a</span><span>n</span><span>n</span><span>y</span>
+      </h1>
+      <p>Surrealism · Dream · Paradox</p>
+    </header>
+    <div class="penrose">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🪞</div>
+        <h3>The False Mirror</h3>
+        <p>A sky reflected in an eye that sees nothing. The boundary between observer and observed dissolves. Who dreams — you, or the dream?</p>
+        <div class="impossible"></div>
+      </div>
+      <div class="card">
+        <div class="icon">🐘</div>
+        <h3>Soft Structures</h3>
+        <p>Weightless elephants. Architecture of jelly. The laws of physics are merely suggestions when the subconscious holds the pen.</p>
+        <div class="impossible"></div>
+      </div>
+      <div class="card">
+        <div class="icon">🚪</div>
+        <h3>Doors Everywhere</h3>
+        <p>Windows that open to brick walls. Doors that lead to the sky. Thresholds that threshold nothing. Passage is a state of mind.</p>
+        <div class="impossible"></div>
+      </div>
+      <div class="card">
+        <div class="icon">⏳</div>
+        <h3>Time Unbound</h3>
+        <p>Clocks that drip like honey. Hours that stretch like taffy. Duration divorced from measurement. The present is a room with no walls.</p>
+        <div class="impossible"></div>
+      </div>
+    </div>
+    <div class="quote">
+      <blockquote>"The surreal is not a departure from reality — it is reality, but with the桌子 pulled out from under it."</blockquote>
+      <cite>— On the Logic of Dreams</cite>
+    </div>
+    <footer>
+      <span>SURRÉALISME · L'INCONSCIENT · LE RÊVE</span>
+    </footer>
+  </div>
 </body>
 </html>

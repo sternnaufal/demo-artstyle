@@ -1,143 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Pixelated Landing</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Press Start 2P', monospace;
-    background: #1a1a1a;
-    color: #00ff00;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-    border-bottom: 4px solid #00ff00;
-  }
-
-  header h1 {
-    font-size: 2rem;
-    color: #ff0000;
-    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000;
-  }
-
-  header p {
-    font-size: 0.8rem;
-    color: #00ff00;
-    margin-top: 0.5rem;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 700;
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    transition: all 0.2s;
-  }
-
-  nav a:hover {
-    background: #00ff00;
-    color: #000;
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-  }
-
-  .panel {
-    background: #000;
-    border: 4px solid #ff0000;
-    padding: 3rem;
-    max-width: 600px;
-    text-align: center;
-  }
-
-  .panel h2 {
-    font-size: 1rem;
-    color: #ff00ff;
-    margin-bottom: 1rem;
-  }
-
-  .panel p {
-    font-size: 0.7rem;
-    color: #00ff00;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: #000;
-    background: #ff00ff;
-    border: 2px solid #ff00ff;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .btn:hover {
-    background: #000;
-    color: #ff00ff;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.7rem;
-    border-top: 2px solid #00ff00;
-    background: #111;
-    color: #00ff00;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelated</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Press Start 2P', monospace, system-ui;
+      background: #0e0e0e;
+      color: #c0c0c0;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 4px,
+        rgba(0,0,0,0.08) 4px,
+        rgba(0,0,0,0.08) 5px
+      );
+      pointer-events: none;
+      z-index: 100;
+      animation: scanline 0.1s linear infinite;
+    }
+    @keyframes scanline {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(5px); }
+    }
+    .crt {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 99;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.7) 100%);
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      border-bottom: 4px solid #404040;
+      image-rendering: pixelated;
+    }
+    header h1 {
+      font-size: 1.2rem;
+      color: #ffcc00;
+      text-shadow: 4px 4px 0 #8a6600;
+      letter-spacing: 2px;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    header h1 .blink {
+      animation: blink-c 0.8s step-end infinite;
+    }
+    @keyframes blink-c {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    header .sub {
+      font-size: 0.45rem;
+      color: #808080;
+      letter-spacing: 4px;
+    }
+    .pixel-bar {
+      display: flex;
+      gap: 2px;
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+    .pixel-bar span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      image-rendering: pixelated;
+    }
+    .px-red { background: #cc4444; }
+    .px-green { background: #44cc44; }
+    .px-blue { background: #4444cc; }
+    .px-yellow { background: #cccc44; }
+    .px-magenta { background: #cc44cc; }
+    .px-cyan { background: #44cccc; }
+    .menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 2rem 0;
+    }
+    .menu-item {
+      border: 4px solid #505050;
+      padding: 1.5rem;
+      text-align: center;
+      background: #181818;
+      color: #c0c0c0;
+      text-decoration: none;
+      font-size: 0.45rem;
+      cursor: pointer;
+      transition: all 0.1s;
+      position: relative;
+    }
+    .menu-item:hover {
+      background: #222;
+      border-color: #ffcc00;
+      color: #ffcc00;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #000;
+    }
+    .menu-item .sprite {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.75rem;
+      image-rendering: pixelated;
+      filter: none;
+    }
+    .menu-item .label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .menu-item .desc {
+      font-size: 0.35rem;
+      color: #606060;
+      margin-top: 0.5rem;
+      letter-spacing: 1px;
+    }
+    .hp-bar {
+      display: flex;
+      gap: 2px;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .hp {
+      width: 16px;
+      height: 12px;
+      background: #44cc44;
+      border: 1px solid #226622;
+    }
+    .hp.empty { background: #333; border-color: #222; }
+    .pixel-art {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 2px;
+      width: 176px;
+      margin: 2rem auto;
+      image-rendering: pixelated;
+    }
+    .pixel-art .p {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+    .pixel-art .p.on { background: #ffcc00; }
+    .pixel-art .p.off { background: #1a1a1a; }
+    .pixel-art .p.skin { background: #d4a060; }
+    .pixel-art .p.hat { background: #cc4444; }
+    .pixel-art .p.eye { background: #222; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 2rem 0;
+    }
+    .stat-box {
+      border: 3px solid #404040;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.35rem;
+    }
+    .stat-box .val {
+      font-size: 0.55rem;
+      color: #ffcc00;
+      margin-top: 0.25rem;
+    }
+    .stat-box.highlight {
+      border-color: #ffcc00;
+      background: rgba(255,204,0,0.05);
+    }
+    .stage-select {
+      background: #111;
+      border: 4px solid #333;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .stage-select::before {
+      content: '▼ SELECT STAGE ▼';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      padding: 0 1rem;
+      font-size: 0.35rem;
+      color: #808080;
+    }
+    .stage-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stage {
+      border: 3px solid #333;
+      background: #181818;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    .stage:hover {
+      border-color: #44cc44;
+    }
+    .stage canvas, .stage .preview {
+      display: block;
+      width: 48px;
+      height: 48px;
+      background: #222;
+      margin: 5px;
+    }
+    .stage .name {
+      font-size: 0.3rem;
+      text-align: center;
+      padding: 0.25rem;
+      color: #808080;
+    }
+    .button-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .btn-pixel {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.45rem;
+      padding: 0.75rem 1.5rem;
+      background: #222;
+      color: #c0c0c0;
+      border: 4px solid #505050;
+      cursor: pointer;
+      transition: 0.1s;
+      text-transform: uppercase;
+    }
+    .btn-pixel:hover {
+      background: #333;
+      border-color: #ffcc00;
+      color: #ffcc00;
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #000;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 4px solid #333;
+      font-size: 0.35rem;
+      color: #505050;
+      letter-spacing: 2px;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 0.8rem; }
+      .menu { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>PIXEL WORLD</h1>
-  <p>Retro • 8-bit • Blocky</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Games</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Enter the 8-Bit Realm</h2>
-    <p>
-      Welcome to <strong>Pixel World</strong>.<br>
-      Blocky graphics, retro vibes, and pixel-perfect adventure.<br>
-      Step in and relive the 80s game era.
-    </p>
-    <a href="#" class="btn">Play Now</a>
+  <div class="crt"></div>
+  <div class="container">
+    <header>
+      <h1>⋆ PIXEL QUEST ⋆<br><span class="blink">█</span></h1>
+      <div class="sub">8-BIT ADVENTURE · v1.0</div>
+      <div class="pixel-bar">
+        <span class="px-red"></span><span class="px-green"></span><span class="px-blue"></span>
+        <span class="px-yellow"></span><span class="px-magenta"></span><span class="px-cyan"></span>
+      </div>
+    </header>
+    <div class="hp-bar">
+      <div class="hp"></div>
+      <div class="hp"></div>
+      <div class="hp"></div>
+      <div class="hp"></div>
+      <div class="hp"></div>
+      <div class="hp empty"></div>
+      <div class="hp empty"></div>
+    </div>
+    <div class="pixel-art">
+      <div class="p off"></div><div class="p off"></div><div class="p on"></div><div class="p on"></div><div class="p on"></div><div class="p on"></div><div class="p off"></div><div class="p off"></div>
+      <div class="p off"></div><div class="p on"></div><div class="p hat"></div><div class="p hat"></div><div class="p hat"></div><div class="p hat"></div><div class="p on"></div><div class="p off"></div>
+      <div class="p off"></div><div class="p on"></div><div class="p hat"></div><div class="p hat"></div><div class="p hat"></div><div class="p hat"></div><div class="p on"></div><div class="p off"></div>
+      <div class="p off"></div><div class="p on"></div><div class="p on"></div><div class="p skin"></div><div class="p skin"></div><div class="p on"></div><div class="p on"></div><div class="p off"></div>
+      <div class="p off"></div><div class="p on"></div><div class="p on"></div><div class="p eye"></div><div class="p eye"></div><div class="p on"></div><div class="p on"></div><div class="p off"></div>
+      <div class="p off"></div><div class="p off"></div><div class="p on"></div><div class="p skin"></div><div class="p skin"></div><div class="p on"></div><div class="p off"></div><div class="p off"></div>
+      <div class="p off"></div><div class="p off"></div><div class="p on"></div><div class="p on"></div><div class="p on"></div><div class="p on"></div><div class="p off"></div><div class="p off"></div>
+    </div>
+    <div class="menu">
+      <div class="menu-item">
+        <span class="sprite">🗡️</span>
+        <span class="label">Equip</span>
+        <div class="desc">Broadsword +3</div>
+      </div>
+      <div class="menu-item">
+        <span class="sprite">🛡️</span>
+        <span class="label">Shield</span>
+        <div class="desc">Iron Guard</div>
+      </div>
+      <div class="menu-item">
+        <span class="sprite">💊</span>
+        <span class="label">Item</span>
+        <div class="desc">Potion x3</div>
+      </div>
+      <div class="menu-item">
+        <span class="sprite">⭐</span>
+        <span class="label">Save</span>
+        <div class="desc">File 1/3</div>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box highlight">
+        <div>LV</div>
+        <div class="val">7</div>
+      </div>
+      <div class="stat-box">
+        <div>STR</div>
+        <div class="val">15</div>
+      </div>
+      <div class="stat-box">
+        <div>DEF</div>
+        <div class="val">12</div>
+      </div>
+      <div class="stat-box highlight">
+        <div>EXP</div>
+        <div class="val">340/800</div>
+      </div>
+    </div>
+    <div class="stage-select">
+      <div class="stage-row">
+        <div class="stage"><div class="preview" style="background:linear-gradient(135deg,#2a4a2a,#1a2a1a);"></div><div class="name">FOREST</div></div>
+        <div class="stage"><div class="preview" style="background:linear-gradient(135deg,#4a3a2a,#2a1a1a);"></div><div class="name">CAVE</div></div>
+        <div class="stage"><div class="preview" style="background:linear-gradient(135deg,#2a2a4a,#1a1a2a);"></div><div class="name">LAKE</div></div>
+        <div class="stage"><div class="preview" style="background:linear-gradient(135deg,#4a2a2a,#2a1a1a);"></div><div class="name">CASTLE</div></div>
+      </div>
+    </div>
+    <div class="button-row">
+      <button class="btn-pixel">▶ Start</button>
+      <button class="btn-pixel">⚙ Config</button>
+    </div>
+    <footer>
+      <span>© 2025 8-BIT STUDIOS // PRESS START //</span>
+    </footer>
   </div>
-</main>
-
-<footer>
-  © 2025 • Pixelated / 8-bit Inspired
-</footer>
-
 </body>
 </html>

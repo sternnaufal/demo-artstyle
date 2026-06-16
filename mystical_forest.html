@@ -1,174 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mystical Forest</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #0b2e1f, #1f4b2f, #3a6a4d);
-    color: #e0f7fa;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* floating light orbs */
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,200,255,0.2);
-    filter: blur(15px);
-    animation: float 20s infinite ease-in-out;
-  }
-  .orb:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
-  .orb:nth-child(2) { width: 120px; height: 120px; bottom: 10%; right: 20%; animation-delay: 5s; }
-  .orb:nth-child(3) { width: 60px; height: 60px; top: 30%; right: 25%; animation-delay: 10s; }
-  .orb:nth-child(4) { width: 100px; height: 100px; bottom: 20%; left: 15%; animation-delay: 15s; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-40px); }
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    color: #cfa0ff;
-    text-shadow: 0 0 10px #cfa0ff, 0 0 20px #ff77ff;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-    text-shadow: 0 0 6px #fff;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 700;
-    color: #cfa0ff;
-    border: 1px solid #cfa0ff;
-    border-radius: 12px;
-    transition: all 0.3s;
-  }
-
-  nav a:hover {
-    background: rgba(207,160,255,0.2);
-    transform: translateY(-2px);
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .panel {
-    background: rgba(10,40,20,0.6);
-    border-radius: 25px;
-    padding: 3rem;
-    max-width: 650px;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 30px rgba(207,160,255,0.3);
-  }
-
-  .panel h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #d0b0ff;
-    text-shadow: 0 0 10px #d0b0ff;
-  }
-
-  .panel p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #e0f0ff;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #0b2e1f;
-    background: #d0b0ff;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn:hover {
-    background: #0b2e1f;
-    color: #d0b0ff;
-    transform: translateY(-3px);
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: #a0c0ff;
-    border-top: 1px solid rgba(207,160,255,0.3);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystical Forest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a1208;
+      color: #b8c8a8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .forest-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse at 50% 100%, #0d1a0a 0%, #060a04 70%);
+    }
+    .silhouettes {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50vh;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .tree {
+      position: absolute;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, transparent, #0a1a06);
+      border-radius: 1px;
+    }
+    .tree::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      width: 0; height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 40px solid #0a1a06;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .tree::after {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 30px);
+      width: 0; height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 30px solid #0d1f08;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .mist {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40vh;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(10,20,8,0.95));
+    }
+    .fireflies {
+      position: fixed;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .firefly {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ccff88;
+      border-radius: 50%;
+      box-shadow:
+        0 0 6px 2px rgba(200,255,100,0.3),
+        0 0 20px 6px rgba(200,255,100,0.1);
+      animation: firefly-float ease-in-out infinite;
+    }
+    @keyframes firefly-float {
+      0%,100% { transform: translate(0, 0); opacity: 0.2; }
+      25% { transform: translate(30px, -20px); opacity: 1; }
+      50% { transform: translate(-10px, -50px); opacity: 0.6; }
+      75% { transform: translate(20px, -30px); opacity: 1; }
+    }
+    .sparkle {
+      position: fixed;
+      width: 2px; height: 2px;
+      background: #ddaa55;
+      border-radius: 50%;
+      z-index: 3;
+      pointer-events: none;
+      animation: sparkle 3s ease-in-out infinite;
+    }
+    @keyframes sparkle {
+      0%,100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 0.8; transform: scale(1); }
+    }
+    .container {
+      position: relative;
+      z-index: 5;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    header h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c8daa8;
+      text-shadow: 0 0 40px rgba(200,230,150,0.08);
+      letter-spacing: 4px;
+      line-height: 1.3;
+    }
+    header h1::after {
+      content: '✦';
+      display: block;
+      font-size: 1rem;
+      color: #8aaa60;
+      margin-top: 1rem;
+      animation: spin-glow 4s ease-in-out infinite;
+    }
+    @keyframes spin-glow {
+      0%,100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.3) rotate(180deg); }
+    }
+    header .sub {
+      font-size: 0.85rem;
+      color: #6a8a50;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-top: 1rem;
+    }
+    .card {
+      background: rgba(10,18,8,0.6);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(100,150,60,0.1);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(160,200,100,0.2), transparent);
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #98b080;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+    .card p em {
+      font-style: italic;
+      color: #c8daa8;
+    }
+    .glowing-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 3rem;
+    }
+    .gallery-item {
+      aspect-ratio: 1;
+      background: rgba(15,25,10,0.4);
+      border: 1px solid rgba(100,150,60,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #4a6a30;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.5s;
+    }
+    .gallery-item:hover { border-color: rgba(160,200,100,0.2); }
+    .gallery-item::after {
+      content: '☾';
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.05;
+    }
+    .footer-note {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.7rem;
+      color: #3a5a28;
+      letter-spacing: 4px;
+    }
+    .footer-note span {
+      display: inline-block;
+      animation: pulse-text 4s ease-in-out infinite;
+    }
+    @keyframes pulse-text {
+      0%,100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.5rem; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .silhouettes { height: 30vh; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- floating orbs -->
-<div class="orb"></div>
-<div class="orb"></div>
-<div class="orb"></div>
-<div class="orb"></div>
-
-<header>
-  <h1>ENCHANTED FOREST</h1>
-  <p>Mystical • Magical • Dreamy</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Explore</a>
-    <a href="#">Legends</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Step Into the Forest</h2>
-    <p>
-      Welcome to the <strong>Enchanted Forest</strong>.<br>
-      Floating lights, misty trees, and soft magical hues.<br>
-      Explore a world where magic hides in every corner.
-    </p>
-    <a href="#" class="btn">Enter the Forest</a>
+  <div class="forest-bg"></div>
+  <div class="silhouettes">
+    <div class="tree" style="left:5%;height:200px;"></div>
+    <div class="tree" style="left:15%;height:280px;"></div>
+    <div class="tree" style="left:25%;height:180px;"></div>
+    <div class="tree" style="left:38%;height:320px;"></div>
+    <div class="tree" style="left:50%;height:220px;"></div>
+    <div class="tree" style="left:62%;height:300px;"></div>
+    <div class="tree" style="left:75%;height:190px;"></div>
+    <div class="tree" style="left:85%;height:260px;"></div>
+    <div class="tree" style="left:93%;height:210px;"></div>
   </div>
-</main>
+  <div class="mist"></div>
+  <div class="fireflies">
+    <div class="firefly" style="top:30%;left:20%;animation-duration:6s;animation-delay:0s;"></div>
+    <div class="firefly" style="top:50%;left:70%;animation-duration:7s;animation-delay:1.5s;"></div>
+    <div class="firefly" style="top:20%;left:45%;animation-duration:5.5s;animation-delay:0.8s;"></div>
+    <div class="firefly" style="top:60%;left:30%;animation-duration:8s;animation-delay:2.2s;"></div>
+    <div class="firefly" style="top:40%;left:85%;animation-duration:6.5s;animation-delay:3s;"></div>
+    <div class="firefly" style="top:15%;left:60%;animation-duration:7.5s;animation-delay:0.3s;"></div>
+  </div>
+  <div class="sparkle" style="top:25%;left:30%;animation-delay:0s;"></div>
+  <div class="sparkle" style="top:45%;left:75%;animation-delay:1.5s;"></div>
+  <div class="sparkle" style="top:65%;left:20%;animation-delay:3s;"></div>
 
-<footer>
-  © 2025 • Mystical Forest Inspired
-</footer>
-
+  <div class="container">
+    <header>
+      <h1>Whispers of the<br>Verdant Deep</h1>
+      <div class="sub">where the old trees remember</div>
+    </header>
+    <div class="card">
+      <p>Deep within the <em>Elderwald</em>, where sunlight filters through the canopy like honey through gauze, the trees speak in languages older than man. Their roots weave together beneath the earth, forming a network older than any kingdom. To step into this wood is to step into a memory. <em>Whose memory?</em> The trees do not say. They wait.</p>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item"><span>moss</span></div>
+      <div class="gallery-item"><span>root</span></div>
+      <div class="gallery-item"><span>glade</span></div>
+      <div class="gallery-item"><span>stream</span></div>
+      <div class="gallery-item"><span>stone</span></div>
+      <div class="gallery-item"><span>canopy</span></div>
+    </div>
+    <div class="card">
+      <p>At dusk, the <em>fireflies</em> rise from the ferns like embers from a forgotten fire. They do not merely glow — they <em>speak</em> in light, tracing paths in the air that only the forest understands. The old folk say that if you follow a firefly long enough, you will find yourself at the heart of the wood. But no one who reaches the heart has ever returned to tell of it.</p>
+    </div>
+    <div class="footer-note">
+      <span>✦ the forest listens ✦</span>
+    </div>
+  </div>
 </body>
 </html>

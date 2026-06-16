@@ -1,174 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Candy Pop Landing</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Fredoka One', cursive;
-    background: linear-gradient(135deg, #ffb3c1, #ffe6a7, #b3f0ff);
-    min-height: 100vh;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-  }
-
-  /* floating candies */
-  .candy {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    filter: blur(6px);
-    animation: float 12s infinite ease-in-out;
-  }
-  .candy:nth-child(1) { width: 50px; height: 50px; top: 15%; left: 10%; animation-delay: 0s; }
-  .candy:nth-child(2) { width: 70px; height: 70px; bottom: 10%; right: 15%; animation-delay: 3s; }
-  .candy:nth-child(3) { width: 40px; height: 40px; top: 30%; right: 25%; animation-delay: 6s; }
-  .candy:nth-child(4) { width: 60px; height: 60px; bottom: 25%; left: 20%; animation-delay: 9s; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-30px); }
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    color: #ff4da6;
-    text-shadow: 0 0 10px #fff, 0 0 15px #ffd6ff;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-    color: #ff80bf;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: bold;
-    color: #ff66b3;
-    border: 2px solid #ff66b3;
-    border-radius: 25px;
-    transition: all 0.3s;
-  }
-
-  nav a:hover {
-    background: #ff66b3;
-    color: #fff;
-    transform: scale(1.1);
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .panel {
-    background: rgba(255,255,255,0.6);
-    border-radius: 25px;
-    padding: 3rem;
-    max-width: 650px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(255,255,255,0.6);
-  }
-
-  .panel h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #ff4da6;
-    text-shadow: 0 0 5px #fff;
-  }
-
-  .panel p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #ff66b3;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: bold;
-    font-size: 1rem;
-    color: #fff;
-    background: #ff66b3;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn:hover {
-    background: #ffb3c1;
-    color: #ff4da6;
-    transform: scale(1.1);
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: #ff80bf;
-    border-top: 1px solid rgba(255,102,179,0.5);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy Pop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff0f5;
+      color: #5a3050;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,182,193,0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(200,150,255,0.2) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,200,0.15) 0%, transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .sprinkles {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .sprinkle {
+      position: absolute;
+      width: 6px; height: 18px;
+      border-radius: 3px;
+      opacity: 0.4;
+      animation: sprinkle-fall linear infinite;
+    }
+    @keyframes sprinkle-fall {
+      0% { transform: translateY(-20px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(720deg); }
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 4rem;
+      color: #ff6b9d;
+      text-shadow:
+        3px 3px 0 #ffaacc,
+        6px 6px 0 rgba(255,100,150,0.2);
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+    }
+    header h1::after {
+      content: '✧';
+      position: absolute;
+      top: -10px; right: -30px;
+      font-size: 1.5rem;
+      color: #ffcc00;
+      animation: sparkle-spin 2s ease-in-out infinite;
+    }
+    @keyframes sparkle-spin {
+      0%,100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+      50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+    }
+    header .sub {
+      font-size: 1rem;
+      color: #d490b0;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+    .lollipop-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+    .lollipop {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: relative;
+      animation: lolli-spin 6s linear infinite;
+    }
+    .lollipop::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 20px;
+      background: #c0b0a0;
+      border-radius: 2px;
+    }
+    .lollipop-1 {
+      background: conic-gradient(#ff6b9d, #ffcc00, #ff6b9d, #ffaacc, #ff6b9d);
+    }
+    .lollipop-2 {
+      background: conic-gradient(#aaddff, #ffaacc, #aaddff, #ccffaa, #aaddff);
+    }
+    .lollipop-3 {
+      background: conic-gradient(#ffcc00, #ff6b9d, #ffcc00, #aaddff, #ffcc00);
+    }
+    @keyframes lolli-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .candy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .candy-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 2px solid rgba(255,150,180,0.2);
+      box-shadow:
+        0 4px 15px rgba(255,150,180,0.1),
+        inset 0 0 30px rgba(255,255,255,0.3);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .candy-card::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(255,200,220,0.1), transparent 60%);
+    }
+    .candy-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: rgba(255,100,150,0.4);
+      box-shadow: 0 8px 25px rgba(255,100,150,0.15);
+    }
+    .candy-card .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    .candy-card h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.1rem;
+      color: #ff6b9d;
+      margin-bottom: 0.5rem;
+    }
+    .candy-card p {
+      font-size: 0.85rem;
+      color: #8a6a7a;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .candy-card .stripe {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, #ff6b9d, #ffcc00, #aaddff, #ccffaa, #ffaacc);
+    }
+    .swirl-banner {
+      text-align: center;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, rgba(255,182,193,0.15), rgba(200,150,255,0.1));
+      border-radius: 30px;
+      border: 2px dashed rgba(255,150,180,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .swirl-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,150,180,0.03) 10px,
+        rgba(255,150,180,0.03) 20px
+      );
+    }
+    .swirl-banner p {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.5rem;
+      color: #ff6b9d;
+      position: relative;
+    }
+    .swirl-banner .small {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.85rem;
+      color: #b08090;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    .swirl-banner .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .swirl-banner .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      animation: bounce 1s ease-in-out infinite;
+    }
+    .swirl-banner .dot:nth-child(1) { background: #ff6b9d; animation-delay: 0s; }
+    .swirl-banner .dot:nth-child(2) { background: #ffcc00; animation-delay: 0.15s; }
+    .swirl-banner .dot:nth-child(3) { background: #aaddff; animation-delay: 0.3s; }
+    .swirl-banner .dot:nth-child(4) { background: #ccffaa; animation-delay: 0.45s; }
+    .swirl-banner .dot:nth-child(5) { background: #ffaacc; animation-delay: 0.6s; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Fredoka One', cursive;
+      font-size: 0.9rem;
+      color: #d490b0;
+      letter-spacing: 2px;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .candy-grid { grid-template-columns: 1fr 1fr; }
+      .lollipop-row { gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .candy-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- floating candies -->
-<div class="candy"></div>
-<div class="candy"></div>
-<div class="candy"></div>
-<div class="candy"></div>
-
-<header>
-  <h1>CANDY POP</h1>
-  <p>Playful • Sweet • Whimsical</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Sweet Adventures Await!</h2>
-    <p>
-      Welcome to <strong>Candy Pop</strong>.<br>
-      Floating candies, pastel colors, and playful vibes.<br>
-      Step into a world full of sweetness and fun.
-    </p>
-    <a href="#" class="btn">Start Playing</a>
+  <div class="sprinkles">
+    <div class="sprinkle" style="left:5%;background:#ff6b9d;animation-duration:8s;animation-delay:0s;"></div>
+    <div class="sprinkle" style="left:15%;background:#ffcc00;animation-duration:10s;animation-delay:1s;width:8px;height:12px;"></div>
+    <div class="sprinkle" style="left:25%;background:#aaddff;animation-duration:7s;animation-delay:2s;"></div>
+    <div class="sprinkle" style="left:40%;background:#ccffaa;animation-duration:9s;animation-delay:0.5s;width:5px;height:15px;"></div>
+    <div class="sprinkle" style="left:55%;background:#ffaacc;animation-duration:11s;animation-delay:3s;"></div>
+    <div class="sprinkle" style="left:70%;background:#ff6b9d;animation-duration:8s;animation-delay:1.5s;width:7px;height:14px;"></div>
+    <div class="sprinkle" style="left:85%;background:#ffcc00;animation-duration:9s;animation-delay:4s;"></div>
+    <div class="sprinkle" style="left:92%;background:#aaddff;animation-duration:10s;animation-delay:2.5s;"></div>
   </div>
-</main>
-
-<footer>
-  © 2025 • Candy Pop Inspired
-</footer>
-
+  <div class="container">
+    <header>
+      <h1>CANDY POP</h1>
+      <div class="sub">sweet enough to make you sick ✧</div>
+    </header>
+    <div class="lollipop-row">
+      <div class="lollipop lollipop-1"></div>
+      <div class="lollipop lollipop-2"></div>
+      <div class="lollipop lollipop-3"></div>
+    </div>
+    <div class="candy-grid">
+      <div class="candy-card">
+        <div class="emoji">🍭</div>
+        <h3>Lollipop</h3>
+        <p>Swirled sugar on a stick. The original handheld happiness.</p>
+        <div class="stripe"></div>
+      </div>
+      <div class="candy-card">
+        <div class="emoji">🍬</div>
+        <h3>Bonbon</h3>
+        <p>Little pillows of joy. Each color is a different promise.</p>
+        <div class="stripe"></div>
+      </div>
+      <div class="candy-card">
+        <div class="emoji">🧁</div>
+        <h3>Cupcake</h3>
+        <p>Frosted perfection. The sprinkle-to-calorie ratio is critical.</p>
+        <div class="stripe"></div>
+      </div>
+      <div class="candy-card">
+        <div class="emoji">🍬</div>
+        <h3>Gummy</h3>
+        <p>Bears, worms, rings. The chewiness is scientifically optimized.</p>
+        <div class="stripe"></div>
+      </div>
+      <div class="candy-card">
+        <div class="emoji">🍫</div>
+        <h3>Chocolate</h3>
+        <p>Smooth, dark, melt-in-your-mouth. The grown-up's candy.</p>
+        <div class="stripe"></div>
+      </div>
+      <div class="candy-card">
+        <div class="emoji">🍩</div>
+        <h3>Donut</h3>
+        <p>Round and frosted. The hole is not a bug, it's a feature.</p>
+        <div class="stripe"></div>
+      </div>
+    </div>
+    <div class="swirl-banner">
+      <p>✦ sugar, spice, and everything nice ✦</p>
+      <div class="small">— lifetime supply not included —</div>
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    <footer>
+      <span>✧ made with love & artificial colors ✧</span>
+    </footer>
+  </div>
 </body>
 </html>

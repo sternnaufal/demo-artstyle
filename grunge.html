@@ -2,163 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grunge Landing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grunge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Special Elite', monospace;
-      background: #1a1a1a url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-      color: #f5f5f5;
+      font-family: 'Special Elite', cursive;
+      background: #1a1814;
+      color: #b0a898;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
     }
-
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 2px,
+          rgba(120,100,80,0.02) 2px,
+          rgba(120,100,80,0.02) 4px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stain {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.04;
+      filter: blur(2px);
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+    }
     header {
+      grid-column: 1 / -1;
       text-align: center;
-      padding: 2rem;
-      background: #111 url('https://www.transparenttextures.com/patterns/grunge-wall.png');
-      border-bottom: 5px solid #c0392b;
-      box-shadow: inset 0 -5px 15px rgba(0,0,0,0.8);
-    }
-
-    header h1 {
-      font-family: 'Staatliches', sans-serif;
-      font-size: 3.5rem;
-      letter-spacing: 2px;
-      color: #fff;
-      text-transform: uppercase;
-      text-shadow: 2px 2px #c0392b, -2px -2px #000;
-    }
-
-    header p {
-      margin-top: .5rem;
-      font-size: 1.2rem;
-      color: #aaa;
-      font-style: italic;
-    }
-
-    nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 0 .7rem;
-      padding: .5rem 1rem;
-      color: #f5f5f5;
-      text-decoration: none;
-      border: 2px solid #f5f5f5;
-      font-weight: bold;
-      text-transform: uppercase;
-      background: #222;
-      box-shadow: 3px 3px 0 #c0392b;
-      transition: all .2s ease;
-    }
-
-    nav a:hover {
-      background: #c0392b;
-      color: #fff;
-      transform: rotate(-2deg) scale(1.05);
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      background: #222 url('https://www.transparenttextures.com/patterns/black-linen.png');
-    }
-
-    .grunge-box {
-      max-width: 700px;
-      padding: 2rem;
-      background: #111;
-      border: 3px dashed #c0392b;
-      box-shadow: -10px 10px 0 #444, 10px -10px 0 #000;
-      text-align: center;
-      transform: rotate(-1deg);
-    }
-
-    .grunge-box h2 {
-      font-family: 'Staatliches', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #e74c3c;
-      text-transform: uppercase;
-      text-shadow: 1px 1px #000;
-    }
-
-    .grunge-box p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ddd;
+      padding: 2rem 0;
+      position: relative;
+      border-top: 3px dashed #5a4a3a;
+      border-bottom: 3px dashed #5a4a3a;
       margin-bottom: 2rem;
     }
-
-    .btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: #c0392b;
-      color: #fff;
-      font-weight: bold;
+    header h1 {
+      font-family: 'Staatliches', cursive;
+      font-size: 5rem;
+      font-weight: 400;
+      letter-spacing: 6px;
+      color: #d4c8b0;
       text-transform: uppercase;
-      text-decoration: none;
-      border: 2px solid #fff;
-      box-shadow: 4px 4px 0 #000;
-      transition: all 0.2s ease;
+      transform: rotate(-2deg);
+      text-shadow:
+        3px 3px 0 #3a2a1a,
+        -2px -2px 0 rgba(180,100,60,0.2);
     }
-
-    .btn:hover {
-      background: #fff;
-      color: #c0392b;
-      transform: translate(-3px, -3px) rotate(-3deg);
+    header .sub {
+      font-size: 0.75rem;
+      color: #6a5a4a;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      transform: rotate(1deg);
+      margin-top: 0.5rem;
     }
-
-    footer {
+    .sidebar {
+      border: 2px dashed #3a2a1a;
+      padding: 1.5rem;
+      position: sticky;
+      top: 2rem;
+      transform: rotate(-1deg);
+    }
+    .sidebar::before {
+      content: '☛';
+      position: absolute;
+      top: -10px; right: -10px;
+      font-size: 1.5rem;
+      color: #8a6a4a;
+      transform: rotate(15deg);
+    }
+    .sidebar h3 {
+      font-family: 'Staatliches', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      color: #c8b098;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      border-bottom: 2px dotted #4a3a2a;
+      padding-bottom: 0.5rem;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      padding: 0.5rem 0;
+      font-size: 0.8rem;
+      border-bottom: 1px dotted #2a2218;
+      color: #8a7a6a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sidebar li::before {
+      content: '//';
+      color: #6a4a3a;
+      font-size: 0.6rem;
+    }
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .post {
+      border: 1px solid #3a3020;
+      padding: 1.5rem;
+      background: rgba(20,18,14,0.6);
+      position: relative;
+      transform: rotate(var(--rot, 0deg));
+      transition: transform 0.3s;
+    }
+    .post:hover {
+      transform: rotate(0deg);
+    }
+    .post:nth-child(odd) { --rot: -0.8deg; }
+    .post:nth-child(even) { --rot: 0.6deg; }
+    .post::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(120,80,40,0.05);
+      pointer-events: none;
+    }
+    .post .tag {
+      display: inline-block;
+      font-family: 'Staatliches', cursive;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid #6a4a3a;
+      color: #b09070;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .post h2 {
+      font-family: 'Staatliches', cursive;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #c8b098;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .post .meta {
+      font-size: 0.65rem;
+      color: #5a4a3a;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .post p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: #8a7a6a;
+    }
+    .post p .highlight {
+      background: rgba(120,80,40,0.1);
+      padding: 0.1rem 0.3rem;
+      border: 1px dotted rgba(120,80,40,0.2);
+    }
+    .post .scribble {
+      position: absolute;
+      bottom: 0; right: 0;
+      font-size: 3rem;
+      opacity: 0.03;
+      pointer-events: none;
+      transform: rotate(20deg);
+    }
+    .footer-note {
+      grid-column: 1 / -1;
       text-align: center;
-      padding: 1rem;
-      background: #111 url('https://www.transparenttextures.com/patterns/grunge-wall.png');
-      font-size: .9rem;
-      color: #777;
-      border-top: 2px solid #c0392b;
+      padding: 2rem;
+      border-top: 2px dashed #2a2218;
+      font-size: 0.7rem;
+      color: #4a3a2a;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .container { grid-template-columns: 1fr; }
+      header h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>⚡ GRUNGE VIBES ⚡</h1>
-    <p>Raw • Loud • Underground</p>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Bands</a>
-      <a href="#">Events</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="grunge-box">
-      <h2>Feel the Noise</h2>
-      <p>
-        Welcome to the <strong>Grunge Era</strong>.<br>
-        Torn posters, dirty walls, and distorted guitars.<br>
-        Not perfect. Not clean. Just real.
-      </p>
-      <a href="#" class="btn">Join the Scene</a>
+  <div class="stain" style="top:20%;left:10%;width:300px;height:200px;background:#5a3a2a;opacity:0.03;"></div>
+  <div class="stain" style="top:60%;right:5%;width:200px;height:300px;background:#3a2a1a;opacity:0.02;"></div>
+  <div class="container">
+    <header>
+      <h1>RAW / GRUNGE</h1>
+      <div class="sub">issue no. 7 — decay culture</div>
+    </header>
+    <div class="sidebar">
+      <h3>noise index</h3>
+      <ul>
+        <li>feedback loop</li>
+        <li>unpolished truth</li>
+        <li>ripped seams</li>
+        <li>static hiss</li>
+        <li>broken tape</li>
+        <li>frayed edges</li>
+        <li>burned out</li>
+      </ul>
     </div>
-  </main>
-
-  <footer>
-    © 1991–2025 • Inspired by Grunge Culture & Underground Design
-  </footer>
+    <div class="main-content">
+      <div class="post">
+        <span class="tag">✦ manifesto</span>
+        <h2>beauty in decay</h2>
+        <div class="meta">issue no. 7 · 2025</div>
+        <p>The things that are <span class="highlight">broken</span> tell the truest stories. A torn poster on a brick wall says more than a perfect billboard. We collect the fragments — the half-erased graffiti, the wrinkled zine, the photograph fading in the sun. <span class="highlight">Perfection is a lie</span>. Grunge is the truth underneath.</p>
+        <div class="scribble">✕</div>
+      </div>
+      <div class="post">
+        <span class="tag">✦ collage</span>
+        <h2>found objects</h2>
+        <div class="meta">from the cutting room floor</div>
+        <p>Ticket stubs. Receipts. Wrappers. Cigarette butts. The <span class="highlight">detritus</span> of daily life arranged into compositions that would make Duchamp smile. We glue them onto paper with dried glue and let the edges curl. The <span class="highlight">imperfection</span> is the point.</p>
+        <div class="scribble">∅</div>
+      </div>
+      <div class="post">
+        <span class="tag">✦ sound</span>
+        <h2>the 4-track years</h2>
+        <div class="meta">recorded in a basement · 1993</div>
+        <p>Before digital silence, there was <span class="highlight">hiss</span>. The warmth of tape saturation. The accident of a microphone too close to an amp. Glorious, beautiful noise. We chase that feeling — the moment when the signal breaks and becomes something <span class="highlight">raw</span>.</p>
+        <div class="scribble">♫</div>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>✦ ripped · torn · faded ✦</span>
+    </div>
+  </div>
 </body>
 </html>

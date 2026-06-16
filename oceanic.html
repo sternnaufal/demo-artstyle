@@ -1,173 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Oceanic Landing</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #0d3b66, #145374, #1ca3ec);
-    min-height: 100vh;
-    color: #e0f7fa;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  /* floating bubbles */
-  .bubble {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    animation: float 15s infinite ease-in-out;
-  }
-  .bubble:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 20%; animation-delay: 0s; }
-  .bubble:nth-child(2) { width: 150px; height: 150px; bottom: 5%; right: 15%; animation-delay: 3s; }
-  .bubble:nth-child(3) { width: 80px; height: 80px; bottom: 20%; left: 25%; animation-delay: 6s; }
-  .bubble:nth-child(4) { width: 120px; height: 120px; top: 30%; right: 20%; animation-delay: 9s; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-50px); }
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    color: #aee1f9;
-    text-shadow: 0 0 10px #aee1f9, 0 0 20px #00bfff;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    color: #d0f0fd;
-    margin-top: 0.5rem;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 700;
-    color: #00e5ff;
-    border: 1px solid #00e5ff;
-    border-radius: 12px;
-    transition: all 0.3s;
-  }
-
-  nav a:hover {
-    background: rgba(0,229,255,0.3);
-    transform: translateY(-2px);
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .panel {
-    background: rgba(0,50,100,0.5);
-    border-radius: 25px;
-    padding: 3rem;
-    max-width: 650px;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 30px rgba(0,255,255,0.3);
-  }
-
-  .panel h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #00f0ff;
-    text-shadow: 0 0 10px #00f0ff;
-  }
-
-  .panel p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #d0f0fd;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #004466;
-    background: #00f0ff;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn:hover {
-    background: #004466;
-    color: #00f0ff;
-    transform: translateY(-3px);
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: #a0e0ff;
-    border-top: 1px solid rgba(0,255,255,0.3);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oceanic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a1628;
+      color: #b8d0e8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .ocean-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(180deg, #0a1e3a 0%, #061220 40%, #030a14 100%);
+    }
+    .caustics {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.06;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(100,200,255,0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(100,200,255,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(100,200,255,0.15) 0%, transparent 50%);
+      animation: caustic-drift 12s ease-in-out infinite;
+    }
+    @keyframes caustic-drift {
+      0%,100% { transform: scale(1) translate(0, 0); }
+      33% { transform: scale(1.1) translate(2%, -1%); }
+      66% { transform: scale(0.95) translate(-1%, 2%); }
+    }
+    .wave {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 120px;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.04;
+    }
+    .wave svg {
+      width: 100%;
+      height: 100%;
+      animation: wave-move 8s linear infinite;
+    }
+    @keyframes wave-move {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .bubbles {
+      position: fixed;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -20px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,230,255,0.2);
+      animation: bubble-rise linear infinite;
+    }
+    @keyframes bubble-rise {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 0.4; }
+      90% { opacity: 0.2; }
+      100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+    }
+    .container {
+      position: relative;
+      z-index: 5;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #c8e0f0;
+      letter-spacing: 1px;
+      text-shadow: 0 0 40px rgba(100,200,255,0.08);
+    }
+    header .sub {
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 6px;
+      color: #4a7a9a;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+    .depth-card {
+      background: linear-gradient(135deg, rgba(10,30,60,0.7), rgba(6,18,40,0.8));
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(100,180,220,0.08);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .depth-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(100,200,255,0.15), transparent);
+    }
+    .depth-card .depth-label {
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      color: #2a5a7a;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .depth-card h2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #a0d0e8;
+      margin-bottom: 1rem;
+    }
+    .depth-card p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #7a9ab0;
+    }
+    .depth-card .creature {
+      position: absolute;
+      bottom: 1rem; right: 1rem;
+      font-size: 3rem;
+      opacity: 0.06;
+    }
+    .depth-zones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .zone {
+      border: 1px solid rgba(100,180,220,0.06);
+      padding: 1.5rem;
+      text-align: center;
+      background: rgba(10,30,60,0.3);
+    }
+    .zone .meter {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #4a8aaa;
+    }
+    .zone .zone-name {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #3a6a8a;
+      margin: 0.5rem 0;
+    }
+    .zone .zone-desc {
+      font-size: 0.75rem;
+      color: #5a7a8a;
+      font-weight: 300;
+    }
+    .tide-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .tide-item {
+      border-top: 1px solid rgba(100,180,220,0.1);
+      padding: 1.5rem;
+    }
+    .tide-item h3 {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #70aac8;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .tide-item p {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #5a7a8a;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(100,180,220,0.05);
+      font-size: 0.65rem;
+      color: #2a4a5a;
+      letter-spacing: 4px;
+      font-weight: 300;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      .depth-zones { grid-template-columns: 1fr; }
+      .tide-panel { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- floating bubbles -->
-<div class="bubble"></div>
-<div class="bubble"></div>
-<div class="bubble"></div>
-<div class="bubble"></div>
-
-<header>
-  <h1>OCEANIC DEPTHS</h1>
-  <p>Underwater • Calm • Immersive</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Explore</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Dive Into the Deep</h2>
-    <p>
-      Welcome to <strong>Oceanic Depths</strong>.<br>
-      Transparent panels, floating bubbles, and calming gradients.<br>
-      Immerse yourself in a tranquil underwater world.
-    </p>
-    <a href="#" class="btn">Start Exploring</a>
+  <div class="ocean-bg"></div>
+  <div class="caustics"></div>
+  <div class="wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#4a8aaa"/>
+    </svg>
   </div>
-</main>
-
-<footer>
-  © 2025 • Oceanic Inspired
-</footer>
-
+  <div class="bubbles">
+    <div class="bubble" style="left:10%;width:6px;height:6px;animation-duration:12s;animation-delay:0s;"></div>
+    <div class="bubble" style="left:25%;width:10px;height:10px;animation-duration:15s;animation-delay:2s;"></div>
+    <div class="bubble" style="left:40%;width:5px;height:5px;animation-duration:10s;animation-delay:4s;"></div>
+    <div class="bubble" style="left:55%;width:12px;height:12px;animation-duration:18s;animation-delay:1s;"></div>
+    <div class="bubble" style="left:70%;width:7px;height:7px;animation-duration:13s;animation-delay:3s;"></div>
+    <div class="bubble" style="left:85%;width:9px;height:9px;animation-duration:14s;animation-delay:5s;"></div>
+    <div class="bubble" style="left:50%;width:4px;height:4px;animation-duration:11s;animation-delay:6s;"></div>
+  </div>
+  <div class="container">
+    <header>
+      <h1>The Deep</h1>
+      <div class="sub">a descent into blue</div>
+    </header>
+    <div class="depth-card">
+      <div class="depth-label">— 0m — surface</div>
+      <h2>Sunlight Zone</h2>
+      <p>Where light still reaches. The water is warm here, dappled with silver. Turtles glide past, and the surface above is a ceiling of liquid glass. <em>Breathe.</em> This is the world you know.</p>
+      <div class="creature">🐢</div>
+    </div>
+    <div class="depth-zones">
+      <div class="zone">
+        <div class="meter">— 200m</div>
+        <div class="zone-name">Twilight</div>
+        <div class="zone-desc">The blue deepens. Light fades to indigo.</div>
+      </div>
+      <div class="zone">
+        <div class="meter">— 1000m</div>
+        <div class="zone-name">Midnight</div>
+        <div class="zone-desc">Absolute dark. Bioluminescence rules.</div>
+      </div>
+      <div class="zone">
+        <div class="meter">— 6000m</div>
+        <div class="zone-name">Abyss</div>
+        <div class="zone-desc">The pressure would crush you in an instant.</div>
+      </div>
+    </div>
+    <div class="depth-card">
+      <div class="depth-label">— 200m — twilight</div>
+      <h2>The Blue Threshold</h2>
+      <p>Below the reach of the sun, the ocean speaks in a different tongue. Creatures of light drift through the perpetual dusk — jellyfish like living lanterns, fish with eyes like telescopes. The silence here is not empty; it is full of frequencies we cannot hear.</p>
+      <div class="creature">🪼</div>
+    </div>
+    <div class="tide-panel">
+      <div class="tide-item">
+        <h3>↗ Currents</h3>
+        <p>Rivers within the sea. The great ocean conveyor belt moves water around the planet in a cycle that takes a thousand years to complete.</p>
+      </div>
+      <div class="tide-item">
+        <h3>↘ Tides</h3>
+        <p>The moon's breath. Every rise and fall is the planet itself breathing — a pulse that has beat for billions of years without rest.</p>
+      </div>
+    </div>
+    <footer>
+      <span>✦ the sea, ever moving, ever still ✦</span>
+    </footer>
+  </div>
 </body>
 </html>

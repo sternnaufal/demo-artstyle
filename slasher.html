@@ -1,148 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Slasher Horror Landing</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  body {
-    font-family: 'Roboto Mono', monospace;
-    background: #0b0b0b;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    text-align: center;
-    padding: 3rem 2rem;
-    border-bottom: 2px solid #550000;
-  }
-
-  header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #800000;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    color: #ff5555;
-    margin-top: 0.5rem;
-  }
-
-  nav {
-    margin-top: 1.5rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 700;
-    color: #ff5555;
-    border: 1px solid #ff0000;
-    transition: all 0.3s;
-  }
-
-  nav a:hover {
-    background: #ff0000;
-    color: #fff;
-    transform: translateY(-2px);
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-  }
-
-  .panel {
-    background: #1a0000;
-    border-radius: 10px;
-    padding: 3rem;
-    max-width: 650px;
-    text-align: center;
-    box-shadow: 0 0 20px #550000;
-  }
-
-  .panel h2 {
-    font-size: 2rem;
-    color: #ff3333;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 8px #ff0000;
-  }
-
-  .panel p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ffaaaa;
-    margin-bottom: 2rem;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #fff;
-    background: #ff0000;
-    border-radius: 5px;
-    text-decoration: none;
-    box-shadow: 0 0 10px #800000;
-    transition: all 0.3s;
-  }
-
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px #ff0000;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    border-top: 2px solid #550000;
-    background: #0b0b0b;
-    color: #ff5555;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slasher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Courier Prime', monospace;
+      background: #0a0505;
+      color: #ccb0b0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(100,0,0,0.03) 3px,
+        rgba(100,0,0,0.03) 6px
+      );
+      pointer-events: none;
+      z-index: 10;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%);
+      pointer-events: none;
+      z-index: 9;
+    }
+    .vhs-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 8;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(255,0,0,0.01) 2px,
+        rgba(255,0,0,0.01) 4px
+      );
+      animation: vhs-scan 0.5s infinite;
+      opacity: 0.3;
+    }
+    @keyframes vhs-scan {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(10px); }
+    }
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 7;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+    .blood-drip {
+      position: fixed;
+      top: 0;
+      left: 20%;
+      width: 3px;
+      height: 0;
+      background: #8a0000;
+      z-index: 5;
+      animation: drip 4s ease-in infinite;
+    }
+    .blood-drip:nth-child(2) { left: 60%; animation-delay: 2s; }
+    .blood-drip:nth-child(3) { left: 40%; animation-delay: 3s; height: 60px; }
+    .blood-drip:nth-child(4) { left: 80%; animation-delay: 1s; }
+    @keyframes drip {
+      0% { height: 0; opacity: 1; }
+      50% { height: 200px; opacity: 0.8; }
+      100% { height: 250px; opacity: 0; }
+    }
+    .container {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      position: relative;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -5%;
+      width: 110%; height: 2px;
+      background: linear-gradient(90deg, transparent, #8a0000, transparent);
+    }
+    header h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 5rem;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: #cc0000;
+      text-shadow:
+        0 0 20px rgba(200,0,0,0.3),
+        3px 3px 0 #1a0000,
+        -1px -1px 0 #3a0000;
+      position: relative;
+      display: inline-block;
+    }
+    header h1::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 2px; left: 2px;
+      color: transparent;
+      text-shadow: 0 0 5px rgba(200,0,0,0.5);
+      animation: flicker 3s infinite;
+    }
+    @keyframes flicker {
+      0%,100% { opacity: 0; }
+      10% { opacity: 0.5; }
+      11% { opacity: 0; }
+      20% { opacity: 0; }
+      21% { opacity: 0.3; }
+      22% { opacity: 0; }
+      50% { opacity: 0; }
+      51% { opacity: 0.4; }
+      52% { opacity: 0; }
+      80% { opacity: 0; }
+      81% { opacity: 0.2; }
+      82% { opacity: 0; }
+    }
+    header .tagline {
+      font-size: 0.8rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #5a2020;
+      margin-top: 1rem;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem 0;
+      margin-bottom: 3rem;
+      border-top: 1px solid rgba(200,0,0,0.15);
+      border-bottom: 1px solid rgba(200,0,0,0.15);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-item .num {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #cc0000;
+      text-shadow: 0 0 10px rgba(200,0,0,0.3);
+    }
+    .stat-item .label {
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #5a3030;
+    }
+    .victims-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .victim-card {
+      border: 1px solid rgba(200,0,0,0.12);
+      padding: 1.5rem;
+      text-align: center;
+      background: rgba(10,0,0,0.3);
+      transition: all 0.3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .victim-card::before {
+      content: '✕';
+      position: absolute;
+      top: -20px; right: -10px;
+      font-size: 5rem;
+      color: rgba(200,0,0,0.05);
+      font-family: 'Courier Prime', monospace;
+    }
+    .victim-card:hover {
+      border-color: rgba(200,0,0,0.4);
+      background: rgba(20,0,0,0.5);
+    }
+    .victim-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .victim-card h3 {
+      font-size: 0.8rem;
+      color: #cc8080;
+      margin-bottom: 0.3rem;
+    }
+    .victim-card .fate {
+      font-size: 0.65rem;
+      color: #5a2020;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .weapon-showcase {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      border: 1px solid rgba(200,0,0,0.1);
+      position: relative;
+    }
+    .weapon-showcase::before {
+      content: 'WEAPON OF CHOICE';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0a0505;
+      padding: 0 1rem;
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      color: #5a2020;
+    }
+    .weapon {
+      font-size: 3rem;
+      filter: grayscale(0.5);
+      transition: all 0.3s;
+      cursor: default;
+    }
+    .weapon:hover {
+      filter: grayscale(0);
+      transform: scale(1.2);
+    }
+    .warning {
+      text-align: center;
+      padding: 2rem;
+      border: 2px dashed rgba(200,0,0,0.15);
+      margin-bottom: 3rem;
+    }
+    .warning p {
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #5a2020;
+      line-height: 2;
+    }
+    .warning .siren {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #cc0000;
+      border-radius: 50%;
+      animation: siren 1s infinite;
+      margin: 0 0.5rem;
+    }
+    @keyframes siren {
+      0%,100% { opacity: 1; box-shadow: 0 0 10px rgba(200,0,0,0.5); }
+      50% { opacity: 0.3; box-shadow: 0 0 2px rgba(200,0,0,0.1); }
+    }
+    .glitch-bar {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(200,0,0,0.1);
+      z-index: 6;
+      animation: glitch-bar 3s infinite;
+    }
+    @keyframes glitch-bar {
+      0%,90%,100% { transform: translateY(-100vh); opacity: 0; }
+      92% { transform: translateY(40vh); opacity: 1; }
+      93% { transform: translateY(42vh); opacity: 0; }
+      95% { transform: translateY(60vh); opacity: 0.5; }
+      96% { transform: translateY(58vh); opacity: 0; }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.65rem;
+      color: #3a1010;
+      letter-spacing: 4px;
+      border-top: 1px solid rgba(200,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 3rem; }
+      .stats { flex-direction: column; gap: 1rem; }
+      .victims-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>SLASHER HORROR</h1>
-  <p>Dark • Blood • Intense</p>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Gallery</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="panel">
-    <h2>Step Into the Nightmare</h2>
-    <p>
-      Welcome to the <strong>Slasher Horror</strong> world.<br>
-      Dark corridors, blood red accents, and tension everywhere.<br>
-      Every click brings you closer to fear.
-    </p>
-    <a href="#" class="btn">Enter Now</a>
+  <div class="vhs-overlay"></div>
+  <div class="grain"></div>
+  <div class="glitch-bar"></div>
+  <div class="blood-drip"></div>
+  <div class="blood-drip"></div>
+  <div class="blood-drip"></div>
+  <div class="blood-drip"></div>
+  <div class="container">
+    <header>
+      <h1 data-text="SLASHER">SLASHER</h1>
+      <div class="tagline">Don't. Go. In. There.</div>
+    </header>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="num">87</div>
+        <div class="label">Victims</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">12</div>
+        <div class="label">Survivors</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">6</div>
+        <div class="label">Sequels</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">∞</div>
+        <div class="label">Nightmares</div>
+      </div>
+    </div>
+    <div class="warning">
+      <span class="siren"></span>
+      <p>If you hear breathing behind you — <span style="color:#cc0000;">run.</span></p>
+      <span class="siren" style="animation-delay:0.5s;"></span>
+    </div>
+    <div class="victims-grid">
+      <div class="victim-card">
+        <div class="icon">🧑</div>
+        <h3>THE JOCK</h3>
+        <div class="fate">"Went to check the noise"</div>
+      </div>
+      <div class="victim-card">
+        <div class="icon">👩</div>
+        <h3>THE FINAL GIRL</h3>
+        <div class="fate">"Still running"</div>
+      </div>
+      <div class="victim-card">
+        <div class="icon">🧓</div>
+        <h3>THE SHERIFF</h3>
+        <div class="fate">"Said it was just kids"</div>
+      </div>
+      <div class="victim-card">
+        <div class="icon">👻</div>
+        <h3>THE CREEPY KID</h3>
+        <div class="fate">"Sings lullabies"</div>
+      </div>
+      <div class="victim-card">
+        <div class="icon">🎭</div>
+        <h3>THE MASK</h3>
+        <div class="fate">"Never comes off"</div>
+      </div>
+      <div class="victim-card">
+        <div class="icon">📞</div>
+        <h3>THE CALL</h3>
+        <div class="fate">"It's coming from inside"</div>
+      </div>
+    </div>
+    <div class="weapon-showcase">
+      <span class="weapon">🔪</span>
+      <span class="weapon">🪓</span>
+      <span class="weapon">⛓️</span>
+      <span class="weapon">🔨</span>
+      <span class="weapon">🪚</span>
+    </div>
+    <footer>
+      <span>/// CAMP BLOOD — OPENING NIGHT ///</span>
+    </footer>
   </div>
-</main>
-
-<footer>
-  © 2025 • Inspired by Slasher Horror Themes
-</footer>
-
 </body>
 </html>
