@@ -241,7 +241,32 @@
       .metrics { grid-template-columns: 1fr 1fr; }
       .grid-cards { grid-template-columns: 1fr; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="particle-field">
@@ -315,10 +340,20 @@
       <button class="btn-futuristic">deploy</button>
       <button class="btn-futuristic primary">initiate</button>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Sleek, spacious, advanced — the future as imagined by industrial designers and sci-fi.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2010s–present. Evolved from minimalism + technological optimism. Mainstreamed by Tesla, Apple, and sci-fi interfaces.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Near-black (#0a0a0c), cool cyan (#60b8e0), white. The "dark mode" palette — minimal color, maximum breathing room.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) — thin, light, airy. Generous letter-spacing and weight contrast for a pristine, uncluttered feel.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Particle fields, thin borders, metric displays, translucent cards, holographic rings, generous whitespace, sci-fi UI language.</p></div>
+      </div>
+    </section>
+<footer>
       <span>// VERSION 2.4.1 // BUILD 2049 //</span>
     </footer>
   </div>
 </body>
 </html>
+
 

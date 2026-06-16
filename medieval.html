@@ -255,7 +255,32 @@
       .columns { grid-template-columns: 1fr; }
       .heraldry { flex-wrap: wrap; gap: 1rem; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="container">
@@ -289,11 +314,21 @@
         <p>"The ink remembers what the tongue forgets. Write, therefore, with trembling hand â€” for your words shall outlast the stone of the castle walls."</p>
         <span class="attr">â€” The Codex of Scribe Aldric</span>
       </div>
-      <footer>
+          <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Sacred, ancient, reverent — the weight of history pressed into parchment and gold.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>5th–15th century CE. Monastic manuscript tradition, illuminated gospels, the golden age of scribes.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Gold (#d4b86a) for the divine, crimson (#8b0000) for martyrs, ultramarine for heaven. Each color had symbolic meaning.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Cinzel (display serif) for headings — epigraphic, monumental. IM Fell English for body — old-style, manuscript-inspired.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Illuminated initials, ornamental borders, heraldry, gold leaf, vellum texture, marginalia, decorative flourishes.</p></div>
+      </div>
+    </section>
+<footer>
         <span>âœ  finis âœ </span>
       </footer>
     </div>
   </div>
 </body>
 </html>
+
 

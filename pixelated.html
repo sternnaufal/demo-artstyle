@@ -268,7 +268,32 @@
       .menu { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="crt"></div>
@@ -351,10 +376,20 @@
       <button class="btn-pixel">â–¶ Start</button>
       <button class="btn-pixel">âš™ Config</button>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Nostalgic, playful, retro — the warmth of 8-bit gaming and early home computers.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1980s–1990s. NES, Commodore 64, arcade cabinets. The pixel was a technical limitation that became an art form.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Limited palette — bright primaries, neon accents on black. Every color choice mattered within memory constraints.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Press Start 2P — a bitmap font recreating the feel of early video game text rendering.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Pixel art, CRT scanlines, tile-based layouts, chunky borders, sprite sheets, retro UI panels, HP bars.</p></div>
+      </div>
+    </section>
+<footer>
       <span>Â© 2025 8-BIT STUDIOS // PRESS START //</span>
     </footer>
   </div>
 </body>
 </html>
+
 

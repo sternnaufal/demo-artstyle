@@ -213,7 +213,32 @@
       .depth-zones { grid-template-columns: 1fr; }
       .tide-panel { grid-template-columns: 1fr; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="ocean-bg"></div>
@@ -276,10 +301,20 @@
         <p>The moon's breath. Every rise and fall is the planet itself breathing â€” a pulse that has beat for billions of years without rest.</p>
       </div>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Calm, deep, meditative — the tranquility and mystery of the underwater world.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>Timeless — inspired by marine biology, oceanography, and humanity's enduring fascination with the deep sea.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Deep blues (#0a1628) for depth, teal/aqua accents, bioluminescent highlights. Color intensity signals depth.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) for clean readability. Playfair Display (italic) for poetic depth — like a voice echoing underwater.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Caustic light patterns, waves, bubbles, depth gradients, underwater fog, organic silhouettes, marine motifs.</p></div>
+      </div>
+    </section>
+<footer>
       <span>âœ¦ the sea, ever moving, ever still âœ¦</span>
     </footer>
   </div>
 </body>
 </html>
+
 

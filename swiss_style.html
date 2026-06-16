@@ -207,7 +207,32 @@
       .col-left, .col-right { grid-column: 1 / -1; }
       .full-width { flex-direction: column; gap: 1rem; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="grid-container">
@@ -301,11 +326,21 @@
         major design movement since
       </div>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Rational, objective, clean — design as information delivery, not decoration.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1950s–1970s. Pioneered by Josef Müller-Brockmann, Armin Hofmann, and the Zurich/Lucerne schools.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Red (#e2001a) for emphasis, black for structure, white for breathing room. Three colors are enough.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Helvetica / Akzidenz Grotesk — neutral, universal sans-serif. Grid-aligned, asymmetrical, hierarchical.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Modular grid, asymmetrical composition, sans-serif typography, photography, objective clarity, reductive palette.</p></div>
+      </div>
+    </section>
+<footer>
       <span>Swiss Style Â· International Typographic Style</span>
       <span>Designed with Helvetica Â· 2025</span>
     </footer>
   </div>
 </body>
 </html>
+
 

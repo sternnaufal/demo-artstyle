@@ -295,7 +295,32 @@
       .stats { flex-direction: column; gap: 1rem; }
       .victims-grid { grid-template-columns: 1fr 1fr; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="vhs-overlay"></div>
@@ -372,10 +397,20 @@
       <span class="weapon">ðŸ”¨</span>
       <span class="weapon">ðŸªš</span>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Aggressive, visceral, campy horror — exploitation film energy with grindhouse grit.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1970s–1990s. Golden age of slasher cinema: Halloween (1978), Friday the 13th (1980), Scream (1996).</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Blood red (#cc0000) for violence, dark desaturated backgrounds, high-contrast VHS distortion.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Creepster (display) for titles — rough, dripping. Courier Prime (mono) for body — typewriter/evidence feel.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Film grain, VHS scanlines, blood drips, glitch effects, red-on-black contrast, exploitation poster energy.</p></div>
+      </div>
+    </section>
+<footer>
       <span>/// CAMP BLOOD â€” OPENING NIGHT ///</span>
     </footer>
   </div>
 </body>
 </html>
+
 

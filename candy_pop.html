@@ -248,7 +248,32 @@
     @media (max-width: 480px) {
       .candy-grid { grid-template-columns: 1fr; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="sprinkles">
@@ -320,10 +345,20 @@
         <div class="dot"></div>
       </div>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Playful, sugary, joyful — happiness engineered through color and whimsy.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2000s–present. Evolved from kawaii culture, pop art, and the democratization of bold digital illustration.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Hot pink (#ff6b9d), sunny yellow (#ffcc00), pastel blue (#aaddff). High saturation, high contrast, maximum cheer.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Fredoka One (rounded sans) for headlines — friendly, bouncy. Nunito for body — soft, approachable, legible.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Conic-gradient lollipops, sprinkles, rounded everything, bouncing animations, candy motifs, pastel-on-bright contrast.</p></div>
+      </div>
+    </section>
+<footer>
       <span>âœ§ made with love & artificial colors âœ§</span>
     </footer>
   </div>
 </body>
 </html>
+
 

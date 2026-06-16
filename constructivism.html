@@ -267,7 +267,32 @@
       .content-grid { grid-template-columns: 1fr; }
       .poster-strip { grid-template-columns: 1fr; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="diagonal-bg"></div>
@@ -331,10 +356,20 @@
       </div>
       <div class="side">proletkult</div>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Revolutionary, bold, propagandistic — art as a weapon for social change.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1913–1930s. Russian avant-garde. Key figures: El Lissitzky, Alexander Rodchenko, Vladimir Tatlin.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Red (#cc0000) for revolution, black for power, white for clarity. The three-color revolutionary palette.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Oswald (geometric sans) — bold, condensed, propaganda-ready. Inspired by the heavy grotesks of Soviet posters.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Diagonal dynamism, photomontage, geometric abstraction, propaganda messaging, asymmetric balance, industrial materials.</p></div>
+      </div>
+    </section>
+<footer>
       constructivism Â· russian avant-garde Â· 1913â€“1930s
     </footer>
   </div>
 </body>
 </html>
+
 

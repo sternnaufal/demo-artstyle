@@ -197,7 +197,32 @@
       header h1 { font-size: 2rem; }
       .corner { display: none; }
     }
-  </style>
+      .style-specs {
+      margin: 3rem 0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .spec-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(128,128,128,0.15);
+      background: rgba(255,255,255,0.02);
+    }
+    .spec-card h3 {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+    .spec-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+</style>
 </head>
 <body>
   <div class="empty-space"></div>
@@ -236,10 +261,20 @@
       <div class="number">005</div>
       <p>Nothing is happening. That's what makes it <span class="disturb">unbearable</span>. You wait for the scare, for the jump, for the loud noise. But it never comes. And you realize â€” the waiting <em>is</em> the horror.</p>
     </div>
-    <footer>
+        <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Unsettling, quiet, psychological — horror that lives in what you don't see.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2010s–present. Digital-age psychological horror. Inspired by analog horror, found footage, and liminal space aesthetics.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Near-black backgrounds, muted grays, barely-there whites. The absence of color is the point.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) — clean, neutral, unassuming. The ordinariness makes the horror feel closer.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Empty space, fragmented text, subtle distortion, breathing/ambient tension, what-ISN'T-there matters more.</p></div>
+      </div>
+    </section>
+<footer>
       <span>the door is still open</span>
     </footer>
   </div>
 </body>
 </html>
+
 
