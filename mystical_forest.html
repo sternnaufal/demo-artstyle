@@ -229,7 +229,16 @@
       .gallery { grid-template-columns: 1fr 1fr; }
       .silhouettes { height: 30vh; }
     }
-  </style>
+    /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="forest-bg"></div>
@@ -257,9 +266,9 @@
   <div class="sparkle" style="top:45%;left:75%;animation-delay:1.5s;"></div>
   <div class="sparkle" style="top:65%;left:20%;animation-delay:3s;"></div>
 
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <header>
-      <h1>Whispers of the<br>Verdant Deep</h1>
+      <h1><i class="fas fa-tree"></i> Whispers of the<br>Verdant Deep</h1>
       <div class="sub">where the old trees remember</div>
     </header>
     <div class="card">
@@ -278,10 +287,10 @@
     </div>
         <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Enchanted, serene, ancient — the quiet magic of old-growth forests and hidden glades.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>Timeless — inspired by folklore, fantasy art (Arthur Rackham, Alan Lee), and the Romantic Sublime tradition.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Enchanted, serene, ancient ï¿½ the quiet magic of old-growth forests and hidden glades.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>Timeless ï¿½ inspired by folklore, fantasy art (Arthur Rackham, Alan Lee), and the Romantic Sublime tradition.</p></div>
         <div class="spec-card"><h3>Colors</h3><p>Deep forest greens, golden highlights (#c8daa8), warm earth tones. Bioluminescent accents for magical depth.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>Cinzel Decorative for headings — elven, ethereal. Inter for body — clean contrast that doesn't compete with the visuals.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Cinzel Decorative for headings ï¿½ elven, ethereal. Inter for body ï¿½ clean contrast that doesn't compete with the visuals.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Tree silhouettes, mist layers, firefly particles, organic shapes, deep depth-of-field, natural framing.</p></div>
       </div>
     </section>
@@ -291,5 +300,9 @@
   </div>
 </body>
 </html>
+
+
+
+
 
 

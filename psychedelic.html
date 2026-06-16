@@ -188,14 +188,23 @@
       .masonry { grid-template-columns: 1fr; }
       .poster-grid { grid-template-columns: 1fr 1fr; }
     }
-  </style>
+    /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="liquid-bg"></div>
   <div class="warp-overlay"></div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <header>
-      <h1>Psychedelic</h1>
+      <h1><i class="fas fa-spinner"></i> Psychedelic</h1>
       <div class="sub">turn on · tune in · drop out</div>
     </header>
     <div class="liquid-type">
@@ -204,24 +213,24 @@
     </div>
     <div class="masonry">
       <div class="trip-card">
-        <div class="icon">🌀</div>
+        <div class="icon"><i class="fas fa-spinner fa-spin"></i></div>
         <h3>Swirling Color</h3>
         <p>Liquid light shows and kaleidoscopic patterns. Color that moves, breathes, and transforms before your eyes.</p>
       </div>
       <div class="trip-card">
-        <div class="icon">🎸</div>
+        <div class="icon"><i class="fas fa-guitar"></i></div>
         <h3>Concert Poster</h3>
         <p>San Francisco 1967 — psychedelic posters for the Grateful Dead, Jefferson Airplane. Undulating letters, vibrating colors.</p>
       </div>
       <div class="trip-card">
-        <div class="icon">👁️</div>
+        <div class="icon"><i class="fas fa-eye"></i></div>
         <h3>Third Eye</h3>
         <p>Eastern spirituality meets western counterculture. The third eye open — seeing beyond the veil of ordinary reality.</p>
       </div>
     </div>
     <div class="poster-grid">
       <div class="poster-item">⚡fillmore</div>
-      <div class="poster-item">🌀avalon</div>
+      <div class="poster-item"><i class="fas fa-spinner fa-spin"></i>avalon</div>
       <div class="poster-item">🎵1967</div>
       <div class="poster-item">🌈summer</div>
     </div>
@@ -235,8 +244,13 @@
       </div>
     </section>
     <footer>
-      <span>🌀 1967 · SUMMER OF LOVE · SAN FRANCISCO 🌀</span>
+      <span><i class="fas fa-spinner fa-spin"></i> 1967 · SUMMER OF LOVE · SAN FRANCISCO <i class="fas fa-spinner fa-spin"></i></span>
     </footer>
   </div>
 </body>
 </html>
+
+
+
+
+

@@ -227,7 +227,16 @@
     .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
     .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
     .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <header>
@@ -252,7 +261,7 @@
       <div class="left" aria-hidden="false">
         <section class="panel-large" aria-labelledby="hero-title">
           
-          <h1 id="hero-title">Embrace the Excess</h1>
+          <h1 id="hero-title"><i class="fas fa-palette"></i> Embrace the Excess</h1>
           <p>Maximalism delights in abundance: layered textures, bold palettes, oversized typography, and visual collage. This is a celebration of creative clutter.</p>
           <a class="cta" href="#" role="button">Explore the Collection</a>
 
@@ -304,10 +313,10 @@
 
       <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Abundant, layered, celebratory — more is more. Joy through visual density and deliberate excess.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>1970s (Memphis Group), revived 2010s–present as a reaction to flat minimalism. Digital maximalism: pattern-drenching, bold color.</p></div>
-        <div class="spec-card"><h3>Colors</h3><p>Hot pink, amber, cyan, deep purple — bold, clashing, unapologetic. Simultaneous contrast and deliberate disharmony.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>Multiple weights and styles — Anton (ultra-bold), Montserrat, Playfair Display. Clashing typography is part of the aesthetic.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Abundant, layered, celebratory ï¿½ more is more. Joy through visual density and deliberate excess.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1970s (Memphis Group), revived 2010sï¿½present as a reaction to flat minimalism. Digital maximalism: pattern-drenching, bold color.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Hot pink, amber, cyan, deep purple ï¿½ bold, clashing, unapologetic. Simultaneous contrast and deliberate disharmony.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Multiple weights and styles ï¿½ Anton (ultra-bold), Montserrat, Playfair Display. Clashing typography is part of the aesthetic.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Layered textures, mosaics, overlapping elements, collage composition, pattern-on-pattern, bold typography, visual density.</p></div>
       </div>
     </section>
@@ -319,5 +328,9 @@
   <div class="confetti" aria-hidden="true"></div>
 </body>
 </html>
+
+
+
+
 
 

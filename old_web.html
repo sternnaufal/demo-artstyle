@@ -148,14 +148,23 @@
     .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
     .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
     .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
 
 <marquee>‚ú® Welcome to the Extreme Old Web 90s Retro! ‚ú®</marquee>
 
 <header>
-  <h1>üåê Old Web Extreme</h1>
+  <h1><i class="fas fa-globe"></i> üåê Old Web Extreme</h1>
   <p class="blink">Bright ‚Ä¢ Chaotic ‚Ä¢ Nostalgic</p>
   <img src="https://i.gifer.com/embedded/download/4j.gif" alt="GIF icon">
   <nav>
@@ -180,10 +189,10 @@
 
     <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Chaotic, nostalgic, exuberant ó the Wild West of the early internet. Anything was possible and everything was animated.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>1995ñ2003. The GeoCities era. Dial-up, web-safe colors, animated GIFs, and "Under Construction" gifs everywhere.</p></div>
-        <div class="spec-card"><h3>Colors</h3><p>Neon everything ó magenta, cyan, lime, bright yellow, red. The 216-color web-safe palette. Max contrast, max saturation.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>System fonts only ó Courier New, Times New Roman, Arial. No @font-face yet. Marquee and blink tags for effects.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Chaotic, nostalgic, exuberant ÔøΩ the Wild West of the early internet. Anything was possible and everything was animated.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1995ÔøΩ2003. The GeoCities era. Dial-up, web-safe colors, animated GIFs, and "Under Construction" gifs everywhere.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Neon everything ÔøΩ magenta, cyan, lime, bright yellow, red. The 216-color web-safe palette. Max contrast, max saturation.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>System fonts only ÔøΩ Courier New, Times New Roman, Arial. No @font-face yet. Marquee and blink tags for effects.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Animated GIFs, marquee text, blink tags, tiled backgrounds, 3D borders, hit counters, guestbooks, "under construction" gifs.</p></div>
       </div>
     </section>
@@ -193,5 +202,9 @@
 
 </body>
 </html>
+
+
+
+
 
 

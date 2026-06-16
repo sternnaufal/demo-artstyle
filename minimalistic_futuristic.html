@@ -266,7 +266,16 @@
       line-height: 1.6;
       opacity: 0.85;
     }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="particle-field">
@@ -279,10 +288,10 @@
     <div class="particle" style="left:90%;animation-duration:16s;animation-delay:0.5s;"></div>
   </div>
   <div class="holographic-ring"></div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <header>
       <div class="badge">s/2026</div>
-      <h1>VERSE.<span class="accent">OS</span></h1>
+      <h1><i class="fas fa-robot"></i> VERSE.<span class="accent">OS</span></h1>
       <p>Interface for the next generation</p>
     </header>
     <div class="metrics">
@@ -342,10 +351,10 @@
     </div>
         <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Sleek, spacious, advanced — the future as imagined by industrial designers and sci-fi.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>2010s–present. Evolved from minimalism + technological optimism. Mainstreamed by Tesla, Apple, and sci-fi interfaces.</p></div>
-        <div class="spec-card"><h3>Colors</h3><p>Near-black (#0a0a0c), cool cyan (#60b8e0), white. The "dark mode" palette — minimal color, maximum breathing room.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) — thin, light, airy. Generous letter-spacing and weight contrast for a pristine, uncluttered feel.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Sleek, spacious, advanced ï¿½ the future as imagined by industrial designers and sci-fi.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2010sï¿½present. Evolved from minimalism + technological optimism. Mainstreamed by Tesla, Apple, and sci-fi interfaces.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Near-black (#0a0a0c), cool cyan (#60b8e0), white. The "dark mode" palette ï¿½ minimal color, maximum breathing room.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) ï¿½ thin, light, airy. Generous letter-spacing and weight contrast for a pristine, uncluttered feel.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Particle fields, thin borders, metric displays, translucent cards, holographic rings, generous whitespace, sci-fi UI language.</p></div>
       </div>
     </section>
@@ -355,5 +364,9 @@
   </div>
 </body>
 </html>
+
+
+
+
 
 

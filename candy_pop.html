@@ -273,7 +273,16 @@
       line-height: 1.6;
       opacity: 0.85;
     }
-</style>
+    .candy-card:hover { transform: translateY(-5px) scale(1.02); }  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="sprinkles">
@@ -286,9 +295,9 @@
     <div class="sprinkle" style="left:85%;background:#ffcc00;animation-duration:9s;animation-delay:4s;"></div>
     <div class="sprinkle" style="left:92%;background:#aaddff;animation-duration:10s;animation-delay:2.5s;"></div>
   </div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <header>
-      <h1>CANDY POP</h1>
+      <h1><i class="fas fa-candy-cane"></i> CANDY POP</h1>
       <div class="sub">sweet enough to make you sick âœ§</div>
     </header>
     <div class="lollipop-row">
@@ -347,10 +356,10 @@
     </div>
         <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Playful, sugary, joyful — happiness engineered through color and whimsy.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>2000s–present. Evolved from kawaii culture, pop art, and the democratization of bold digital illustration.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Playful, sugary, joyful ï¿½ happiness engineered through color and whimsy.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2000sï¿½present. Evolved from kawaii culture, pop art, and the democratization of bold digital illustration.</p></div>
         <div class="spec-card"><h3>Colors</h3><p>Hot pink (#ff6b9d), sunny yellow (#ffcc00), pastel blue (#aaddff). High saturation, high contrast, maximum cheer.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>Fredoka One (rounded sans) for headlines — friendly, bouncy. Nunito for body — soft, approachable, legible.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Fredoka One (rounded sans) for headlines ï¿½ friendly, bouncy. Nunito for body ï¿½ soft, approachable, legible.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Conic-gradient lollipops, sprinkles, rounded everything, bouncing animations, candy motifs, pastel-on-bright contrast.</p></div>
       </div>
     </section>
@@ -360,5 +369,10 @@
   </div>
 </body>
 </html>
+
+
+
+
+
 
 

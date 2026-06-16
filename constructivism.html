@@ -292,15 +292,24 @@
       line-height: 1.6;
       opacity: 0.85;
     }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="diagonal-bg"></div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <div class="hero">
       <div class="hero-text">
         <div class="eyebrow">1913â€“1930s</div>
-        <h1>CONSTRUCT<br><span class="red">REVOLUTION</span></h1>
+        <h1><i class="fas fa-hammer"></i> CONSTRUCT<br><span class="red">REVOLUTION</span></h1>
         <p>Art for the masses. Form follows ideology. Geometry as weapon.</p>
       </div>
       <div class="hero-graphic">
@@ -358,10 +367,10 @@
     </div>
         <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Revolutionary, bold, propagandistic — art as a weapon for social change.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>1913–1930s. Russian avant-garde. Key figures: El Lissitzky, Alexander Rodchenko, Vladimir Tatlin.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Revolutionary, bold, propagandistic ï¿½ art as a weapon for social change.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1913ï¿½1930s. Russian avant-garde. Key figures: El Lissitzky, Alexander Rodchenko, Vladimir Tatlin.</p></div>
         <div class="spec-card"><h3>Colors</h3><p>Red (#cc0000) for revolution, black for power, white for clarity. The three-color revolutionary palette.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>Oswald (geometric sans) — bold, condensed, propaganda-ready. Inspired by the heavy grotesks of Soviet posters.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Oswald (geometric sans) ï¿½ bold, condensed, propaganda-ready. Inspired by the heavy grotesks of Soviet posters.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Diagonal dynamism, photomontage, geometric abstraction, propaganda messaging, asymmetric balance, industrial materials.</p></div>
       </div>
     </section>
@@ -371,5 +380,9 @@
   </div>
 </body>
 </html>
+
+
+
+
 
 

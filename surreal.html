@@ -338,7 +338,16 @@
       line-height: 1.6;
       opacity: 0.85;
     }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="sky"></div>
@@ -353,10 +362,10 @@
     <div class="leaf" style="left:75%;animation-duration:14s;animation-delay:1s;"></div>
     <div class="leaf" style="left:90%;animation-duration:11s;animation-delay:3s;"></div>
   </div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <header>
       <h1>
-        <span>T</span><span>h</span><span>e</span>
+        <i class="fas fa-hand-mirror"></i> <span>T</span><span>h</span><span>e</span>
         <span> </span>
         <span>U</span><span>n</span><span>c</span><span>a</span><span>n</span><span>n</span><span>y</span>
       </h1>
@@ -369,25 +378,25 @@
     </div>
     <div class="cards">
       <div class="card">
-        <div class="icon">ğŸª</div>
+        <div class="icon"><i class="fas fa-hand-mirror"></i></div>
         <h3>The False Mirror</h3>
         <p>A sky reflected in an eye that sees nothing. The boundary between observer and observed dissolves. Who dreams â€” you, or the dream?</p>
         <div class="impossible"></div>
       </div>
       <div class="card">
-        <div class="icon">ğŸ˜</div>
+        <div class="icon"><i class="fas fa-elephant"></i></div>
         <h3>Soft Structures</h3>
         <p>Weightless elephants. Architecture of jelly. The laws of physics are merely suggestions when the subconscious holds the pen.</p>
         <div class="impossible"></div>
       </div>
       <div class="card">
-        <div class="icon">ğŸšª</div>
+        <div class="icon"><i class="fas fa-door-open"></i></div>
         <h3>Doors Everywhere</h3>
         <p>Windows that open to brick walls. Doors that lead to the sky. Thresholds that threshold nothing. Passage is a state of mind.</p>
         <div class="impossible"></div>
       </div>
       <div class="card">
-        <div class="icon">â³</div>
+        <div class="icon"><i class="fas fa-hourglass-half"></i></div>
         <h3>Time Unbound</h3>
         <p>Clocks that drip like honey. Hours that stretch like taffy. Duration divorced from measurement. The present is a room with no walls.</p>
         <div class="impossible"></div>
@@ -399,9 +408,9 @@
     </div>
         <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Dreamlike, uncanny, paradoxical — reality with the laws of physics suspended.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>1920s–present. Founded by André Breton (1924 Manifesto), iconic artists: Dalí, Magritte, Ernst, Miró.</p></div>
-        <div class="spec-card"><h3>Colors</h3><p>Muted earth tones and sepia — the palette of dreams. Unexpected color juxtapositions to create unease.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Dreamlike, uncanny, paradoxical ï¿½ reality with the laws of physics suspended.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1920sï¿½present. Founded by Andrï¿½ Breton (1924 Manifesto), iconic artists: Dalï¿½, Magritte, Ernst, Mirï¿½.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Muted earth tones and sepia ï¿½ the palette of dreams. Unexpected color juxtapositions to create unease.</p></div>
         <div class="spec-card"><h3>Typography</h3><p>Playfair Display (serif) for literary, classical dream quality. Contrast with clean sans-serif for grounding.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Impossible objects, melting forms, scale paradoxes, unexpected juxtapositions, dream logic, automatism.</p></div>
       </div>
@@ -412,5 +421,9 @@
   </div>
 </body>
 </html>
+
+
+
+
 
 

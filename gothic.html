@@ -144,13 +144,22 @@
       .arch-grid { grid-template-columns: 1fr; }
       .triptych { grid-template-columns: 1fr; }
     }
-  </style>
+    /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="rose-window"><div></div><div></div><div></div></div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <header>
-      <h1>Gothic</h1>
+      <h1><i class="fas fa-church"></i> Gothic</h1>
       <div class="sub">pointed arches · light divine · medieval</div>
     </header>
     <div class="arch-grid">
@@ -172,17 +181,17 @@
     </div>
     <div class="triptych">
       <div class="panel">
-        <div class="icon">⛪</div>
+        <div class="icon"><i class="fas fa-church"></i></div>
         <h3>Cathedral</h3>
         <p>Notre-Dame, Chartres, Reims — stone prayers reaching toward heaven.</p>
       </div>
       <div class="panel">
-        <div class="icon">🌸</div>
+        <div class="icon"><i class="fas fa-circle"></i></div>
         <h3>Rose Window</h3>
         <p>Geometric stained glass — the cosmos rendered in colored light. A wheel of divine order.</p>
       </div>
       <div class="panel">
-        <div class="icon">🗿</div>
+        <div class="icon"><i class="fas fa-monument"></i></div>
         <h3>Gargoyle</h3>
         <p>Water spout and guardian. The grotesque protecting the sacred.</p>
       </div>
@@ -202,3 +211,8 @@
   </div>
 </body>
 </html>
+
+
+
+
+

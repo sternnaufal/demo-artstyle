@@ -252,7 +252,16 @@
     .spec-card { padding: 1.25rem; border: 1px solid rgba(128,128,128,0.15); background: rgba(255,255,255,0.02); }
     .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; opacity: 0.6; }
     .spec-card p { font-size: 0.8rem; line-height: 1.6; opacity: 0.85; }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <header>
@@ -278,7 +287,7 @@
     <div class="stage">
       <section class="hero" aria-labelledby="hero-title">
         <div class="frame">
-          <h1 id="hero-title">Baroque of the Circuit</h1>
+          <h1 id="hero-title"><i class="fas fa-chess-knight"></i> Baroque of the Circuit</h1>
           <p>
             A fusion of gilded ornament and electronic luminance â€” sumptuous forms meet algorithmic light.
             We craft lavish interfaces that glow and gild the future.
@@ -348,8 +357,8 @@
 
       <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Opulent, ceremonial, futuristic — digital-age luxury. Ornament meets circuit board.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>2015–present. A postmodern fusion of historical ornament with digital aesthetics. Reaction against flat design.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Opulent, ceremonial, futuristic ï¿½ digital-age luxury. Ornament meets circuit board.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2015ï¿½present. A postmodern fusion of historical ornament with digital aesthetics. Reaction against flat design.</p></div>
         <div class="spec-card"><h3>Colors</h3><p>Dark backgrounds, gold (#d4af37), deep burgundy, neon accents. The palette of velvet, gold leaf, and OLED screens.</p></div>
         <div class="spec-card"><h3>Typography</h3><p>Playfair Display (serif) for elegance, Montserrat (sans) for contrast. Old-world refinement with new-world precision.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Ornate borders, filigree patterns, circuit overlay motifs, gold accents, dark opulence, ceremonial layout, luxury tech.</p></div>
@@ -361,5 +370,9 @@
   </footer>
 </body>
 </html>
+
+
+
+
 
 

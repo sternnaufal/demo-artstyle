@@ -280,15 +280,24 @@
       line-height: 1.6;
       opacity: 0.85;
     }
-</style>
+  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <div class="border-frame">
       <div class="corner-bl"></div>
       <div class="corner-br"></div>
       <header>
-        <h1>The Canticle</h1>
+        <h1><i class="fas fa-crown"></i> The Canticle</h1>
         <div class="sub">of the old kingdom Â· a manuscript</div>
       </header>
       <div class="illuminated">
@@ -316,10 +325,10 @@
       </div>
           <section class="style-specs">
       <div class="specs-grid">
-        <div class="spec-card"><h3>Mood</h3><p>Sacred, ancient, reverent — the weight of history pressed into parchment and gold.</p></div>
-        <div class="spec-card"><h3>Era</h3><p>5th–15th century CE. Monastic manuscript tradition, illuminated gospels, the golden age of scribes.</p></div>
+        <div class="spec-card"><h3>Mood</h3><p>Sacred, ancient, reverent ï¿½ the weight of history pressed into parchment and gold.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>5thï¿½15th century CE. Monastic manuscript tradition, illuminated gospels, the golden age of scribes.</p></div>
         <div class="spec-card"><h3>Colors</h3><p>Gold (#d4b86a) for the divine, crimson (#8b0000) for martyrs, ultramarine for heaven. Each color had symbolic meaning.</p></div>
-        <div class="spec-card"><h3>Typography</h3><p>Cinzel (display serif) for headings — epigraphic, monumental. IM Fell English for body — old-style, manuscript-inspired.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Cinzel (display serif) for headings ï¿½ epigraphic, monumental. IM Fell English for body ï¿½ old-style, manuscript-inspired.</p></div>
         <div class="spec-card"><h3>Characteristics</h3><p>Illuminated initials, ornamental borders, heraldry, gold leaf, vellum texture, marginalia, decorative flourishes.</p></div>
       </div>
     </section>
@@ -330,5 +339,9 @@
   </div>
 </body>
 </html>
+
+
+
+
 
 

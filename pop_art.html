@@ -221,14 +221,24 @@
       .celebrity-grid { grid-template-columns: 1fr 1fr; }
       .campbells { grid-template-columns: 1fr 1fr; }
     }
-  </style>
+      .comic-panel { transition: all 0.2s; cursor: default; }
+    .comic-panel:hover { transform: scale(1.05); z-index: 2; box-shadow: 4px 4px 0 rgba(0,0,0,0.2); }  /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <div class="hero">
       <div class="hero-left">
         <div class="badge">1950s–1960s</div>
-        <h1>POP!<br><span class="red">ART</span></h1>
+        <h1><i class="fas fa-bullseye"></i> POP!<br><span class="red">ART</span></h1>
         <p>Everyday objects become high art. Celebrity faces become icons. The line between mass culture and fine art dissolves.</p>
       </div>
       <div class="hero-right">
@@ -238,10 +248,10 @@
     </div>
     <div class="ben-day">
       <div class="celebrity-grid">
-        <div class="celeb"><span class="emoji">🥫</span>WARHOL</div>
-        <div class="celeb"><span class="emoji">🎯</span>LICHTENSTEIN</div>
-        <div class="celeb"><span class="emoji">🇺🇸</span>JOHNS</div>
-        <div class="celeb"><span class="emoji">💬</span>ROSQUIST</div>
+        <div class="celeb"><span class="emoji"><i class="fas fa-prescription-bottle"></i></span>WARHOL</div>
+        <div class="celeb"><span class="emoji"><i class="fas fa-bullseye"></i></span>LICHTENSTEIN</div>
+        <div class="celeb"><span class="emoji"><i class="fas fa-flag-usa"></i></span>JOHNS</div>
+        <div class="celeb"><span class="emoji"><i class="fas fa-comment-dots"></i></span>ROSQUIST</div>
       </div>
     </div>
     <div class="comic-strip">
@@ -277,3 +287,8 @@
   </div>
 </body>
 </html>
+
+
+
+
+

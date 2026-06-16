@@ -158,11 +158,20 @@
       .liminal-content h1 { font-size: 2.5rem; letter-spacing: 4px; }
       .info-row { flex-direction: column; gap: 0.5rem; }
     }
-  </style>
+    /* Hover.css integration - card/button hover effects */
+  .card:hover, .feature:hover, .panel:hover, .shell-card:hover,
+  .trip-card:hover, .victim-card:hover, .neu-card:hover, .spec-card:hover,
+  .style-card:hover, .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: all 0.3s ease; }
+  .btn:hover, button:hover, .cta:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+  .card, .feature, .panel, .shell-card, .trip-card, .victim-card, .neu-card,
+  .spec-card, .style-card, .gallery-item, .btn, button, .cta, a.btn { transition: all 0.3s ease; }</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
   <div class="vignette"></div>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <div class="corridor">
       <div class="floor"></div>
       <div class="wall-lamp"></div>
@@ -171,7 +180,7 @@
       <div class="wall-lamp"></div>
       <div class="liminal-content">
         <div class="sub">you shouldn't be here</div>
-        <h1>THE<br><span class="thin">BACKROOMS</span></h1>
+        <h1><i class="fas fa-door-open"></i> THE<br><span class="thin">BACKROOMS</span></h1>
         <div class="door"></div>
         <div class="liminal-text">
           The lights are humming but there is <span class="gap"></span> no one here.<br>
@@ -201,3 +210,8 @@
   </div>
 </body>
 </html>
+
+
+
+
+
