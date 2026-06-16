@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swiss Style Extreme Landing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    background: #f9f9f9;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 3rem 5rem;
+    border-bottom: 2px solid #000;
+  }
+
+  header h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+  }
+
+  header p {
+    font-size: 1.4rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+
+  nav {
+    margin-top: 2rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 700;
+    color: #000;
+    transition: color 0.3s;
+    font-size: 1rem;
+  }
+
+  nav a:hover {
+    color: #0077cc;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 5rem;
+  }
+
+  .panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 3rem;
+    border: 2px solid #000;
+  }
+
+  .panel h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    grid-column: span 2;
+  }
+
+  .panel p {
+    font-size: 1.15rem;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .panel .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    background: #0077cc;
+    text-decoration: none;
+    border: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
+  }
+
+  .panel .btn:hover {
+    background: #005fa3;
+  }
+
+  footer {
+    text-align: center;
+    padding: 3rem 5rem;
+    font-size: 0.9rem;
+    border-top: 2px solid #000;
+    background: #f9f9f9;
+    color: #111;
+  }
+
+  /* Accent lines inside panel */
+  .accent-line {
+    height: 3px;
+    background: #0077cc;
+    width: 50px;
+    margin: 1rem 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SWISS STYLE EXTREME</h1>
+  <p>Grid • Typography • Precision</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Experience Swiss Precision</h2>
+    <div>
+      <p>
+        Welcome to the world of <strong>Swiss Style</strong> design. Clear grids, bold typography, and precise alignment.
+      </p>
+      <div class="accent-line"></div>
+      <p>
+        Minimalism meets order — every element has a place. Focus is on clarity and readability.
+      </p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+    <div>
+      <p>
+        Using whitespace strategically, typography becomes the hero. Color is limited, only to emphasize hierarchy.
+      </p>
+      <div class="accent-line"></div>
+      <p>
+        The design feels structured yet elegant. Perfect for showcasing content with precision.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Inspired by Swiss / International Typographic Style
+</footer>
+
+</body>
+</html>

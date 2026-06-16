@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oceanic Landing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #0d3b66, #145374, #1ca3ec);
+    min-height: 100vh;
+    color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* floating bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    animation: float 15s infinite ease-in-out;
+  }
+  .bubble:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 20%; animation-delay: 0s; }
+  .bubble:nth-child(2) { width: 150px; height: 150px; bottom: 5%; right: 15%; animation-delay: 3s; }
+  .bubble:nth-child(3) { width: 80px; height: 80px; bottom: 20%; left: 25%; animation-delay: 6s; }
+  .bubble:nth-child(4) { width: 120px; height: 120px; top: 30%; right: 20%; animation-delay: 9s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    color: #aee1f9;
+    text-shadow: 0 0 10px #aee1f9, 0 0 20px #00bfff;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    color: #d0f0fd;
+    margin-top: 0.5rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  nav a:hover {
+    background: rgba(0,229,255,0.3);
+    transform: translateY(-2px);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel {
+    background: rgba(0,50,100,0.5);
+    border-radius: 25px;
+    padding: 3rem;
+    max-width: 650px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+  }
+
+  .panel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff;
+  }
+
+  .panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #d0f0fd;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #004466;
+    background: #00f0ff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    background: #004466;
+    color: #00f0ff;
+    transform: translateY(-3px);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #a0e0ff;
+    border-top: 1px solid rgba(0,255,255,0.3);
+  }
+</style>
+</head>
+<body>
+
+<!-- floating bubbles -->
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+
+<header>
+  <h1>OCEANIC DEPTHS</h1>
+  <p>Underwater • Calm • Immersive</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Explore</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Dive Into the Deep</h2>
+    <p>
+      Welcome to <strong>Oceanic Depths</strong>.<br>
+      Transparent panels, floating bubbles, and calming gradients.<br>
+      Immerse yourself in a tranquil underwater world.
+    </p>
+    <a href="#" class="btn">Start Exploring</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Oceanic Inspired
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Constructivism Landing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Oswald', sans-serif;
+      background: #f2f2f2;
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #d10000;
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.6rem 1.2rem;
+      background: black;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #fff 50%, #d10000 50%);
+    }
+
+    .panel {
+      background: white;
+      padding: 3rem;
+      max-width: 600px;
+      text-align: center;
+      border: 6px solid black;
+      box-shadow: 12px 12px 0px #111;
+      transform: rotate(-2deg);
+    }
+
+    .panel h2 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: #d10000;
+    }
+
+    .panel p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #111;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border: 3px solid #111;
+      transition: all 0.2s ease;
+    }
+
+    .cta:hover {
+      background: #d10000;
+      border-color: black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: black;
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Revolution Design</h1>
+    <p>Bold • Geometric • Propaganda-Inspired</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Manifesto</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="panel">
+      <h2>Design is Power</h2>
+      <p>
+        Inspired by the Constructivist movement, this design<br>
+        uses geometry, bold typography, and strong contrast<br>
+        to deliver a revolutionary message.  
+        The medium is the message.
+      </p>
+      <a href="#" class="cta">Join The Movement</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 • Constructivism Style Landing
+  </footer>
+</body>
+</html>

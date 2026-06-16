@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Techno-Baroque Landing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#07060a;
+    --gold1:#d4af37;
+    --gold2:#f3d892;
+    --neon:#7efcff;
+    --accent:#7a3bff;
+    --muted:#0f1013;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(122,59,255,0.08), transparent 8%),
+      linear-gradient(180deg,#05050a 0%, #0b0b0f 100%);
+    color:var(--gold2);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+
+  /* header (ornate + neon) */
+  header{
+    padding:28px 36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    position:relative;
+  }
+
+  .brand{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+
+  .crest{
+    width:68px;height:68px;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--gold1),#e6c96a);
+    color:#111;font-weight:800;
+    border-radius:12px;
+    box-shadow: 0 6px 30px rgba(122,59,255,0.06), inset 0 -6px 12px rgba(0,0,0,0.12);
+    transform:rotate(-6deg);
+    border:3px solid rgba(0,0,0,0.15);
+  }
+
+  .title{
+    display:flex;flex-direction:column;
+    line-height:1;
+  }
+  .title .brand-name{
+    font-family:'Playfair Display', serif;
+    font-size:1.25rem;
+    color:var(--gold2);
+    letter-spacing:1px;
+  }
+  .title .tag{ font-size:0.8rem; color:rgba(255,255,255,0.45); font-weight:600; }
+
+  nav{ display:flex; gap:12px; align-items:center; }
+  nav a{
+    text-decoration:none;
+    color:rgba(255,255,255,0.65);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    padding:10px 14px;
+    border-radius:8px;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,0.03);
+    transition: all .18s ease;
+    box-shadow: 0 6px 18px rgba(122,59,255,0.03);
+  }
+  nav a:hover{
+    color:var(--neon);
+    transform:translateY(-3px);
+    box-shadow: 0 14px 40px rgba(122,59,255,0.12), 0 0 20px rgba(126,252,255,0.04);
+  }
+
+  /* decorative baroque frame (top) */
+  .ornament-top{
+    position:absolute; left:50%; transform:translateX(-50%);
+    top:100%; height:86px; width:calc(100% - 120px);
+    pointer-events:none; opacity:0.06;
+    background:
+      radial-gradient(300px 80px at 10% 50%, rgba(212,175,55,0.25), transparent 10%),
+      radial-gradient(300px 80px at 90% 50%, rgba(212,175,55,0.18), transparent 10%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1));
+  }
+
+  /* main area */
+  main{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:48px 24px;
+  }
+
+  .stage{
+    width:100%;
+    max-width:1100px;
+    display:grid;
+    grid-template-columns: 1fr 420px;
+    gap:28px;
+  }
+
+  /* left hero - ornate frame + modern glass card */
+  .hero{
+    position:relative;
+    padding:36px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:18px;
+    overflow:visible;
+    box-shadow: 0 30px 80px rgba(7,6,10,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .frame{
+    position:relative;
+    padding:28px;
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(10,10,12,0.6), rgba(18,12,22,0.55));
+    border: 6px solid rgba(212,175,55,0.06);
+    box-shadow: inset 0 6px 30px rgba(0,0,0,0.6), 0 20px 60px rgba(0,0,0,0.6);
+    overflow:hidden;
+  }
+
+  /* ornate corner flourishes (pure CSS shapes + glow) */
+  .frame::before, .frame::after{
+    content:"";
+    position:absolute;
+    width:220px;height:220px;
+    background:
+      conic-gradient(from 90deg at 50% 50%, rgba(212,175,55,0.12), rgba(212,175,55,0.02));
+    border-radius:50%;
+    filter: blur(6px);
+    opacity:0.55;
+    transform:translate(-40px,-40px) rotate(12deg);
+  }
+  .frame::after{ right:-40px; left:auto; transform:translate(40px,-40px) rotate(-12deg); }
+
+  .hero h1{
+    margin:0 0 8px 0;
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+    color:var(--gold2);
+    text-shadow: 0 2px 10px rgba(122,59,255,0.06), 0 0 18px rgba(126,252,255,0.03);
+  }
+  .hero p{
+    color:rgba(255,255,255,0.72);
+    font-size:1rem;
+    line-height:1.6;
+    max-width:58ch;
+    margin-bottom:18px;
+  }
+
+  .cta-row{
+    display:flex; gap:12px; align-items:center;
+  }
+
+  .btn-primary{
+    background:linear-gradient(90deg,var(--accent),var(--neon));
+    color:#051018;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:800;
+    text-decoration:none;
+    box-shadow: 0 12px 30px rgba(122,59,255,0.14), 0 0 40px rgba(126,252,255,0.06);
+    border: 2px solid rgba(255,255,255,0.06);
+  }
+  .btn-ghost{
+    padding:10px 14px;
+    border-radius:10px;
+    border:2px solid rgba(212,175,55,0.12);
+    color:var(--gold2);
+    text-decoration:none;
+    font-weight:700;
+    background:transparent;
+  }
+
+  /* tech grid overlay */
+  .tech-grid{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.05));
+  }
+  .tech-grid svg{ width:100%; height:100%; opacity:0.08; mix-blend-mode:screen; }
+
+  /* right column: info panels (ornate + neon) */
+  .side{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:18px;
+    border-radius:12px;
+    border:3px solid rgba(212,175,55,0.04);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.6);
+  }
+  .stat{
+    display:flex; align-items:center; gap:12px;
+  }
+  .orb{
+    width:56px; height:56px; border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, var(--neon), var(--accent));
+    box-shadow: 0 6px 20px rgba(126,252,255,0.12), 0 0 18px rgba(122,59,255,0.06);
+    display:grid; place-items:center; font-weight:800; color:#041018;
+  }
+  .stat h3{ margin:0; font-size:1.1rem; color:var(--gold2); }
+  .stat p{ margin:0; color:rgba(255,255,255,0.6); font-size:0.95rem; }
+
+  /* footer */
+  footer{
+    padding:28px 36px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    color:rgba(255,255,255,0.7);
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px;
+    border-top:1px solid rgba(255,255,255,0.02);
+  }
+
+  /* subtle animations */
+  @keyframes pulse {
+    0% { transform:scale(1); filter:blur(0); opacity:1; }
+    50% { transform:scale(1.02); filter:blur(.4px); opacity:.95; }
+    100% { transform:scale(1); filter:blur(0); opacity:1; }
+  }
+  .btn-primary{ animation: pulse 6s ease-in-out infinite; }
+
+  /* responsive */
+  @media (max-width:1000px){
+    .stage{ grid-template-columns: 1fr; }
+    .crest{ width:52px;height:52px }
+    nav{ display:none; }
+    .hero h1{ font-size:32px }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="crest">TB</div>
+      <div class="title">
+        <div class="brand-name">Techno-Baroque</div>
+        <div class="tag">Opulent • Ornate • Neon</div>
+      </div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="#">Manifesto</a>
+      <a href="#">Collections</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="ornament-top" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <div class="stage">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="frame">
+          <h1 id="hero-title">Baroque of the Circuit</h1>
+          <p>
+            A fusion of gilded ornament and electronic luminance — sumptuous forms meet algorithmic light.
+            We craft lavish interfaces that glow and gild the future.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn-primary" href="#">Enter the Salon</a>
+            <a class="btn-ghost" href="#">Read the Codex</a>
+          </div>
+
+          <div class="tech-grid" aria-hidden="true">
+            <!-- SVG grid + circuit-ish pattern, low-opacity decorative -->
+            <svg viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="#7efcff" stop-opacity="0.6"/>
+                  <stop offset="1" stop-color="#7a3bff" stop-opacity="0.6"/>
+                </linearGradient>
+              </defs>
+              <g fill="none" stroke="url(#g)" stroke-width="1" stroke-opacity=".8">
+                <!-- decorative circuit lines -->
+                <path d="M20 120 H300 V80 H420 V200 H600" />
+                <path d="M120 40 H500 V120 H700" />
+                <circle cx="760" cy="160" r="18" />
+                <rect x="820" y="60" width="160" height="60" rx="6" />
+                <path d="M960 120 H1180" />
+                <path d="M60 240 H300 V300 H400" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side" aria-label="Highlights">
+        <div class="card">
+          <div class="stat">
+            <div class="orb">01</div>
+            <div>
+              <h3>Gilded UI</h3>
+              <p>Ornate frames, gold filigree, tactile depth with modern microinteractions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="stat">
+            <div class="orb">02</div>
+            <div>
+              <h3>Neon Illumination</h3>
+              <p>Colorful backlights and subtle neon halos that respond to user focus.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="stat">
+            <div class="orb">03</div>
+            <div>
+              <h3>Algorithmic Ornament</h3>
+              <p>Procedural patterns and SVG flourishes mix with classic motifs.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2025 Techno-Baroque Atelier</div>
+    <div style="opacity:.9">Luxury meets circuitry — design as ceremony.</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Surreal Landing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff77ff, #7799ff, #ffcc88);
+    background-size: 600% 600%;
+    animation: gradientShift 20s ease infinite;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @keyframes gradientShift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(5px);
+  }
+
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px #fff, 0 0 25px #ff88ff;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px #fff;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  nav a:hover {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(2px);
+    transform: translateY(-2px);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  .panel {
+    background: rgba(0,0,0,0.3);
+    border-radius: 30px;
+    padding: 3rem;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255,255,255,0.3);
+  }
+
+  .panel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #ffccff;
+  }
+
+  .panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #f0f0ff;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(45deg, #ff77ff, #88ccff);
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 0 15px #ff77ff, 0 0 25px #88ccff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px #ff77ff, 0 0 35px #88ccff;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.3);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>DREAMSCAPE</h1>
+  <p>Surreal • Mystical • Floating</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">Stories</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Step Into the Surreal World</h2>
+    <p>
+      Welcome to <strong>Dreamscape</strong>.<br>
+      Floating colors, dreamy gradients, and magical forms.<br>
+      Explore a place where reality bends and imagination thrives.
+    </p>
+    <a href="#" class="btn">Enter the Dream</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Surreal / Dreamlike Inspired
+</footer>
+
+</body>
+</html>

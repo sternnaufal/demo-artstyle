@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fantasy Landing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Cinzel', serif;
+    background: url('https://i.ibb.co/2S7xvYk/fantasy-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f5f5dc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 2px solid #daa520;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 0 0 8px #daa520, 0 0 15px #ffea00;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    color: #eee8aa;
+    margin-top: 0.5rem;
+  }
+
+  nav {
+    margin-top: 1.5rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.6rem 1.5rem;
+    font-weight: 700;
+    color: #ffd700;
+    border: 1px solid #daa520;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+
+  nav a:hover {
+    background: #daa520;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  .panel {
+    background: rgba(0,0,0,0.6);
+    border-radius: 15px;
+    padding: 3rem;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 0 20px #ffd700;
+  }
+
+  .panel h2 {
+    font-size: 2rem;
+    color: #ffea00;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px #daa520;
+  }
+
+  .panel p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #f5f5dc;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    background: linear-gradient(45deg, #ffd700, #daa520);
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 15px #ffd700;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #ffea00, 0 0 30px #daa520;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    border-top: 2px solid #daa520;
+    background: rgba(0,0,0,0.5);
+    color: #eee8aa;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>FANTASY REALM</h1>
+  <p>Epic • Magical • Medieval</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Quests</a>
+    <a href="#">Lore</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Step Into the Magical World</h2>
+    <p>
+      Welcome to the <strong>Fantasy Realm</strong>.<br>
+      Explore enchanted forests, ancient castles, and mystical powers.<br>
+      Adventure awaits those who dare.
+    </p>
+    <a href="#" class="btn">Begin Your Quest</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Fantasy / Medieval Inspired
+</footer>
+
+</body>
+</html>

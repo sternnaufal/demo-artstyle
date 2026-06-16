@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biopunk Landing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: radial-gradient(circle at center, #0f0f0f, #050505);
+      color: #a3ff5d;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #0a0, #303030, #400060);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px #0f0, 0 0 30px #80ff00;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #bb88ff;
+      text-shadow: 0 0 10px #500080;
+    }
+
+    .content {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(30, 30, 30, 0.85);
+      border: 2px solid #44ff99;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px #44ff99, inset 0 0 20px #200020;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #ff44ff;
+      text-shadow: 0 0 8px #ff00ff;
+    }
+
+    .card p {
+      color: #ccffcc;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #44ff99;
+      font-size: 0.9rem;
+      color: #44ff99;
+    }
+
+    /* glitch effect for title */
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffea; }
+      20% { text-shadow: -2px 2px #ff00ff, 2px -2px #00ffea; }
+      40% { text-shadow: 2px -2px #ff00ff, -2px 2px #00ffea; }
+      60% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffea; }
+      100% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffea; }
+    }
+    header h1 {
+      animation: glitch 1.5s infinite;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BioNet Systems</h1>
+    <p>Genetic Futures / Cybernetic Evolution</p>
+  </header>
+
+  <div class="content">
+    <div class="card">
+      <h2>Splice Your Destiny</h2>
+      <p>Integrate with engineered DNA strands and unlock hidden powers within your genome. The future isn’t human, it’s hybrid.</p>
+    </div>
+
+    <div class="card">
+      <h2>Neural Growth</h2>
+      <p>Our biotech enhances your nervous system with bio-circuits. Faster reflexes, deeper memories, organic computation.</p>
+    </div>
+
+    <div class="card">
+      <h2>Wetware Labs</h2>
+      <p>Enter the laboratory where biology meets machinery. Slime, circuits, and synthetic evolution merge under neon lights.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2084 BioNet Corp. All Rights Respliced.
+  </footer>
+</body>
+</html>

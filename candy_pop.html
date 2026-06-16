@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Candy Pop Landing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(135deg, #ffb3c1, #ffe6a7, #b3f0ff);
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* floating candies */
+  .candy {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    filter: blur(6px);
+    animation: float 12s infinite ease-in-out;
+  }
+  .candy:nth-child(1) { width: 50px; height: 50px; top: 15%; left: 10%; animation-delay: 0s; }
+  .candy:nth-child(2) { width: 70px; height: 70px; bottom: 10%; right: 15%; animation-delay: 3s; }
+  .candy:nth-child(3) { width: 40px; height: 40px; top: 30%; right: 25%; animation-delay: 6s; }
+  .candy:nth-child(4) { width: 60px; height: 60px; bottom: 25%; left: 20%; animation-delay: 9s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    color: #ff4da6;
+    text-shadow: 0 0 10px #fff, 0 0 15px #ffd6ff;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #ff80bf;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    color: #ff66b3;
+    border: 2px solid #ff66b3;
+    border-radius: 25px;
+    transition: all 0.3s;
+  }
+
+  nav a:hover {
+    background: #ff66b3;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel {
+    background: rgba(255,255,255,0.6);
+    border-radius: 25px;
+    padding: 3rem;
+    max-width: 650px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  }
+
+  .panel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ff4da6;
+    text-shadow: 0 0 5px #fff;
+  }
+
+  .panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ff66b3;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: #ff66b3;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    background: #ffb3c1;
+    color: #ff4da6;
+    transform: scale(1.1);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #ff80bf;
+    border-top: 1px solid rgba(255,102,179,0.5);
+  }
+</style>
+</head>
+<body>
+
+<!-- floating candies -->
+<div class="candy"></div>
+<div class="candy"></div>
+<div class="candy"></div>
+<div class="candy"></div>
+
+<header>
+  <h1>CANDY POP</h1>
+  <p>Playful • Sweet • Whimsical</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Sweet Adventures Await!</h2>
+    <p>
+      Welcome to <strong>Candy Pop</strong>.<br>
+      Floating candies, pastel colors, and playful vibes.<br>
+      Step into a world full of sweetness and fun.
+    </p>
+    <a href="#" class="btn">Start Playing</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Candy Pop Inspired
+</footer>
+
+</body>
+</html>

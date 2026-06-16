@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maximalism Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #fff7f2;
+      --accent1: #ff3b8a;
+      --accent2: #ffb300;
+      --accent3: #00d4ff;
+      --deep: #12021b;
+      --panel: rgba(255,255,255,0.88);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background:
+        linear-gradient(120deg, rgba(255,59,138,0.06), rgba(0,212,255,0.04)),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0 6px, transparent 6px 12px),
+        var(--bg1);
+      color:var(--deep);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+
+    /* header */
+    header{
+      padding:28px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .logo{
+      width:64px; height:64px;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:grid; place-items:center;
+      color:#fff; font-weight:700;
+      font-family:"Anton", sans-serif;
+      transform: rotate(-8deg);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border-radius:12px;
+    }
+    .title{
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .title .h{
+      font-family:"Playfair Display", serif;
+      font-size:20px; letter-spacing:1px;
+      color:var(--deep);
+    }
+    .title .sub{ font-size:12px; color:#444; font-weight:600; }
+
+    nav{ display:flex; gap:12px; align-items:center; }
+    nav a{
+      text-decoration:none;
+      padding:8px 14px;
+      border-radius:10px;
+      font-weight:700;
+      color:var(--deep);
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(0,0,0,0.02));
+      border: 2px solid rgba(0,0,0,0.08);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.06);
+      transition: transform .18s, box-shadow .18s;
+    }
+    nav a:hover{ transform: translateY(-3px); box-shadow: 10px 10px 0 rgba(0,0,0,0.08); }
+
+    /* Main composition: intentionally cluttered but balanced */
+    main{ padding:36px; display:flex; gap:28px; justify-content:center; align-items:flex-start; }
+
+    .canvas{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:24px;
+      align-items:start;
+    }
+
+    /* left: layered panels, collage style */
+    .left{
+      display:grid;
+      gap:18px;
+      grid-auto-rows: min-content;
+    }
+
+    .panel-large{
+      background: var(--panel);
+      padding:28px;
+      border-radius:18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      position:relative;
+      overflow:visible;
+      border:6px solid rgba(0,0,0,0.06);
+    }
+
+    .panel-large h1{
+      margin:0 0 8px 0;
+      font-family:"Anton", sans-serif;
+      font-size:44px;
+      line-height:1;
+      color:var(--deep);
+      letter-spacing:1px;
+    }
+    .panel-large p{
+      margin:0 0 16px 0;
+      color:#333; font-size:16px;
+    }
+    .cta{
+      display:inline-block;
+      padding:12px 20px;
+      background:linear-gradient(90deg,var(--accent1),var(--accent3));
+      color:#fff; text-decoration:none; font-weight:800;
+      border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    /* decorative stickers (overlapping shapes) */
+    .sticker{
+      position:absolute;
+      right:-36px;
+      top:-36px;
+      width:160px; height:160px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.15)), conic-gradient(from 120deg, var(--accent2), var(--accent1), var(--accent3));
+      transform: rotate(12deg);
+      border-radius:20px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.14);
+      border:6px solid rgba(255,255,255,0.6);
+    }
+
+    /* collage row: small colorful cards */
+    .row-cards{ display:flex; gap:14px; margin-top:6px; flex-wrap:wrap; }
+    .card{
+      flex:0 0 180px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      padding:14px; border-radius:12px; border:4px solid rgba(0,0,0,0.06);
+      display:flex; gap:10px; align-items:center;
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.06);
+    }
+    .swatch{ width:56px; height:56px; border-radius:8px; }
+    .card .txt{ font-weight:700; font-size:14px; }
+
+    /* floating ribbon */
+    .ribbon{
+      position:relative;
+      margin-top:18px;
+      display:inline-block;
+      padding:8px 16px;
+      background:linear-gradient(90deg,#fff, rgba(255,255,255,0.85));
+      border-left:6px solid var(--accent1);
+      border-radius:8px;
+      font-weight:800;
+      transform:skewX(-8deg);
+      box-shadow:6px 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* right column: busy mosaic + pattern */
+    .right{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .mosaic{
+      width:100%;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+      padding:18px;
+      border-radius:14px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+      border:4px solid rgba(0,0,0,0.06);
+      box-shadow: 10px 12px 30px rgba(0,0,0,0.08);
+    }
+    .tile{
+      min-height:80px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+      color:var(--deep); font-weight:800;
+    }
+    .t1{ background: var(--accent1); color:#fff; font-family:"Anton"; font-size:18px; transform: rotate(-3deg); }
+    .t2{ background: var(--accent2); color:#111; transform: rotate(5deg); }
+    .t3{ background: linear-gradient(90deg,var(--accent3),#9af0ff); color:#012; }
+    .t4{ background: linear-gradient(135deg,#ffd8b3,#ffb3d1); color:#111; }
+
+    /* busy footer-card */
+    .footer-card{
+      background:linear-gradient(90deg, rgba(255,255,255,0.96), rgba(255,255,255,0.9));
+      padding:16px; border-radius:12px; text-align:center; border:4px solid rgba(0,0,0,0.06);
+      box-shadow: 8px 10px 30px rgba(0,0,0,0.08);
+    }
+    .footer-card small{ display:block; opacity:.7; margin-top:8px }
+
+    /* decorative confetti dots across page (pseudo) */
+    .confetti{ position:fixed; inset:0; pointer-events:none; z-index:0; }
+    .confetti::before, .confetti::after{
+      content:"";
+      position:absolute;
+      width:14px; height:14px; border-radius:50%;
+      background:var(--accent1); transform:translate(10vw,20vh);
+      box-shadow:
+        80vw 10vh var(--accent2),
+        60vw 80vh var(--accent3),
+        30vw 60vh #ff7fb3,
+        90vw 30vh #ffd27f,
+        20vw 40vh #a0f0ff;
+      opacity:.12;
+      filter:blur(0.5px);
+    }
+
+    /* responsiveness */
+    @media (max-width:1000px){
+      .canvas{ grid-template-columns: 1fr; }
+      nav{ display:none; }
+      .logo{ width:52px; height:52px; }
+      .panel-large h1{ font-size:32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">MX</div>
+      <div class="title">
+        <div class="h">Maximalism Studio</div>
+        <div class="sub">More is a mood</div>
+      </div>
+    </div>
+
+    <nav aria-label="Main">
+      <a href="#">Work</a>
+      <a href="#">Collections</a>
+      <a href="#">Journal</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="canvas" role="main" aria-labelledby="hero-title">
+      <div class="left" aria-hidden="false">
+        <section class="panel-large" aria-labelledby="hero-title">
+          
+          <h1 id="hero-title">Embrace the Excess</h1>
+          <p>Maximalism delights in abundance: layered textures, bold palettes, oversized typography, and visual collage. This is a celebration of creative clutter.</p>
+          <a class="cta" href="#" role="button">Explore the Collection</a>
+
+          <div class="row-cards" aria-hidden="true">
+            <div class="card"><div class="swatch" style="background:var(--accent1)"></div><div class="txt">Color Study</div></div>
+            <div class="card"><div class="swatch" style="background:var(--accent2)"></div><div class="txt">Pattern Lab</div></div>
+            <div class="card"><div class="swatch" style="background:var(--accent3)"></div><div class="txt">Collage</div></div>
+            <div class="card"><div class="swatch" style="background:#9af0ff"></div><div class="txt">Materiality</div></div>
+          </div>
+
+          <div style="margin-top:18px;">
+            <span class="ribbon">Featured · New Release</span>
+          </div>
+        </section>
+
+        <div style="display:flex; gap:18px; align-items:stretch; flex-wrap:wrap;">
+          <div style="flex:1; min-width:240px;">
+            <div style="background:linear-gradient(135deg,#fff8ef,#fff0f8); padding:18px; border-radius:12px; border:4px solid rgba(0,0,0,0.06); box-shadow:8px 8px 0 rgba(0,0,0,0.06);">
+              <h3 style="margin:0 0 8px 0; font-family:'Anton',sans-serif; font-size:18px; color:var(--deep)">Pattern Library</h3>
+              <p style="margin:0; color:#444;">A playground of textures and repeats — decals, stripes, and layered motifs.</p>
+            </div>
+          </div>
+
+          <div style="flex:1; min-width:240px;">
+            <div style="background:linear-gradient(90deg,#fff,#fffbf0); padding:16px; border-radius:12px; border:4px solid rgba(0,0,0,0.06); box-shadow:8px 8px 0 rgba(0,0,0,0.06);">
+              <h3 style="margin:0 0 8px 0; font-family:'Playfair Display',serif; font-size:18px; color:var(--accent1)">Typography Play</h3>
+              <p style="margin:0; color:#444;">Oversized headlines, clashing weights, and expressive letterforms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right" aria-label="Highlights">
+        <div class="mosaic" role="list">
+          <div class="tile t1">BOLD</div>
+          <div class="tile t2">COLLAGE</div>
+          <div class="tile t3">TEXTURE</div>
+          <div class="tile t4">HYPER</div>
+        </div>
+
+        <div class="footer-card">
+          <div style="font-weight:800; font-size:16px">Exhibition · Now Showing</div>
+          <small>Curated works exploring maximal ornament and modern kitsch.</small>
+          
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer style="padding:24px 36px; display:flex; justify-content:space-between; align-items:center; gap:12px; background:linear-gradient(90deg,#fff,#fffdf8); border-top:6px solid rgba(0,0,0,0.06)">
+    <div style="font-weight:700">© 2025 Maximalism Studio</div>
+    <div style="opacity:.85">Layer. Clash. Celebrate.</div>
+  </footer>
+
+  <div class="confetti" aria-hidden="true"></div>
+</body>
+</html>

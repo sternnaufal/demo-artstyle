@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pixelated Landing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Press Start 2P', monospace;
+    background: #1a1a1a;
+    color: #00ff00;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-bottom: 4px solid #00ff00;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    color: #ff0000;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000;
+  }
+
+  header p {
+    font-size: 0.8rem;
+    color: #00ff00;
+    margin-top: 0.5rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    transition: all 0.2s;
+  }
+
+  nav a:hover {
+    background: #00ff00;
+    color: #000;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  .panel {
+    background: #000;
+    border: 4px solid #ff0000;
+    padding: 3rem;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .panel h2 {
+    font-size: 1rem;
+    color: #ff00ff;
+    margin-bottom: 1rem;
+  }
+
+  .panel p {
+    font-size: 0.7rem;
+    color: #00ff00;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #000;
+    background: #ff00ff;
+    border: 2px solid #ff00ff;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: #000;
+    color: #ff00ff;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.7rem;
+    border-top: 2px solid #00ff00;
+    background: #111;
+    color: #00ff00;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PIXEL WORLD</h1>
+  <p>Retro • 8-bit • Blocky</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Games</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Enter the 8-Bit Realm</h2>
+    <p>
+      Welcome to <strong>Pixel World</strong>.<br>
+      Blocky graphics, retro vibes, and pixel-perfect adventure.<br>
+      Step in and relive the 80s game era.
+    </p>
+    <a href="#" class="btn">Play Now</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Pixelated / 8-bit Inspired
+</footer>
+
+</body>
+</html>

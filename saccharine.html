@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saccharine Landing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(135deg, #ffd6e8, #ffe8f0, #fff0f6, #ffe6ff);
+      background-size: 400% 400%;
+      animation: bgmove 12s ease infinite;
+      color: #ff3399;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgmove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 2rem;
+      animation: float 10s infinite ease-in-out;
+      opacity: 0.7;
+    }
+    .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { top: 60%; left: 5%; animation-delay: 2s; }
+    .heart:nth-child(3) { top: 40%; right: 10%; animation-delay: 4s; }
+    .heart:nth-child(4) { bottom: 15%; left: 30%; animation-delay: 6s; }
+    .heart:nth-child(5) { bottom: 25%; right: 20%; animation-delay: 8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+    }
+
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-bottom: 4px dashed #ff99cc;
+      box-shadow: 0 6px 15px rgba(255, 100, 150, 0.4);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #ff3399;
+      text-shadow: 0 2px 6px rgba(255, 150, 200, 0.7);
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      color: #ff66b2;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, #ffccf9, #ff99cc);
+      border: 2px solid #ff66b2;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(255, 100, 150, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: linear-gradient(to bottom, #ff66b2, #ff3399);
+      transform: scale(1.05);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .candy-panel {
+      background: #fff0fa;
+      border: 4px dotted #ff99cc;
+      border-radius: 25px;
+      padding: 2.5rem;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 8px 25px rgba(255, 120, 180, 0.5);
+    }
+
+    .candy-panel h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff3399;
+    }
+
+    .candy-panel p {
+      font-size: 1.1rem;
+      color: #ff66b2;
+      line-height: 1.6;
+    }
+
+    .jelly-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      background: radial-gradient(circle at 30% 30%, #ff99cc, #ff3399);
+      border: 3px solid #fff;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(255, 80, 160, 0.6);
+      transition: transform 0.2s ease;
+    }
+
+    .jelly-btn:hover {
+      transform: scale(1.08) rotate(-2deg);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: #ffe6f5;
+      border-top: 2px dashed #ff99cc;
+      color: #ff3399;
+      box-shadow: 0 -4px 12px rgba(255, 100, 150, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- floating hearts -->
+  <div class="heart">💖</div>
+  <div class="heart">💗</div>
+  <div class="heart">💕</div>
+  <div class="heart">💓</div>
+  <div class="heart">💞</div>
+
+  <header>
+    <h1>💖 Saccharine Web 💖</h1>
+    <p>So Sweet • So Cute • So Pink</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="candy-panel">
+      <h2>Welcome to Candyland!</h2>
+      <p>
+        Everything here is <strong>cute, sparkly, and sweet</strong>!<br>
+        Pink dreams, heart-shaped sparkles, and sugar-coated vibes.<br>
+        Too much? Never enough! 🍬✨
+      </p>
+      <a href="#" class="jelly-btn">Taste the Sweetness</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 • Made with 💖 Sugar & Sparkles
+  </footer>
+</body>
+</html>

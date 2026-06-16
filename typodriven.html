@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typography Landing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      background: #fafafa;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 1.1;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+      color: #444;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 4rem 2rem;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .big-statement {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .supporting-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+      max-width: 500px;
+    }
+
+    .cta {
+      margin-top: 2rem;
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 1rem 2rem;
+      border: 2px solid #111;
+      text-decoration: none;
+      color: #111;
+      transition: all 0.3s ease;
+    }
+
+    .cta:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Words Matter.</h1>
+    <p>Design driven entirely by typography.</p>
+  </header>
+
+  <main>
+    <div class="big-statement">
+      Bold Letters,<br>
+      Strong Message.
+    </div>
+    <div>
+      <p class="supporting-text">
+        Typography-driven design strips away all distractions.
+        No gradients, no heavy images, just pure text hierarchy.
+        Every letter carries weight. Every word becomes design.
+      </p>
+      <a href="#" class="cta">Explore More</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 • Typography is the design itself.
+  </footer>
+</body>
+</html>

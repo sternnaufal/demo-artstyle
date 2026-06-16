@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frutiger Aero Landing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #66ccff 0%, #0099cc 100%);
+      background-attachment: fixed;
+      color: #003366;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* floating bubbles */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+      animation: float 18s infinite ease-in-out;
+    }
+    .bubble:nth-child(1) { width: 180px; height: 180px; top: 10%; left: 15%; animation-delay: 0s; }
+    .bubble:nth-child(2) { width: 250px; height: 250px; bottom: 5%; right: 10%; animation-delay: 4s; }
+    .bubble:nth-child(3) { width: 120px; height: 120px; bottom: 20%; left: 25%; animation-delay: 8s; }
+    .bubble:nth-child(4) { width: 90px; height: 90px; top: 30%; right: 20%; animation-delay: 12s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-40px); }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(15px);
+      border-bottom: 2px solid rgba(255,255,255,0.7);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      margin: 0;
+      color: #004080;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 20px #80d0ff;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #009966;
+      text-shadow: 0 1px 6px rgba(255,255,255,0.8);
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      background: linear-gradient(to bottom, #ffffffaa, #cceeffdd);
+      border: 1px solid #99ccff;
+      color: #004080;
+      font-weight: bold;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.9),
+                  0 3px 8px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: linear-gradient(to bottom, #66ccff, #0099cc);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 0 12px #66ccff;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass-panel {
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      max-width: 650px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3),
+                  inset 0 2px 14px rgba(255,255,255,0.7);
+    }
+
+    .glass-panel h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #004080;
+      text-shadow: 0 1px 8px rgba(255,255,255,0.8);
+    }
+
+    .glass-panel p {
+      font-size: 1.15rem;
+      color: #222;
+      line-height: 1.7;
+      text-shadow: 0 1px 6px rgba(255,255,255,0.7);
+    }
+
+    .orb-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      background: radial-gradient(circle at 30% 30%, #66ccff, #0066cc);
+      border: 2px solid #004080;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: inset 0 2px 12px rgba(255,255,255,0.8),
+                  0 8px 18px rgba(0,0,0,0.4),
+                  0 0 15px rgba(102,204,255,0.7);
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orb-btn::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 50px;
+      background: linear-gradient(120deg, rgba(255,255,255,0.6), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+    }
+
+    .orb-btn:hover::after {
+      transform: translateX(100%);
+    }
+
+    .orb-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 20px #00ccff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.45);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid #99ccff;
+      color: #004080;
+      box-shadow: 0 -3px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- floating bubbles -->
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <header>
+    <h1>🌿 Frutiger Aero</h1>
+    <p>Fresh • Glassy • Nature Inspired</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="glass-panel">
+      <h2>Experience the Vista Vibes</h2>
+      <p>
+        Welcome to the world of <strong>Frutiger Aero</strong>.<br>
+        Transparent glass panels, glowing aqua buttons, and<br>
+        nature-inspired harmony.<br>
+        It’s 2007 again — the future is glossy.
+      </p>
+      <a href="#" class="orb-btn">Get Started</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2007–2025 • Inspired by Windows Vista & Frutiger Aero
+  </footer>
+</body>
+</html>

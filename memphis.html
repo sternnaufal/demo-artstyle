@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memphis Design Landing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Fredoka One', cursive;
+      background: #fff200;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 4rem;
+      display: inline-block;
+      padding: 15px 25px;
+      background: #ff4d6d;
+      transform: rotate(-5deg);
+      color: #fff;
+      box-shadow: 5px 5px 0 #111;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: #111;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background: #00c2ff;
+      color: #fff;
+      border: none;
+      padding: 15px 45px;
+      font-size: 1.3rem;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 5px 5px 0 #111;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #ff4d6d;
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    /* Geometric shapes random */
+    .shape {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.85;
+    }
+
+  .x1 { color: #ff4d6d; top: 10%; left: 15%; transform: rotate(-20deg);}
+  .o1 { color: #00c2ff; top: 50%; left: 70%; transform: rotate(10deg);}
+  .x2 { color: #00ff90; top: 50%; left: 25%; transform: rotate(15deg);}
+  .o2 { color: #ffeb3b; top: 60%; left: 60%; transform: rotate(-10deg);}
+  .x3 { color: #ff5722; top: 75%; left: 40%; transform: rotate(5deg);}
+  .o3 { color: #ff00ff; top: 55%; left: 45%; transform: rotate(-15deg);}
+    .circle { width: 130px; height: 130px; background: #00ff90; border-radius:50%; top:10%; left:10%; transform: rotate(10deg); }
+    .triangle { width:0; height:0; border-left:70px solid transparent; border-right:70px solid transparent; border-bottom:120px solid #ff4d6d; top:65%; left:75%; transform: rotate(-15deg);}
+    .zigzag { width:200px; height:20px; background: repeating-linear-gradient(135deg, #ff00ff, #ff00ff 10px, transparent 10px, transparent 20px); top:45%; left:65%; transform: rotate(25deg);}
+    .square { width:100px; height:100px; background:#00c2ff; top:70%; left:15%; transform: rotate(-20deg);}
+    .small-circle { width:70px; height:70px; background:#ffeb3b; border-radius:50%; top:75%; left:5%; }
+    .rectangle { width:180px; height:30px; background:#ff5722; top:40%; left:40%; transform: rotate(10deg);}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>HELLO MEMPHIS</h1>
+    <p>Playful, bold, and colorful design inspired by the 80s.</p>
+    <button class="btn">Get Started</button>
+  </div>
+
+  <!-- Shapes -->
+  <div class="shape circle"></div>
+  <div class="shape triangle"></div>
+  <div class="shape zigzag"></div>
+  <div class="shape square"></div>
+  <div class="shape small-circle"></div>
+  <div class="shape rectangle"></div>
+
+  <!-- X & O shapes -->
+<div class="shape x1">X</div>
+<div class="shape o1">O</div>
+<div class="shape x2">X</div>
+<div class="shape o2">O</div>
+<div class="shape x3">X</div>
+<div class="shape o3">O</div>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grunge Landing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Special Elite', monospace;
+      background: #1a1a1a url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #111 url('https://www.transparenttextures.com/patterns/grunge-wall.png');
+      border-bottom: 5px solid #c0392b;
+      box-shadow: inset 0 -5px 15px rgba(0,0,0,0.8);
+    }
+
+    header h1 {
+      font-family: 'Staatliches', sans-serif;
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 2px 2px #c0392b, -2px -2px #000;
+    }
+
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+      color: #aaa;
+      font-style: italic;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 .7rem;
+      padding: .5rem 1rem;
+      color: #f5f5f5;
+      text-decoration: none;
+      border: 2px solid #f5f5f5;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: #222;
+      box-shadow: 3px 3px 0 #c0392b;
+      transition: all .2s ease;
+    }
+
+    nav a:hover {
+      background: #c0392b;
+      color: #fff;
+      transform: rotate(-2deg) scale(1.05);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: #222 url('https://www.transparenttextures.com/patterns/black-linen.png');
+    }
+
+    .grunge-box {
+      max-width: 700px;
+      padding: 2rem;
+      background: #111;
+      border: 3px dashed #c0392b;
+      box-shadow: -10px 10px 0 #444, 10px -10px 0 #000;
+      text-align: center;
+      transform: rotate(-1deg);
+    }
+
+    .grunge-box h2 {
+      font-family: 'Staatliches', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #e74c3c;
+      text-transform: uppercase;
+      text-shadow: 1px 1px #000;
+    }
+
+    .grunge-box p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #c0392b;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid #fff;
+      box-shadow: 4px 4px 0 #000;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #c0392b;
+      transform: translate(-3px, -3px) rotate(-3deg);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111 url('https://www.transparenttextures.com/patterns/grunge-wall.png');
+      font-size: .9rem;
+      color: #777;
+      border-top: 2px solid #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ GRUNGE VIBES ⚡</h1>
+    <p>Raw • Loud • Underground</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Bands</a>
+      <a href="#">Events</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grunge-box">
+      <h2>Feel the Noise</h2>
+      <p>
+        Welcome to the <strong>Grunge Era</strong>.<br>
+        Torn posters, dirty walls, and distorted guitars.<br>
+        Not perfect. Not clean. Just real.
+      </p>
+      <a href="#" class="btn">Join the Scene</a>
+    </div>
+  </main>
+
+  <footer>
+    © 1991–2025 • Inspired by Grunge Culture & Underground Design
+  </footer>
+</body>
+</html>

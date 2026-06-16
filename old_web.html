@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Old Web Extreme</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Courier New', monospace;
+    background: repeating-linear-gradient(45deg, #ff00ff 0 30px, #00ffff 0 60px);
+    color: #0000ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Blink text */
+  .blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+    color: #ff0000;
+    font-weight: bold;
+  }
+
+  @keyframes blink-animation {
+    to { visibility: hidden; }
+  }
+
+  /* Marquee */
+  marquee {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #00ff00;
+    margin-bottom: 10px;
+  }
+
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #ffff99;
+    border-bottom: 4px ridge #ff00ff;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    color: #ff00ff;
+    text-shadow: 2px 2px #0000ff;
+  }
+
+  header img {
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: float-gif 3s infinite alternate;
+  }
+
+  @keyframes float-gif {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  header p {
+    font-size: 1.2rem;
+    color: #ff6600;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 0.8rem;
+    padding: 0.5rem 1rem;
+    background: #00ff00;
+    color: #ff00ff;
+    font-weight: bold;
+    border: 3px outset #ff0000;
+  }
+
+  nav a:hover {
+    background: #ff00ff;
+    color: #ffff00;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel {
+    background: #ffffff;
+    border: 4px groove #ff6600;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 650px;
+    box-shadow: 8px 8px #0000ff;
+  }
+
+  .panel h2 {
+    font-size: 2rem;
+    color: #ff0000;
+  }
+
+  .panel p {
+    font-size: 1.1rem;
+    color: #0000aa;
+    line-height: 1.6;
+  }
+
+  .classic-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: #0000ff;
+    border: 3px outset #ff00ff;
+    cursor: pointer;
+    animation: flash 1.5s infinite alternate;
+  }
+
+  @keyframes flash {
+    0% { background: #0000ff; }
+    50% { background: #ff00ff; }
+    100% { background: #00ff00; }
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background: #ffff99;
+    border-top: 3px ridge #ff00ff;
+    color: #0000cc;
+  }
+</style>
+</head>
+<body>
+
+<marquee>✨ Welcome to the Extreme Old Web 90s Retro! ✨</marquee>
+
+<header>
+  <h1>🌐 Old Web Extreme</h1>
+  <p class="blink">Bright • Chaotic • Nostalgic</p>
+  <img src="https://i.gifer.com/embedded/download/4j.gif" alt="GIF icon">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Experience the 90s Chaos</h2>
+    <p>
+      Welcome to the world of <strong>Old Web</strong>.<br>
+      Neon colors, marquee text, blinking messages, and moving GIFs.<br>
+      It’s 1997 again — the web is wild and totally over the top.
+    </p>
+    <a href="#" class="classic-btn">Get Started</a>
+  </div>
+</main>
+
+<footer>
+  © 1995–2025 • Inspired by Classic Extreme Web Design
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mystical Forest</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #0b2e1f, #1f4b2f, #3a6a4d);
+    color: #e0f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* floating light orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,200,255,0.2);
+    filter: blur(15px);
+    animation: float 20s infinite ease-in-out;
+  }
+  .orb:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+  .orb:nth-child(2) { width: 120px; height: 120px; bottom: 10%; right: 20%; animation-delay: 5s; }
+  .orb:nth-child(3) { width: 60px; height: 60px; top: 30%; right: 25%; animation-delay: 10s; }
+  .orb:nth-child(4) { width: 100px; height: 100px; bottom: 20%; left: 15%; animation-delay: 15s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    color: #cfa0ff;
+    text-shadow: 0 0 10px #cfa0ff, 0 0 20px #ff77ff;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 6px #fff;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    color: #cfa0ff;
+    border: 1px solid #cfa0ff;
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  nav a:hover {
+    background: rgba(207,160,255,0.2);
+    transform: translateY(-2px);
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel {
+    background: rgba(10,40,20,0.6);
+    border-radius: 25px;
+    padding: 3rem;
+    max-width: 650px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 30px rgba(207,160,255,0.3);
+  }
+
+  .panel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #d0b0ff;
+    text-shadow: 0 0 10px #d0b0ff;
+  }
+
+  .panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0f0ff;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #0b2e1f;
+    background: #d0b0ff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    background: #0b2e1f;
+    color: #d0b0ff;
+    transform: translateY(-3px);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #a0c0ff;
+    border-top: 1px solid rgba(207,160,255,0.3);
+  }
+</style>
+</head>
+<body>
+
+<!-- floating orbs -->
+<div class="orb"></div>
+<div class="orb"></div>
+<div class="orb"></div>
+<div class="orb"></div>
+
+<header>
+  <h1>ENCHANTED FOREST</h1>
+  <p>Mystical • Magical • Dreamy</p>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Explore</a>
+    <a href="#">Legends</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Step Into the Forest</h2>
+    <p>
+      Welcome to the <strong>Enchanted Forest</strong>.<br>
+      Floating lights, misty trees, and soft magical hues.<br>
+      Explore a world where magic hides in every corner.
+    </p>
+    <a href="#" class="btn">Enter the Forest</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 • Mystical Forest Inspired
+</footer>
+
+</body>
+</html>
