@@ -37,7 +37,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/de_stijl.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/grunge.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/gothic.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/liminal_space.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -65,6 +77,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/neumorphism.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/oceanic.html</loc>
     <priority>0.8</priority>
   </url>
@@ -78,6 +94,14 @@
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/pop_art.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/psychedelic.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/rococo.html</loc>
     <priority>0.8</priority>
   </url>
   <url>

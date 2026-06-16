@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gothic</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0e0a0e;
+      color: #b8a8b8;
+      font-family: 'EB Garamond', serif;
+      min-height: 100vh;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(80,30,80,0.06) 0%, transparent 60%),
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(80,40,80,0.02) 40px, rgba(80,40,80,0.02) 41px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container { width: 100%; padding: 2rem; position: relative; z-index: 1; }
+    .rose-window {
+      position: fixed;
+      top: -100px; right: -100px;
+      width: 350px; height: 350px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.04;
+    }
+    .rose-window div {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid #6a3a6a;
+    }
+    .rose-window div:nth-child(1) { border: none; background: radial-gradient(circle, transparent 30%, rgba(100,40,100,0.05) 30%, transparent 35%, rgba(100,40,100,0.03) 35%, transparent 40%); }
+    .rose-window div:nth-child(2) { inset: 20%; border-width: 2px; }
+    .rose-window div:nth-child(3) { inset: 40%; border-width: 1px; }
+    header {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      position: relative;
+    }
+    header::after {
+      content: '⸸';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #5a2a5a;
+      font-size: 1.5rem;
+    }
+    header h1 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 4rem;
+      color: #c8a8c8;
+      letter-spacing: 4px;
+      text-shadow: 0 0 40px rgba(150,60,150,0.1);
+    }
+    header .sub {
+      font-size: 0.8rem;
+      color: #5a3a5a;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+    }
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    .arch {
+      text-align: center;
+      padding: 2rem 1rem;
+      border: 1px solid rgba(100,50,100,0.08);
+      position: relative;
+    }
+    .arch::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%;
+      width: 80%; height: 1px;
+      background: linear-gradient(90deg, transparent, #5a2a5a, transparent);
+    }
+    .arch .point {
+      display: inline-block;
+      width: 60px; height: 80px;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .arch .point div {
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      height: 100%;
+      border: 1px solid #5a3a5a;
+      border-bottom: none;
+    }
+    .arch .point div:first-child { left: 0; border-right: none; border-radius: 30px 0 0 0; }
+    .arch .point div:last-child { right: 0; border-left: none; border-radius: 0 30px 0 0; }
+    .arch.highlight .point div { border-color: #8a4a8a; }
+    .arch h3 { font-size: 1rem; color: #d0b0d0; margin-bottom: 0.5rem; }
+    .arch p { font-size: 0.85rem; color: #7a6a7a; line-height: 1.6; }
+    .triptych {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 0;
+      max-width: 800px;
+      margin: 4rem auto;
+      border: 1px solid rgba(100,50,100,0.06);
+    }
+    .triptych .panel {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid rgba(100,50,100,0.06);
+      text-align: center;
+    }
+    .triptych .panel:last-child { border-right: none; }
+    .triptych .panel .icon { font-size: 2.5rem; opacity: 0.3; }
+    .triptych .panel h3 { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #6a4a6a; margin: 0.5rem 0; }
+    .triptych .panel p { font-size: 0.75rem; color: #5a4a5a; }
+    .style-specs { margin: 3rem auto; max-width: 1000px; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(100,50,100,0.1); background: rgba(14,10,14,0.5); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #8a4a8a; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #7a6a7a; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(100,50,100,0.06);
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      color: #3a2a3a;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .arch-grid { grid-template-columns: 1fr; }
+      .triptych { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rose-window"><div></div><div></div><div></div></div>
+  <div class="container">
+    <header>
+      <h1>Gothic</h1>
+      <div class="sub">pointed arches · light divine · medieval</div>
+    </header>
+    <div class="arch-grid">
+      <div class="arch highlight">
+        <div class="point"><div></div><div></div></div>
+        <h3>Pointed Arch</h3>
+        <p>The defining feature — distributing thrust downward, allowing taller windows and more light. A technical innovation that became a spiritual symbol.</p>
+      </div>
+      <div class="arch">
+        <div class="point"><div></div><div></div></div>
+        <h3>Ribbed Vault</h3>
+        <p>Stone ribs cross the ceiling, channeling weight to columns. The skeleton of the building becomes its decoration.</p>
+      </div>
+      <div class="arch">
+        <div class="point"><div></div><div></div></div>
+        <h3>Flying Buttress</h3>
+        <p>External supports that counter the outward thrust of the vault. Structural necessity made elegant — the skeleton exposed.</p>
+      </div>
+    </div>
+    <div class="triptych">
+      <div class="panel">
+        <div class="icon">⛪</div>
+        <h3>Cathedral</h3>
+        <p>Notre-Dame, Chartres, Reims — stone prayers reaching toward heaven.</p>
+      </div>
+      <div class="panel">
+        <div class="icon">🌸</div>
+        <h3>Rose Window</h3>
+        <p>Geometric stained glass — the cosmos rendered in colored light. A wheel of divine order.</p>
+      </div>
+      <div class="panel">
+        <div class="icon">🗿</div>
+        <h3>Gargoyle</h3>
+        <p>Water spout and guardian. The grotesque protecting the sacred.</p>
+      </div>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Sacred, towering, mysterious — reaching toward heaven through stone and light. Spiritual awe through architecture.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1140–1550 CE. Île-de-France to all Europe. Key sites: Notre-Dame, Chartres, Reims, Westminster Abbey.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Deep purples, stone grays, gold accents. Stained glass colors — ruby red, sapphire blue, emerald green against dark stone.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>UnifrakturMaguntia (blackletter) for headings. EB Garamond (old-style serif) for body. Medieval manuscript roots.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Pointed arches, ribbed vaults, flying buttresses, rose windows, gargoyles, stained glass, verticality, tracery.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>✦ GOTHIC · 1140–1550 · LIGHT DIVINE ✦</span>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Stijl</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f0eb;
+      color: #111;
+      min-height: 100vh;
+    }
+    .container { width: 100%; height: 100vh; display: flex; flex-direction: column; }
+    .mondrian-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      grid-template-rows: 1fr 0.8fr 0.6fr 1.2fr;
+      height: 100%;
+      gap: 6px;
+      padding: 6px;
+    }
+    .mondrian-grid > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 80px;
+    }
+    .mondrian-grid .red { background: #d4000f; }
+    .mondrian-grid .blue { background: #0033a0; }
+    .mondrian-grid .yellow { background: #ffd700; }
+    .mondrian-grid .white { background: #f5f0eb; }
+    .mondrian-grid .black { background: #111; color: #f5f0eb; }
+    .grid-item-1 { grid-column: 1; grid-row: 1 / 3; }
+    .grid-item-2 { grid-column: 2; grid-row: 1; }
+    .grid-item-3 { grid-column: 3; grid-row: 1 / 4; }
+    .grid-item-4 { grid-column: 2; grid-row: 2 / 4; background: #0033a0 !important; }
+    .grid-item-5 { grid-column: 1; grid-row: 3 / 5; }
+    .grid-item-6 { grid-column: 2; grid-row: 4; }
+    .grid-item-7 { grid-column: 3; grid-row: 4; }
+    .mondrian-grid .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .grid-item-1 .content { align-items: flex-start; justify-content: flex-end; }
+    .grid-item-3 .content { align-items: flex-end; justify-content: flex-end; }
+    .grid-item-5 .content { justify-content: center; }
+    .grid-item-7 .content { flex-direction: row; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center; }
+    .mondrian-grid h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      line-height: 0.9;
+    }
+    .mondrian-grid h1 .thin { font-weight: 300; }
+    .red h1, .blue h1, .yellow h1 { color: #f5f0eb; }
+    .red h1 .thin, .blue h1 .thin { color: rgba(255,255,255,0.5); }
+    .yellow h1 { color: #111; }
+    .yellow h1 .thin { color: rgba(0,0,0,0.3); }
+    .mondrian-grid .sub {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .red .sub { color: rgba(255,255,255,0.6); }
+    .yellow .sub { color: rgba(0,0,0,0.4); }
+    .mondrian-grid p {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      font-weight: 300;
+      max-width: 30ch;
+    }
+    .white p, .white .sub { color: #444; }
+    .black p, .black .sub { color: rgba(255,255,255,0.5); }
+    .grid-item-4 .content {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .grid-item-6 .content {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .color-dot {
+      width: 24px; height: 24px;
+      border: 2px solid #111;
+    }
+    .color-dot.red { background: #d4000f; }
+    .color-dot.blue { background: #0033a0; }
+    .color-dot.yellow { background: #ffd700; }
+    .color-dot.white { background: #f5f0eb; }
+    .grid-item-7 .sub {
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .grid-item-7 p {
+      font-size: 0.7rem;
+      color: #666;
+      font-weight: 300;
+    }
+    .style-specs {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      z-index: 10;
+      background: #f5f0eb;
+      border-top: 6px solid #111;
+      padding: 1rem 1.5rem;
+      display: none;
+    }
+    .style-specs.open { display: block; }
+    .specs-toggle {
+      position: fixed;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      z-index: 11;
+      background: #111;
+      color: #f5f0eb;
+      border: none;
+      font-family: inherit;
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+    }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; }
+    .spec-card h3 { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.25rem; font-weight: 700; color: #d4000f; }
+    .spec-card p { font-size: 0.7rem; line-height: 1.5; color: #444; }
+    @media (max-width: 768px) {
+      .mondrian-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .grid-item-1, .grid-item-3, .grid-item-5 { grid-column: 1 / -1; }
+      .mondrian-grid h1 { font-size: 2rem; }
+      .specs-toggle { font-size: 0.5rem; padding: 0.3rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="mondrian-grid">
+      <div class="red grid-item-1">
+        <div class="content">
+          <h1>DE<br><span class="thin">STIJL</span></h1>
+          <div class="sub">1917 · NEOPLASTICISM</div>
+        </div>
+      </div>
+      <div class="white grid-item-2">
+        <div class="content">
+          <p>Reducing form to the elemental. Straight lines, right angles, primary colors. The universal language of pure abstraction.</p>
+        </div>
+      </div>
+      <div class="yellow grid-item-3">
+        <div class="content">
+          <p style="max-width:25ch;font-size:0.7rem;line-height:1.6;text-align:right;">"The position of the straight line is the only means of expressing the relationship of color planes." — Mondrian</p>
+        </div>
+      </div>
+      <div class="blue grid-item-4">
+        <div class="content">
+          MONDRIAN<br>VAN DOESBURG<br>RIETVELD
+        </div>
+      </div>
+      <div class="white grid-item-5">
+        <div class="content">
+          <div style="display:flex;gap:0;border:3px solid #111;">
+            <div style="width:30px;height:60px;background:#d4000f;"></div>
+            <div style="width:30px;height:60px;background:#f5f0eb;border-left:3px solid #111;"></div>
+            <div style="width:30px;height:60px;background:#0033a0;border-left:3px solid #111;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="yellow grid-item-6">
+        <div class="content">
+          <div class="color-dot red"></div>
+          <div class="color-dot blue"></div>
+          <div class="color-dot yellow"></div>
+          <div class="color-dot white"></div>
+          <div class="color-dot" style="background:#111;"></div>
+        </div>
+      </div>
+      <div class="white grid-item-7">
+        <div class="content">
+          <div><div class="sub">STRAIGHT LINE</div></div>
+          <div><div class="sub">RIGHT ANGLE</div></div>
+          <div><div class="sub">PRIMARY</div></div>
+          <p style="width:100%;margin-top:0.5rem;">The grid is not a constraint — it is liberation through structure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="specs-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ CLOSE':'▼ STYLE SPECS'">▼ STYLE SPECS</button>
+  <section class="style-specs">
+    <div class="specs-grid">
+      <div class="spec-card"><h3>Mood</h3><p>Pure, universal, elemental — reducing art to its absolute essence. Harmony through geometric reduction.</p></div>
+      <div class="spec-card"><h3>Era</h3><p>1917–1931. Founded by Theo van Doesburg. Key figure: Piet Mondrian, Gerrit Rietveld. Dutch avant-garde.</p></div>
+      <div class="spec-card"><h3>Colors</h3><p>Red (#d4000f), blue (#0033a0), yellow (#ffd700) + black, white, gray. No green, no purple, no curves.</p></div>
+      <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) — bold geometric uppercase. No serifs, no decoration, no personality beyond pure form.</p></div>
+      <div class="spec-card"><h3>Characteristics</h3><p>Straight lines, right angles, primary colors, asymmetric grid, reduction to essentials, horizontal-vertical composition.</p></div>
+    </div>
+  </section>
+  <script>document.querySelector('.specs-toggle').addEventListener('click',function(){this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'▲ CLOSE':'▼ STYLE SPECS';})</script>
+</body>
+</html>

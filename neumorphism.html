@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neumorphism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8e4e0;
+      color: #4a4a4a;
+      min-height: 100vh;
+    }
+    .container { width: 100%; padding: 2rem; }
+    header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: -1px;
+      color: #4a4a4a;
+    }
+    header .sub {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #9a9a9a;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+    .neu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+    .neu-icon {
+      background: #e8e4e0;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow:
+        -8px -8px 16px rgba(255,255,255,0.8),
+        8px 8px 16px rgba(0,0,0,0.06);
+      transition: all 0.2s;
+      cursor: default;
+    }
+    .neu-icon:active {
+      box-shadow:
+        inset -4px -4px 8px rgba(255,255,255,0.8),
+        inset 4px 4px 8px rgba(0,0,0,0.06);
+    }
+    .neu-icon .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .neu-icon .label {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7a7a7a;
+      font-weight: 400;
+    }
+    .neu-card {
+      background: #e8e4e0;
+      border-radius: 30px;
+      padding: 2.5rem;
+      max-width: 500px;
+      margin: 3rem auto;
+      box-shadow:
+        -12px -12px 24px rgba(255,255,255,0.8),
+        12px 12px 24px rgba(0,0,0,0.05);
+    }
+    .neu-card h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #4a4a4a;
+      margin-bottom: 1rem;
+    }
+    .neu-card p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #7a7a7a;
+      font-weight: 300;
+    }
+    .neu-input-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+    .neu-input {
+      background: #e8e4e0;
+      border: none;
+      border-radius: 15px;
+      padding: 1rem 1.5rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: #4a4a4a;
+      box-shadow:
+        inset -4px -4px 8px rgba(255,255,255,0.8),
+        inset 4px 4px 8px rgba(0,0,0,0.05);
+      outline: none;
+      min-width: 200px;
+    }
+    .neu-input::placeholder { color: #b0b0b0; font-weight: 300; }
+    .neu-btn {
+      background: #e8e4e0;
+      border: none;
+      border-radius: 15px;
+      padding: 1rem 2rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #4a4a4a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow:
+        -6px -6px 12px rgba(255,255,255,0.8),
+        6px 6px 12px rgba(0,0,0,0.05);
+      transition: all 0.15s;
+    }
+    .neu-btn:active {
+      box-shadow:
+        inset -4px -4px 8px rgba(255,255,255,0.8),
+        inset 4px 4px 8px rgba(0,0,0,0.05);
+      color: #6a6a6a;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+    .neu-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: #6a6a6a;
+      font-weight: 300;
+    }
+    .neu-toggle .track {
+      width: 40px; height: 22px;
+      border-radius: 11px;
+      background: #e8e4e0;
+      box-shadow:
+        inset -3px -3px 6px rgba(255,255,255,0.8),
+        inset 3px 3px 6px rgba(0,0,0,0.05);
+      position: relative;
+      cursor: pointer;
+    }
+    .neu-toggle .track .knob {
+      position: absolute;
+      top: 2px; left: 2px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #e8e4e0;
+      box-shadow:
+        -2px -2px 4px rgba(255,255,255,0.8),
+        2px 2px 4px rgba(0,0,0,0.05);
+      transition: left 0.2s;
+    }
+    .neu-toggle .track.on .knob { left: 20px; }
+    .style-specs { margin: 3rem auto; max-width: 1000px; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; background: #e8e4e0; border-radius: 20px; box-shadow: -6px -6px 12px rgba(255,255,255,0.8), 6px 6px 12px rgba(0,0,0,0.05); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #7a7a7a; font-weight: 400; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #6a6a6a; font-weight: 300; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      color: #b0b0b0;
+      font-weight: 300;
+    }
+    @media (max-width: 768px) {
+      .neu-grid { grid-template-columns: 1fr 1fr; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Neumorphism</h1>
+      <div class="sub">soft · embossed · tactile</div>
+    </header>
+    <div class="neu-grid">
+      <div class="neu-icon"><span class="emoji">🔍</span><span class="label">Search</span></div>
+      <div class="neu-icon"><span class="emoji">💾</span><span class="label">Save</span></div>
+      <div class="neu-icon"><span class="emoji">⚙️</span><span class="label">Settings</span></div>
+      <div class="neu-icon"><span class="emoji">📁</span><span class="label">Files</span></div>
+    </div>
+    <div class="neu-card">
+      <h2>What is Neumorphism?</h2>
+      <p>A UI design trend that blends flat design with skeuomorphism. Elements appear to be extruded from the background — embossed or debossed — using subtle shadows and highlights that mimic soft plastic or clay.</p>
+    </div>
+    <div class="neu-input-row">
+      <input class="neu-input" type="text" placeholder="Type something..." value="Hello, Neumorphism">
+      <button class="neu-btn">Submit</button>
+    </div>
+    <div class="toggle-row">
+      <div class="neu-toggle">
+        <span>Dark mode</span>
+        <div class="track on"><div class="knob"></div></div>
+      </div>
+      <div class="neu-toggle">
+        <span>Notifications</span>
+        <div class="track"><div class="knob"></div></div>
+      </div>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Soft, tactile, calm — interfaces that feel tangible and physical. Gentle shadows create a sense of depth without violence.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>2019–2021. Popularized by UI designers on Dribbble. Coined by Michał Malewicz. A trend within the broader "soft UI" movement.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Monochromatic backgrounds (#e8e4e0). No dark colors — only soft whites, creams, and light grays. The background IS the shadow reference.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Inter (sans-serif) — light weight, clean, unassuming. Low contrast between text and background for that soft look.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Dual shadow (light + dark), same-color-as-background elements, emboss/deboss effect, rounded corners, no borders, monochromatic.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>NEUMORPHISM · SOFT UI · 2019–2021</span>
+    </footer>
+  </div>
+</body>
+</html>

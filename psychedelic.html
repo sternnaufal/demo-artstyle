@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychedelic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #f0e0d0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .liquid-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      animation: liquid-shift 12s ease-in-out infinite;
+      background:
+        radial-gradient(ellipse at 20% 30%, #ff0066 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, #ffcc00 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 70%, #00ccff 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, #ff00cc 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, #cc00ff 0%, transparent 50%);
+      background-blend-mode: screen;
+      opacity: 0.15;
+    }
+    @keyframes liquid-shift {
+      0%,100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.05) rotate(3deg); }
+      50% { transform: scale(0.95) rotate(-2deg); }
+      75% { transform: scale(1.02) rotate(4deg); }
+    }
+    .warp-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent, transparent 20px,
+        rgba(255,255,255,0.01) 20px, rgba(255,255,255,0.01) 21px
+      );
+    }
+    .container { position: relative; z-index: 2; width: 100%; padding: 2rem; }
+    header {
+      text-align: center;
+      padding: 4rem 0 3rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 700;
+      font-style: italic;
+      background: linear-gradient(135deg, #ff0066, #ffcc00, #00ccff, #ff00cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: hue-shift 6s linear infinite;
+      letter-spacing: 4px;
+    }
+    @keyframes hue-shift {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    header .sub {
+      font-size: 0.8rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #6a4a6a;
+      margin-top: 1rem;
+      animation: blink 2s step-end infinite;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    .trip-card {
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      animation: card-warp 4s ease-in-out infinite;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(10,10,10,0.4);
+      backdrop-filter: blur(10px);
+    }
+    .trip-card:nth-child(1) { animation-delay: 0s; }
+    .trip-card:nth-child(2) { animation-delay: 1s; }
+    .trip-card:nth-child(3) { animation-delay: 2s; }
+    @keyframes card-warp {
+      0%,100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.02) rotate(1deg); }
+      75% { transform: scale(0.98) rotate(-1deg); }
+    }
+    .trip-card .icon { font-size: 3rem; margin-bottom: 1rem; filter: saturate(2); }
+    .trip-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #ff0066, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .trip-card p { font-size: 0.8rem; color: #8a7a7a; line-height: 1.6; }
+    .liquid-type {
+      text-align: center;
+      padding: 3rem;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .liquid-type p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #ff00cc, #ffcc00, #00ccff, #ff0066);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 300% 300%;
+      animation: liquid-type 5s ease-in-out infinite;
+    }
+    @keyframes liquid-type {
+      0%,100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .liquid-type .small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #5a3a5a;
+      margin-top: 1rem;
+      -webkit-text-fill-color: initial;
+      background: none;
+      animation: none;
+    }
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 800px;
+      margin: 3rem auto;
+      text-align: center;
+    }
+    .poster-item {
+      padding: 2rem 0.5rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.7rem;
+      color: #6a4a6a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .poster-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,0,102,0.05), rgba(0,204,255,0.05));
+    }
+    .style-specs { margin: 3rem auto; max-width: 1000px; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(255,0,102,0.08); background: rgba(10,10,10,0.3); backdrop-filter: blur(4px); }
+    .spec-card h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; color: #ff0066; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #8a7a7a; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255,0,102,0.05);
+      font-size: 0.6rem;
+      letter-spacing: 6px;
+      color: #3a1a3a;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .masonry { grid-template-columns: 1fr; }
+      .poster-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="liquid-bg"></div>
+  <div class="warp-overlay"></div>
+  <div class="container">
+    <header>
+      <h1>Psychedelic</h1>
+      <div class="sub">turn on · tune in · drop out</div>
+    </header>
+    <div class="liquid-type">
+      <p>""Let the colors bleed into each other."</p>
+      <div class="small">— the mind expands</div>
+    </div>
+    <div class="masonry">
+      <div class="trip-card">
+        <div class="icon">🌀</div>
+        <h3>Swirling Color</h3>
+        <p>Liquid light shows and kaleidoscopic patterns. Color that moves, breathes, and transforms before your eyes.</p>
+      </div>
+      <div class="trip-card">
+        <div class="icon">🎸</div>
+        <h3>Concert Poster</h3>
+        <p>San Francisco 1967 — psychedelic posters for the Grateful Dead, Jefferson Airplane. Undulating letters, vibrating colors.</p>
+      </div>
+      <div class="trip-card">
+        <div class="icon">👁️</div>
+        <h3>Third Eye</h3>
+        <p>Eastern spirituality meets western counterculture. The third eye open — seeing beyond the veil of ordinary reality.</p>
+      </div>
+    </div>
+    <div class="poster-grid">
+      <div class="poster-item">⚡fillmore</div>
+      <div class="poster-item">🌀avalon</div>
+      <div class="poster-item">🎵1967</div>
+      <div class="poster-item">🌈summer</div>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Expanded, vibrant, transcendental — reality as a swirling kaleidoscope. Anti-establishment, spiritual, experimental.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1965–1975. San Francisco counterculture. Key artists: Victor Moscoso, Wes Wilson, Rick Griffin, Peter Max.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Fluorescent hot pink (#ff0066), electric yellow (#ffcc00), cyan (#00ccff), violet (#cc00ff). High-contrast clashing + blending.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Undulating, warped, hand-drawn lettering. Playfair Display (italic) for elegance. Letters that writhe and flow like smoke.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Swirling patterns, kaleidoscopic colors, vibrating edges, liquid typography, third eye motifs, concert poster style, optical art.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>🌀 1967 · SUMMER OF LOVE · SAN FRANCISCO 🌀</span>
+    </footer>
+  </div>
+</body>
+</html>

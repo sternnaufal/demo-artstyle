@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rococo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'EB Garamond', serif;
+      background: #faf0e6;
+      color: #3a2a1a;
+      min-height: 100vh;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(255,215,180,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(255,200,220,0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container { width: 100%; padding: 2rem; position: relative; z-index: 1; }
+    .border-ornate {
+      border: 2px solid #d4c4a8;
+      padding: 1rem;
+      position: relative;
+    }
+    .border-ornate::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: -6px;
+      right: -6px; bottom: -6px;
+      border: 1px solid #e8dcc8;
+      pointer-events: none;
+    }
+    .border-ornate .corner {
+      position: absolute;
+      width: 30px; height: 30px;
+      border: 1px solid #d4c4a8;
+      border-radius: 50%;
+    }
+    .border-ornate .corner.tl { top: -15px; left: -15px; }
+    .border-ornate .corner.tr { top: -15px; right: -15px; }
+    .border-ornate .corner.bl { bottom: -15px; left: -15px; }
+    .border-ornate .corner.br { bottom: -15px; right: -15px; }
+    header {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      position: relative;
+    }
+    header::after {
+      content: '❀';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #d4a888;
+      font-size: 1.2rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #5a3a2a;
+      letter-spacing: 2px;
+    }
+    header .sub {
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #b89880;
+      margin-top: 0.75rem;
+    }
+    .shell-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+    .shell-card {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255,255,255,0.3);
+      border: 1px solid rgba(200,180,160,0.15);
+      position: relative;
+      border-radius: 30px 10px 30px 10px;
+    }
+    .shell-card::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 1px solid rgba(200,180,160,0.1);
+      border-radius: 35px 15px 35px 15px;
+      pointer-events: none;
+    }
+    .shell-card .icon { font-size: 2.5rem; margin-bottom: 0.75rem; opacity: 0.7; }
+    .shell-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; font-style: italic; color: #6a4a3a; margin-bottom: 0.5rem; }
+    .shell-card p { font-size: 0.8rem; color: #8a7a6a; line-height: 1.6; }
+    .rocailles {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+    .rocailles .panel {
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(200,180,160,0.08);
+    }
+    .rocailles .panel .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      background: linear-gradient(135deg, #e8c8a8, #d4a888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .rocailles .panel h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #6a4a3a;
+      margin: 0.5rem 0;
+    }
+    .rocailles .panel p { font-size: 0.75rem; color: #8a7a6a; line-height: 1.5; }
+    .curve-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+    .curve-item {
+      padding: 0.5rem 1.5rem;
+      border: 1px solid rgba(200,180,160,0.1);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #b89880;
+      border-radius: 20px 5px 20px 5px;
+    }
+    .style-specs { margin: 3rem auto; max-width: 1000px; padding: 0 2rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .spec-card { padding: 1.25rem; border: 1px solid rgba(200,180,160,0.15); background: rgba(255,255,255,0.3); border-radius: 20px 5px 20px 5px; }
+    .spec-card h3 { font-family: 'Playfair Display', serif; font-size: 0.8rem; font-style: italic; margin-bottom: 0.5rem; color: #d4a888; }
+    .spec-card p { font-size: 0.8rem; line-height: 1.6; color: #7a6a5a; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(200,180,160,0.08);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #b89880;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      .shell-grid { grid-template-columns: 1fr 1fr; }
+      .rocailles { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="border-ornate">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+      <header>
+        <h1>Rococo</h1>
+        <div class="sub">ornament · frivolity · light</div>
+      </header>
+    </div>
+    <div class="shell-grid">
+      <div class="shell-card">
+        <div class="icon">🐚</div>
+        <h3>Rocaille</h3>
+        <p>Shellwork and pebble motifs — the origin of the name "Rococo." Nature rendered as decorative fantasy.</p>
+      </div>
+      <div class="shell-card">
+        <div class="icon">🌿</div>
+        <h3>Arabesque</h3>
+        <p>Flowing, sinuous curves and foliage. Asymmetrical scrollwork that dances across walls and ceilings.</p>
+      </div>
+      <div class="shell-card">
+        <div class="icon">✨</div>
+        <h3>Pastel</h3>
+        <p>Soft pinks, pale blues, mint greens, cream. The palette of pleasure and lightness.</p>
+      </div>
+      <div class="shell-card">
+        <div class="icon">🪞</div>
+        <h3>Mirror</h3>
+        <p>Gilded mirrors amplifying light and space. The Hall of Mirrors — reality multiplied into infinity.</p>
+      </div>
+    </div>
+    <div class="rocailles">
+      <div class="panel">
+        <div class="num">1715</div>
+        <h3>Régence</h3>
+        <p>Transition from Baroque grandeur to lighter, more intimate elegance.</p>
+      </div>
+      <div class="panel">
+        <div class="num">1730</div>
+        <h3>Louis XV</h3>
+        <p>Peak Rococo. The royal court of France — Fragonard, Boucher, Watteau. Art as pleasure.</p>
+      </div>
+      <div class="panel">
+        <div class="num">1760</div>
+        <h3>Decline</h3>
+        <p>Neoclassicism rises. Rococo deemed too frivolous. The Revolution changes everything.</p>
+      </div>
+    </div>
+    <div class="curve-row">
+      <span class="curve-item">S-curve</span>
+      <span class="curve-item">c-scroll</span>
+      <span class="curve-item">rocaille</span>
+      <span class="curve-item">cartouche</span>
+    </div>
+    <section class="style-specs">
+      <div class="specs-grid">
+        <div class="spec-card"><h3>Mood</h3><p>Playful, light, indulgent — art as pleasure, not purpose. Frivolous, ornate, unapologetically decorative.</p></div>
+        <div class="spec-card"><h3>Era</h3><p>1715–1770s France. Louis XV reign. Key artists: François Boucher, Jean-Honoré Fragonard, Antoine Watteau.</p></div>
+        <div class="spec-card"><h3>Colors</h3><p>Pastels — soft pink, powder blue, mint, cream, lavender. Accented with gold leaf and gilded white.</p></div>
+        <div class="spec-card"><h3>Typography</h3><p>Playfair Display (italic serif) — elegant, refined, aristocratic. EB Garamond for body — classical, readable.</p></div>
+        <div class="spec-card"><h3>Characteristics</h3><p>Asymmetrical scrollwork (rocaille), shell motifs, pastel palette, gilded frames, arabesques, pastoral scenes, pleasure.</p></div>
+      </div>
+    </section>
+    <footer>
+      <span>❀ rococo · 1715–1770 · l'art pour le plaisir ❀</span>
+    </footer>
+  </div>
+</body>
+</html>
