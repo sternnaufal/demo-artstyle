@@ -1,0 +1,51 @@
+name: Notify Search Engines
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: IndexNow
+        run: |
+          curl -sS "https://api.indexnow.org/indexnow?url=https://demo.naufalrakha.my.id/&key=${{ secrets.INDEXNOW_KEY }}" -o /dev/null -w "IndexNow: %{http_code}\n" || echo "IndexNow skipped (no key)"
+
+      - name: Submit sitemap to Google Search Console
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          python3 -c "
+import json, time, base64, subprocess, urllib.request, urllib.parse, sys, os
+key_raw = os.environ.get('GCP_SA_KEY', '')
+if not key_raw:
+    print('GCP_SA_KEY not set, skipping')
+    sys.exit(0)
+sa = json.loads(key_raw)
+now = int(time.time())
+def b64(d):
+    return base64.urlsafe_b64encode(json.dumps(d).encode()).rstrip(b'=').decode()
+header = b64({'alg': 'RS256', 'typ': 'JWT'})
+claim = b64({'iss': sa['client_email'], 'scope': 'https://www.googleapis.com/auth/webmasters', 'aud': 'https://oauth2.googleapis.com/token', 'iat': now, 'exp': now + 3600})
+with open('/tmp/gcp-key.pem', 'w') as f: f.write(sa['private_key'])
+msg = (header + '.' + claim).encode()
+sig = subprocess.run(['openssl', 'dgst', '-sha256', '-sign', '/tmp/gcp-key.pem'], input=msg, capture_output=True).stdout
+sig_b64 = base64.urlsafe_b64encode(sig).rstrip(b'=').decode()
+assertion = header + '.' + claim + '.' + sig_b64
+data = 'grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=' + urllib.parse.quote(assertion)
+req = urllib.request.Request('https://oauth2.googleapis.com/token', data.encode(), {'Content-Type': 'application/x-www-form-urlencoded'})
+access_token = json.load(urllib.request.urlopen(req))['access_token']
+gsc_site = 'sc-domain:demo.naufalrakha.my.id'
+req2 = urllib.request.Request(f'https://www.googleapis.com/webmasters/v3/sites/{urllib.parse.quote(gsc_site, safe=\"\")}/sitemaps')
+req2.add_header('Authorization', f'Bearer {access_token}')
+sitemaps = [s['path'] for s in json.load(urllib.request.urlopen(req2)).get('sitemap', [])]
+sitemap_url = 'https://demo.naufalrakha.my.id/sitemap.xml'
+if sitemap_url in sitemaps:
+    print(f'GSC: sitemap verified ({sitemap_url})')
+else:
+    print(f'GSC: sitemap NOT registered. Submit manually. Available: {sitemaps}')
+" || echo "GSC step failed (non-critical)"
+          rm -f /tmp/gcp-key.pem
