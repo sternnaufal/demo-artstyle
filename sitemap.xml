@@ -13,6 +13,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/barbiecore.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/bauhaus.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -49,6 +55,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/corporate_memphis.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/dada.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -61,14 +73,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/glassmorphism.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/gothic.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://demo.naufalrakha.my.id/grunge.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://demo.naufalrakha.my.id/isometric.html</loc>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -195,6 +213,12 @@
   <url>
     <loc>https://demo.naufalrakha.my.id/typodriven.html</loc>
     <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/ukiyo_e.html</loc>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

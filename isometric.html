@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isometric</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .page-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .iso-card {
+      max-width: 860px;
+      width: 100%;
+      background: #16213e;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 32px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .grid-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .content { position: relative; z-index: 1; }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #e0e0ff;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+    .sub {
+      font-size: 0.95rem;
+      color: #8888aa;
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+    .scene {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .ic {
+      flex-shrink: 0;
+      animation: floatIso 3s ease-in-out infinite;
+    }
+    .ic-2 { animation-delay: 0.5s; }
+    .ic-3 { animation-delay: 1s; }
+    @keyframes floatIso {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .stack { display: flex; flex-direction: column; align-items: center; }
+    .features-iso {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .f-iso {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 1.25rem;
+    }
+    .f-iso h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e0e0ff;
+      margin-bottom: 0.4rem;
+    }
+    .f-iso p {
+      font-size: 0.8rem;
+      color: #8888aa;
+      line-height: 1.6;
+    }
+    .f-iso .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #e94560;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .spec-row-iso {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      justify-content: center;
+    }
+    .tag-iso {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8888aa;
+      border-radius: 4px;
+    }
+    .tag-iso.accent { border-color: #e94560; color: #e94560; }
+    .btn-iso {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.7rem 2rem;
+      background: #e94560;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .btn-iso:hover { background: #ff6b81; transform: translateY(-2px); }
+    @media (max-width: 600px) {
+      .iso-card { padding: 1.5rem; }
+      h1 { font-size: 2rem; }
+      .scene { gap: 1.5rem; }
+      .ic { width: 60px !important; height: auto !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="iso-card animate__animated animate__fadeInUp">
+      <div class="grid-bg"></div>
+      <div class="content">
+        <h1>Isometric</h1>
+        <p class="sub">Axonometric projection &mdash; three dimensions, no perspective.</p>
+
+        <div class="scene">
+          <svg class="ic" width="100" height="120" viewBox="0 0 100 120">
+            <polygon points="50,0 100,25 50,50 0,25" fill="#0f3460" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            <polygon points="0,25 50,50 50,100 0,75" fill="#1a3a6a" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            <polygon points="50,50 100,25 100,75 50,100" fill="#0a2647" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+          </svg>
+          <div class="stack">
+            <svg class="ic ic-2" width="80" height="140" viewBox="0 0 80 140">
+              <polygon points="40,0 80,20 40,40 0,20" fill="#533483" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+              <polygon points="0,20 40,40 40,110 0,90" fill="#3a1f6a" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+              <polygon points="40,40 80,20 80,90 40,110" fill="#2a1047" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            </svg>
+            <div style="margin-top:0.5rem;font-size:0.65rem;color:#8888aa;">30&deg; &times; 30&deg;</div>
+          </div>
+          <svg class="ic ic-3" width="80" height="100" viewBox="0 0 80 100">
+            <polygon points="40,0 80,20 40,40 0,20" fill="#e94560" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            <polygon points="0,20 40,40 40,80 0,60" fill="#c23550" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            <polygon points="40,40 80,20 80,60 40,80" fill="#a0203a" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+          </svg>
+        </div>
+
+        <div class="features-iso">
+          <div class="f-iso">
+            <div class="num">120&deg;</div>
+            <h3>Perfect Angles</h3>
+            <p>Every axis separated by exactly 120 degrees. No vanishing points, no distortion.</p>
+          </div>
+          <div class="f-iso">
+            <div class="num">2:1</div>
+            <h3>Pixel Ratio</h3>
+            <p>Classic isometric grid uses 2:1 pixel stepping. Moves right 2, up 1 &mdash; the golden rule.</p>
+          </div>
+          <div class="f-iso">
+            <div class="num">CSS</div>
+            <h3>3D Transforms</h3>
+            <p>Modern CSS can render isometric scenes with <code>rotateX(54deg) rotateZ(-45deg)</code>.</p>
+          </div>
+          <div class="f-iso">
+            <div class="num">Games</div>
+            <h3>Gaming Roots</h3>
+            <p>From Q*bert to SimCity, isometric was the go-to for pseudo-3D in the 80s and 90s.</p>
+          </div>
+        </div>
+
+        <div class="spec-row-iso">
+          <span class="tag-iso accent">Mood: Technical &amp; clean</span>
+          <span class="tag-iso">Era: 1980s&ndash;present</span>
+          <span class="tag-iso">Colors: Deep navy, purple, accent red</span>
+          <span class="tag-iso">Font: Space Grotesk</span>
+        </div>
+
+        <div style="text-align:center;">
+          <a href="#" class="btn-iso">Build in 3D</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:1rem 0;position:relative;z-index:1;margin-top:2rem;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;font-size:0.8rem;">
+        <a href="https://naufalrakha.my.id" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,255,0.1);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.5)'">Root</a>
+        <a href="https://digital.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,255,0.1);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.5)'">Digital</a>
+        <a href="https://demo.naufalrakha.my.id" target="_blank" style="color:#e0e0ff;text-decoration:none;padding:0.25rem 0.5rem;border:1px solid #e0e0ff;font-weight:600;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#e0e0ff'">Demo Artstyle</a>
+        <a href="https://koleksilama.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,255,0.1);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.5)'">Koleksi</a>
+        <a href="https://webapps.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,255,0.1);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.5)'">WebApps</a>
+        <a href="https://blog.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,255,0.1);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.5)'">Blog</a>
+      </div>
+    </div>
+    <footer style="text-align:center;padding:0.5rem 0 1.5rem;font-size:0.75rem;color:rgba(255,255,255,0.3);position:relative;z-index:1;">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id" style="color:rgba(255,255,255,0.4);">Naufal Rakha Putra</a>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

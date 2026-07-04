@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Western</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #d9c8a8 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8a88a' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .page-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .wanted-paper {
+      max-width: 800px;
+      width: 100%;
+      background: #f5edd6;
+      background-image: linear-gradient(#e8dcc4 1px, transparent 1px), linear-gradient(90deg, #e8dcc4 1px, transparent 1px);
+      background-size: 40px 40px;
+      border: 6px solid #6b3a2a;
+      border-radius: 4px;
+      padding: 3rem;
+      box-shadow: 8px 8px 0 #4a251a, 0 12px 40px rgba(0,0,0,0.25);
+      position: relative;
+    }
+    .wanted-paper::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .wanted-paper > * { position: relative; z-index: 1; }
+    .star-badge {
+      font-size: 2.5rem;
+      text-align: center;
+      color: #6b3a2a;
+      margin-bottom: 0.25rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 4rem;
+      text-align: center;
+      color: #2c1810;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+      text-shadow: 1px 1px 0 #a08060;
+    }
+    .subhead {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #6b3a2a;
+      border-top: 2px solid #6b3a2a;
+      border-bottom: 2px solid #6b3a2a;
+      padding: 0.5rem 0;
+      margin-bottom: 2rem;
+      letter-spacing: 0.15em;
+    }
+    .poster-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .poster-item {
+      background: rgba(255,255,240,0.6);
+      border: 2px solid #8b6e4a;
+      border-radius: 2px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .poster-item i {
+      font-size: 2rem;
+      color: #6b3a2a;
+      margin-bottom: 0.5rem;
+    }
+    .poster-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #2c1810;
+      margin-bottom: 0.4rem;
+    }
+    .poster-item p {
+      font-size: 0.85rem;
+      color: #5a4a3a;
+      line-height: 1.5;
+    }
+    .wanted-footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #6b3a2a;
+      font-size: 0.9rem;
+    }
+    .wanted-footer strong {
+      font-style: normal;
+      font-size: 1.1rem;
+    }
+    .btn-west {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      background: #6b3a2a;
+      color: #f5edd6;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      border: 2px solid #4a251a;
+      transition: all 0.2s;
+    }
+    .btn-west:hover {
+      background: #4a251a;
+      transform: scale(1.02);
+    }
+    .spec-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .spec-tag {
+      background: rgba(107,58,42,0.08);
+      border: 1px solid #8b6e4a;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #5a4a3a;
+    }
+    @media (max-width: 600px) {
+      .poster-grid { grid-template-columns: 1fr; }
+      .wanted-paper { padding: 1.5rem; }
+      h1 { font-size: 2.2rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="wanted-paper animate__animated animate__fadeIn">
+      <div class="star-badge">&#9733; &#9733; &#9733;</div>
+      <h1>WESTERN</h1>
+      <div class="subhead">Wanted: Art Style of the Frontier</div>
+
+      <div class="poster-grid">
+        <div class="poster-item">
+          <i class="fas fa-hat-cowboy"></i>
+          <h3>Cowboy Spirit</h3>
+          <p>Rugged individualism meets wide-open plains. Leather, dust, and the code of the West.</p>
+        </div>
+        <div class="poster-item">
+          <i class="fas fa-horse-head"></i>
+          <h3>By Horseback</h3>
+          <p>Travel across mesas and canyons. The horse remains the true symbol of frontier mobility.</p>
+        </div>
+        <div class="poster-item">
+          <i class="fas fa-revolver"></i>
+          <h3>Six-Shooter</h3>
+          <p>Law &amp; disorder at high noon. The revolver defines the era of outlaws and sheriffs alike.</p>
+        </div>
+        <div class="poster-item">
+          <i class="fas fa-train"></i>
+          <h3>Iron Horse</h3>
+          <p>The railroad tamed the wilderness. Steel tracks pushed civilization ever westward.</p>
+        </div>
+      </div>
+
+      <div class="spec-row">
+        <span class="spec-tag">Mood: Rugged &amp; nostalgic</span>
+        <span class="spec-tag">Era: 1860s – 1890s</span>
+        <span class="spec-tag">Colors: Tan, rust, brown, ochre</span>
+        <span class="spec-tag">Font: Playfair Display</span>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="#" class="btn-west"><i class="fas fa-scroll"></i> Ride Along</a>
+      </div>
+
+      <div class="wanted-footer">
+        <strong>WANTED</strong> &mdash; Alive or dead &mdash; for the boldest design this side of the Mississippi.
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:1rem 0;position:relative;z-index:1;margin-top:2rem;">
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;font-size:0.8rem;">
+        <a href="https://naufalrakha.my.id" target="_blank" style="color:rgba(255,255,240,0.7);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,240,0.3);border-radius:50px;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,240,0.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,240,0.7)'">Root</a>
+        <a href="https://digital.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,240,0.7);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,240,0.3);border-radius:50px;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,240,0.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,240,0.7)'">Digital</a>
+        <a href="https://demo.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,240,0.9);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,240,0.6);border-radius:50px;font-weight:600;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,240,0.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,240,0.9)'">Demo Artstyle</a>
+        <a href="https://koleksilama.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,240,0.7);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,240,0.3);border-radius:50px;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,240,0.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,240,0.7)'">Koleksi</a>
+        <a href="https://webapps.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,240,0.7);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,240,0.3);border-radius:50px;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,240,0.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,240,0.7)'">WebApps</a>
+        <a href="https://blog.naufalrakha.my.id" target="_blank" style="color:rgba(255,255,240,0.7);text-decoration:none;padding:0.25rem 0.5rem;border:1px solid rgba(255,255,240,0.3);border-radius:50px;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,240,0.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,240,0.7)'">Blog</a>
+      </div>
+    </div>
+    <footer style="text-align:center;padding:0.5rem 0 1.5rem;font-size:0.75rem;color:rgba(255,255,240,0.4);position:relative;z-index:1;">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id" style="color:rgba(255,255,240,0.5);">Naufal Rakha Putra</a>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
