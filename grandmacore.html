@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grandmacore — Web Landing</title>
+  <meta name="description" content="Grandmacore — kehangatan rumah nenek: doily renda, wallpaper bunga, rajutan crochet, teh sore, dan keramahan vintage.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/grandmacore.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Grandmacore — Web Landing">
+  <meta property="og:description" content="Grandmacore — kehangatan rumah nenek: doily renda, wallpaper bunga, rajutan crochet, teh sore.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/grandmacore.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grandmacore — Web Landing">
+  <meta name="twitter:description" content="Grandmacore — doily renda, wallpaper bunga, teh sore, keramahan vintage.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(180,120,90,0.08) 0 3px, transparent 3px 28px),
+        radial-gradient(circle at 85% 70%, rgba(140,110,80,0.07) 0 3px, transparent 3px 34px),
+        linear-gradient(180deg, #faf3e8 0%, #f3e6d5 100%);
+      color: #6a4a35;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: #8a5a3a; }
+    .nav-links a { color: #8a6a50; text-decoration: none; font-weight: 600; font-size: 0.85rem; margin-left: 1.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #b07040; }
+
+    .hero { text-align: center; padding: 3rem 1rem 3.5rem; }
+    .hero .doily {
+      width: 90px; height: 45px;
+      margin: 0 auto 1.25rem;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 45'%3E%3Cg fill='none' stroke='%23b07040' stroke-width='1'%3E%3Ccircle cx='45' cy='45' r='10'/%3E%3Ccircle cx='45' cy='45' r='16'/%3E%3Ccircle cx='45' cy='45' r='22'/%3E%3Ccircle cx='45' cy='45' r='28'/%3E%3Ccircle cx='45' cy='45' r='34'/%3E%3Ccircle cx='45' cy='45' r='40'/%3E%3C/g%3E%3C/svg%3E") no-repeat center bottom;
+      background-size: contain;
+      opacity: 0.7;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      color: #6a4a35;
+    }
+    .hero p { max-width: 520px; margin: 0 auto 2rem; color: #8a6a50; font-size: 1.05rem; line-height: 1.8; }
+    .btn-grandma {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      padding: 0.9rem 2.5rem;
+      background: #b07040;
+      color: #faf3e8;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid #8a5a3a;
+      box-shadow: 0 4px 12px rgba(176,112,64,0.3);
+      transition: all 0.25s;
+    }
+    .btn-grandma:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(176,112,64,0.4); }
+
+    /* Floral wallpaper panel */
+    .wallpaper {
+      border: 6px double #c49a70;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 15% 25%, #e8c9b0 0 3px, transparent 3px 14px),
+        radial-gradient(circle at 85% 70%, #d8b898 0 3px, transparent 3px 14px),
+        radial-gradient(circle at 50% 90%, #e0bca0 0 2px, transparent 2px 10px),
+        linear-gradient(160deg, #f7ead9, #efdcc3);
+      padding: 2.5rem;
+      margin: 0 auto 3rem;
+      max-width: 640px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(140,110,80,0.15);
+    }
+    .wallpaper .inner { border: 2px dashed rgba(176,112,64,0.5); border-radius: 12px; padding: 1.5rem; }
+    .wallpaper h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; margin-bottom: 0.75rem; color: #8a5a3a; }
+    .wallpaper p { font-size: 0.95rem; color: #a08060; line-height: 1.7; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: #fffdf8;
+      border: 3px solid #e8d0b8;
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .card:hover { border-color: #b07040; transform: translateY(-5px); box-shadow: 0 8px 25px rgba(176,112,64,0.15); }
+    .card .icon { font-size: 2rem; color: #b07040; display: block; margin-bottom: 0.75rem; }
+    .card h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.15rem; margin-bottom: 0.5rem; color: #6a4a35; }
+    .card p { font-size: 0.9rem; color: #8a6a50; line-height: 1.7; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .spec { background: #fffdf8; border: 3px solid #f0dcc4; border-radius: 16px; padding: 1.5rem; text-align: center; }
+    .spec h3 { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: #b07040; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; color: #8a6a50; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #8a6a50; text-decoration: none; font-weight: 600; padding: 0.35rem 0.9rem; border: 2px solid #e0c8ac; border-radius: 50px; transition: all 0.2s; }
+    .links a:hover { background: #b07040; color: #fff; border-color: #b07040; }
+    .links a.current { background: #b07040; color: #fff; border-color: #b07040; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #b09070; }
+    .footer-text a { color: #8a5a3a; text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 2rem 0.5rem 2.5rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">Nenek's Cozy Home</div>
+      <div class="nav-links">
+        <a href="#">Dapur</a>
+        <a href="#">Taman</a>
+        <a href="#">Rajutan</a>
+        <a href="#">Resep</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="doily animate__animated animate__fadeInDown"></div>
+      <h1 class="animate__animated animate__fadeIn">Selamat Datang di<br>Rumah Nenek</h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Grandmacore merayakan kehangatan masa kecil: bau teh melati, selimut rajutan, dan senyum yang selalu menyambut.</p>
+      <a href="#" class="btn-grandma animate__animated animate__fadeIn" style="animation-delay:0.3s">Duduk &amp; Ngobrol</a>
+    </section>
+
+    <div class="wallpaper">
+      <div class="inner">
+        <h3>Ruang Tamu Favorit</h3>
+        <p>Wallpaper bunga, kursi goyang, dan taplak renda — tempat terbaik untuk bercerita panjang.</p>
+      </div>
+    </div>
+
+    <section class="cards">
+      <div class="card">
+        <span class="icon"><i class="fas fa-cookie-bite"></i></span>
+        <h3>Resep Warisan</h3>
+        <p>Kue kering dan roti buatan sendiri — aroma yang tak bisa ditiru pabrik.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-mug-hot"></i></span>
+        <h3>Teh Sore</h3>
+        <p>Melati atau chamomile — secangkir teh selalu jadi jawaban untuk apa pun.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-circle-notch"></i></span>
+        <h3>Rajutan Crochet</h3>
+        <p>Selimut, taplak, dan doily yang dibuat dengan kesabaran dan cinta.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-sun"></i></span>
+        <h3>Pagi di Taman</h3>
+        <p>Menyiram bunga, memetik sayur, dan menikmati udara pagi yang segar.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Hangat, nyaman, nostalgia</p></div>
+      <div class="spec"><h3>Era</h3><p>1950–70-an</p></div>
+      <div class="spec"><h3>Colors</h3><p>Krem, cokelat, terakota</p></div>
+      <div class="spec"><h3>Typography</h3><p>Playfair Italic + Quicksand</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Doily, bunga, vintage</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Noir — Web Landing</title>
+  <meta name="description" content="Film Noir — hitam-putih dramatis ala detektif 1940-an: bayangan tajam, garis venetian blind, tipografi serif tegas, dan suasana misteri.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/noir.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Film Noir — Web Landing">
+  <meta property="og:description" content="Film Noir — hitam-putih dramatis ala detektif 1940-an: bayangan tajam, garis venetian blind, misteri.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/noir.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Film Noir — Web Landing">
+  <meta name="twitter:description" content="Film Noir — hitam-putih dramatis, bayangan tajam, misteri.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: #0d0d0d;
+      color: #e8e4dc;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+
+    /* Venetian blind shadow overlay */
+    .shadows {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(90deg, rgba(0,0,0,0.35) 0 14px, transparent 14px 42px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .nav { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #2a2a2a; margin-bottom: 3.5rem; }
+    .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.1em; color: #f0ece4; }
+    .logo .dot { color: #888; }
+    .nav-links a { color: #9a9488; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.15em; margin-left: 1.75rem; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: #f0ece4; }
+
+    .hero { position: relative; z-index: 1; display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3.5rem; }
+    .hero .case-no { font-size: 0.7rem; letter-spacing: 0.3em; color: #6a6458; margin-bottom: 1rem; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      color: #f0ece4;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.8);
+    }
+    .hero h1 em { font-style: italic; color: #9a9488; }
+    .hero p { color: #9a9488; font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; max-width: 420px; }
+    .btn-noir {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding: 0.9rem 2.25rem;
+      border: 1px solid #f0ece4;
+      color: #f0ece4;
+      text-decoration: none;
+      background: linear-gradient(90deg, #1a1a1a 0 50%, #0d0d0d 50%);
+      background-size: 200% 100%;
+      transition: background-position 0.3s, color 0.3s;
+    }
+    .btn-noir:hover { background-position: -100% 0; color: #0d0d0d; }
+
+    /* Photo frame silhouette */
+    .photo {
+      background: linear-gradient(160deg, #2a2a2a 0%, #1a1a1a 50%, #242424 100%);
+      border: 1px solid #3a3a3a;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    .photo::before {
+      content: '';
+      display: block;
+      height: 200px;
+      background:
+        radial-gradient(ellipse at 30% 20%, #333 0%, transparent 60%),
+        linear-gradient(90deg, transparent 0 45%, rgba(255,255,255,0.08) 45% 46%, transparent 46%);
+    }
+    .photo .caption { font-size: 0.7rem; letter-spacing: 0.25em; color: #6a6458; text-align: center; margin-top: 1rem; text-transform: uppercase; }
+
+    .cards { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .card { border: 1px solid #2a2a2a; background: #111; padding: 1.75rem; transition: all 0.25s; }
+    .card:hover { border-color: #f0ece4; transform: translateY(-4px); }
+    .card .n { font-size: 0.65rem; letter-spacing: 0.25em; color: #6a6458; display: block; margin-bottom: 0.75rem; }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.5rem; color: #f0ece4; }
+    .card p { font-size: 0.85rem; color: #9a9488; line-height: 1.7; }
+
+    .specs { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; padding: 2rem 0; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; margin-bottom: 3rem; }
+    .spec { text-align: center; }
+    .spec h3 { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: #6a6458; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.9rem; color: #e8e4dc; }
+
+    .links { position: relative; z-index: 1; text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #9a9488; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid #2a2a2a; transition: all 0.2s; }
+    .links a:hover { border-color: #f0ece4; color: #f0ece4; }
+    .links a.current { border-color: #f0ece4; color: #f0ece4; }
+    .footer-text { position: relative; z-index: 1; text-align: center; padding: 0.75rem; font-size: 0.72rem; color: #5a554a; }
+    .footer-text a { color: #9a9488; text-decoration: none; }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="shadows"></div>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">MIDNIGHT<span class="dot">.</span></div>
+      <div class="nav-links">
+        <a href="#">Kasus</a>
+        <a href="#">File</a>
+        <a href="#">Alibi</a>
+        <a href="#">Kontak</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="case-no animate__animated animate__fadeIn">CASE FILE N&deg;1947</div>
+        <h1 class="animate__animated animate__fadeIn">Malam yang<br><em>Berbicara</em></h1>
+        <p class="animate__animated animate__fadeIn" style="animation-delay:0.15s">Kota tidur, rahasia bangun. Detektif hitam-putih menelusuri bayangan di bawah cahaya lampu venetian blind.</p>
+        <a href="#" class="btn-noir animate__animated animate__fadeIn" style="animation-delay:0.25s">Buka Kasus</a>
+      </div>
+      <div class="photo animate__animated animate__fadeInRight">
+        <div class="silhouette" style="height:200px;background:radial-gradient(ellipse at 50% 100%, #2e2e2e 0%, #1a1a1a 60%);border-radius:50% 50% 0 0;"></div>
+        <div class="caption">Saksi di Kegelapan</div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <span class="n">FILE 01</span>
+        <h3>Bayangan Tajam</h3>
+        <p>Kontras hitam-putih tinggi dan bayangan tegas menciptakan drama visual.</p>
+      </div>
+      <div class="card">
+        <span class="n">FILE 02</span>
+        <h3>Venetian Blind</h3>
+        <p>Garis-garis cahaya horizontal ikonik yang menusuk ruangan gelap.</p>
+      </div>
+      <div class="card">
+        <span class="n">FILE 03</span>
+        <h3>Suara Narasi</h3>
+        <p>Monolog internal detektif — teks yang terasa seperti voice-over film.</p>
+      </div>
+      <div class="card">
+        <span class="n">FILE 04</span>
+        <h3>Femme Fatale</h3>
+        <p>Elemen misterius yang menggoda, tersembunyi di balik setiap sudut.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Misterius, dramatis, tegang</p></div>
+      <div class="spec"><h3>Era</h3><p>1940-an</p></div>
+      <div class="spec"><h3>Colors</h3><p>Hitam, putih, abu-abu</p></div>
+      <div class="spec"><h3>Typography</h3><p>Playfair + Plex Mono</p></div>
+      <div class="spec"><h3>Karakter</h3><p>High contrast, shadow, serif</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

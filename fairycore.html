@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fairycore — Web Landing</title>
+  <meta name="description" content="Fairycore — dunia peri yang whimsical: pastel lavender-pink, sparkle bintang, hutan ajaib, dan kelembutan dongeng.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/fairycore.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Fairycore — Web Landing">
+  <meta property="og:description" content="Fairycore — dunia peri whimsical: pastel lavender-pink, sparkle bintang, hutan ajaib, kelembutan dongeng.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/fairycore.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fairycore — Web Landing">
+  <meta name="twitter:description" content="Fairycore — pastel lavender-pink, sparkle, hutan ajaib.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(180deg, #f3e8ff 0%, #fce7f3 50%, #ede9fe 100%);
+      color: #6d4a8e;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Floating sparkles */
+    .sparkle { position: fixed; font-size: 1.2rem; color: #d8b4fe; pointer-events: none; z-index: 0; animation: floaty 8s ease-in-out infinite; }
+    .sp1 { top: 12%; left: 8%; animation-delay: 0s; }
+    .sp2 { top: 25%; right: 12%; animation-delay: -2s; }
+    .sp3 { bottom: 20%; left: 15%; animation-delay: -4s; }
+    .sp4 { bottom: 30%; right: 20%; animation-delay: -6s; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0) rotate(0); opacity: 0.7; } 50% { transform: translateY(-25px) rotate(15deg); opacity: 1; } }
+
+    .wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-weight: 700; font-size: 1.4rem; color: #7c5aa8; letter-spacing: 0.04em; }
+    .nav-links a { color: #8a6aae; text-decoration: none; font-weight: 600; font-size: 0.88rem; margin-left: 1.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #c084fc; }
+
+    .hero { text-align: center; padding: 3.5rem 1rem 4rem; }
+    .hero .wing { font-size: 2.2rem; color: #d8b4fe; display: block; margin-bottom: 1rem; text-shadow: 0 0 20px rgba(216,180,254,0.6); }
+    .hero h1 {
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      color: #6d4a8e;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(90deg, #c084fc, #f472b6);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { max-width: 520px; margin: 0 auto 2rem; color: #8a6aae; font-size: 1.05rem; line-height: 1.8; }
+    .btn-fairy {
+      display: inline-block;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(90deg, #c084fc, #f472b6);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(216,180,254,0.5);
+      transition: all 0.25s;
+    }
+    .btn-fairy:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(216,180,254,0.7); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border: 2px solid #e9d5ff;
+      border-radius: 24px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(216,180,254,0.25);
+      transition: all 0.25s;
+    }
+    .card:hover { transform: translateY(-5px); border-color: #c084fc; }
+    .card .icon { font-size: 2.2rem; display: block; margin-bottom: 1rem; }
+    .card:nth-child(1) .icon { color: #c084fc; } .card:nth-child(2) .icon { color: #f472b6; }
+    .card:nth-child(3) .icon { color: #a5b4fc; } .card:nth-child(4) .icon { color: #fbbf24; }
+    .card h3 { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #6d4a8e; }
+    .card p { font-size: 0.9rem; color: #8a6aae; line-height: 1.7; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .spec { background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); border: 2px solid #f3e8ff; border-radius: 18px; padding: 1.5rem; text-align: center; }
+    .spec h3 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #c084fc; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; color: #7c5aa8; font-weight: 600; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #8a6aae; text-decoration: none; font-weight: 600; padding: 0.35rem 0.9rem; border: 2px solid #e9d5ff; border-radius: 50px; transition: all 0.2s; }
+    .links a:hover { background: #c084fc; color: #fff; border-color: #c084fc; }
+    .links a.current { background: #c084fc; color: #fff; border-color: #c084fc; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #a78bca; }
+    .footer-text a { color: #7c5aa8; text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 2.5rem 0.5rem 3rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <span class="sparkle sp1">&#10024;</span>
+  <span class="sparkle sp2">&#10024;</span>
+  <span class="sparkle sp3">&#10024;</span>
+  <span class="sparkle sp4">&#10024;</span>
+
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">Fae Realm</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Kebun</a>
+        <a href="#">Dongeng</a>
+        <a href="#">Kontak</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="wing animate__animated animate__fadeInDown"><i class="fas fa-feather-alt"></i></span>
+      <h1 class="animate__animated animate__fadeIn">Temukan<br><span class="grad">Dunia Peri</span></h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Fairycore membawa kelembutan dongeng: bunga yang berbisik, debu peri yang berpendar, dan hutan yang penuh keajaiban.</p>
+      <a href="#" class="btn-fairy animate__animated animate__fadeIn" style="animation-delay:0.3s"><i class="fas fa-wand-magic-sparkles"></i> Masuk ke Dongeng</a>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <span class="icon"><i class="fas fa-sparkles"></i></span>
+        <h3>Debu Peri</h3>
+        <p>Sparkle melayang dan shimmer halus memberi kesan magis yang hidup.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-feather"></i></span>
+        <h3>Sayap Lembut</h3>
+        <p>Elemen organik, sudut membulat, dan gradasi pastel yang menenangkan.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-tree"></i></span>
+        <h3>Hutan Ajaib</h3>
+        <p>Nuansa lavender dan pink menghadirkan hutan yang hangat dan ramah.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-crown"></i></span>
+        <h3>Keagungan Kecil</h3>
+        <p>Detail whimsical — mahkota bunga, jamur, dan makhluk kecil yang menggemaskan.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Whimsical, lembut, magis</p></div>
+      <div class="spec"><h3>Era</h3><p>Dongeng abadi</p></div>
+      <div class="spec"><h3>Colors</h3><p>Lavender, pink, ungu muda</p></div>
+      <div class="spec"><h3>Typography</h3><p>Quicksand, rounded</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Sparkle, pastel, flora</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Futurism — Web Landing</title>
+  <meta name="description" content="Retro Futurism — Atomic Age 1950-an: bentuk starburst, roket, warna mustard-teal, dan optimisme masa depan masa lalu.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/retro_futurism.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Retro Futurism — Web Landing">
+  <meta property="og:description" content="Retro Futurism — Atomic Age 1950-an: starburst, roket, mustard-teal, optimisme masa depan masa lalu.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/retro_futurism.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retro Futurism — Web Landing">
+  <meta name="twitter:description" content="Retro Futurism — Atomic Age, starburst, roket, mustard-teal.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: #fdf6e3;
+      color: #3a3a2a;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-family: 'Righteous', sans-serif; font-size: 1.5rem; color: #c53d2f; letter-spacing: 0.02em; }
+    .nav-links a { color: #3a7a6a; text-decoration: none; font-weight: 500; font-size: 0.88rem; margin-left: 1.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #c53d2f; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3.5rem; }
+    .hero h1 {
+      font-family: 'Righteous', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      color: #3a3a2a;
+    }
+    .hero h1 .hl { color: #c53d2f; }
+    .hero h1 .hl2 { color: #3a7a6a; }
+    .hero p { color: #6a6a50; font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; max-width: 460px; }
+    .btn-atomic {
+      display: inline-block;
+      font-family: 'Righteous', sans-serif;
+      letter-spacing: 0.06em;
+      padding: 0.9rem 2.25rem;
+      background: #c53d2f;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      box-shadow: 0 5px 0 #8f2a1f;
+      transition: all 0.15s;
+    }
+    .btn-atomic:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #8f2a1f; }
+    .btn-atomic:active { transform: translateY(3px); box-shadow: 0 2px 0 #8f2a1f; }
+
+    /* Starburst + rocket art */
+    .atomic-art { position: relative; min-height: 320px; }
+    .starburst {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 280px; height: 280px;
+      background: repeating-conic-gradient(#f2c94c 0deg 6deg, transparent 6deg 18deg);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: pulse-rot 12s linear infinite;
+    }
+    @keyframes pulse-rot { to { transform: translate(-50%,-50%) rotate(360deg); } }
+    .rocket {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 120px; height: 190px;
+      background: linear-gradient(180deg, #c53d2f 0%, #e86a5a 50%, #f2c94c 50%);
+      border-radius: 60px 60px 20px 20px;
+      position: relative;
+    }
+    .rocket::before {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: -18px;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 28px solid transparent;
+      border-right: 28px solid transparent;
+      border-top: 40px solid #3a7a6a;
+    }
+    .rocket::after {
+      content: '';
+      position: absolute;
+      top: 30px; left: 50%;
+      transform: translateX(-50%);
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #a5d8ff 0%, #5aa7e0 60%, #3a7a6a 100%);
+      border: 3px solid #2a4a40;
+    }
+    .orbit { position: absolute; width: 340px; height: 110px; border: 3px dashed rgba(60,122,106,0.5); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(-15deg); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem; }
+    .card {
+      border: 3px solid #3a3a2a;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 6px 6px 0 #3a3a2a;
+      transition: all 0.2s;
+    }
+    .card:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 #3a3a2a; }
+    .card .icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+    .card:nth-child(1) .icon { color: #c53d2f; } .card:nth-child(2) .icon { color: #3a7a6a; }
+    .card:nth-child(3) .icon { color: #f2c94c; } .card:nth-child(4) .icon { color: #3a5a7a; }
+    .card h3 { font-family: 'Righteous', sans-serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.88rem; color: #6a6a50; line-height: 1.7; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; padding: 2rem 0; border-top: 3px solid #3a3a2a; border-bottom: 3px solid #3a3a2a; margin-bottom: 3rem; }
+    .spec { text-align: center; }
+    .spec h3 { font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: #c53d2f; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; font-weight: 500; color: #3a3a2a; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #3a3a2a; text-decoration: none; font-weight: 500; padding: 0.35rem 0.9rem; border: 2px solid #3a3a2a; border-radius: 50px; transition: all 0.2s; }
+    .links a:hover { background: #3a3a2a; color: #fdf6e3; }
+    .links a.current { background: #c53d2f; color: #fff; border-color: #c53d2f; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #8a8a6a; }
+    .footer-text a { color: #c53d2f; text-decoration: none; }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.5rem; }
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">ATOMIC AGE</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Rocket</a>
+        <a href="#">Space</a>
+        <a href="#">Future</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1 class="animate__animated animate__fadeInLeft">Masa Depan<br><span class="hl">yang Dulu</span><br><span class="hl2">Diimpikan</span></h1>
+        <p class="animate__animated animate__fadeInLeft" style="animation-delay:0.15s">Atomic Age 1950-an: optimisme luar angkasa, bentuk starburst, dan warna mustard-teal yang ceria.</p>
+        <a href="#" class="btn-atomic animate__animated animate__fadeInLeft" style="animation-delay:0.25s">LUNCURKAN &rarr;</a>
+      </div>
+      <div class="atomic-art animate__animated animate__fadeInRight">
+        <div class="starburst"></div>
+        <div class="orbit"></div>
+        <div class="rocket"></div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <span class="icon"><i class="fas fa-sun"></i></span>
+        <h3>Starburst</h3>
+        <p>Pola sinar menyebar ikonik era space race — diputar perlahan dengan animasi.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-rocket"></i></span>
+        <h3>Roket &amp; Orbit</h3>
+        <p>Siluet roket CSS murni dengan garis orbit putus-putus yang berputar.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-palette"></i></span>
+        <h3>Mustard &amp; Teal</h3>
+        <p>Kuning mustard, hijau teal, dan merah terakota — palet khas 1950-an.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-smile-beam"></i></span>
+        <h3>Optimisme</h3>
+        <p>Bentuk membulat dan warna ceria mewakili keyakinan masa depan yang cerah.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Ceria, optimistis, retro</p></div>
+      <div class="spec"><h3>Era</h3><p>1950–60-an</p></div>
+      <div class="spec"><h3>Colors</h3><p>Mustard, teal, terakota</p></div>
+      <div class="spec"><h3>Typography</h3><p>Righteous + Rubik</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Starburst, rocket, atom</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
