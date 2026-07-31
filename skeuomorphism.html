@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skeuomorphism — Web Landing</title>
+  <meta name="description" content="Skeuomorphism — UI meniru objek nyata: tekstur kulit jahitan, kayu, tombol timbul 3D, dan highlight mengkilap ala era iOS lama.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/skeuomorphism.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Skeuomorphism — Web Landing">
+  <meta property="og:description" content="Skeuomorphism — UI meniru objek nyata: tekstur kulit jahitan, tombol timbul 3D, dan highlight mengkilap ala era iOS lama.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/skeuomorphism.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skeuomorphism — Web Landing">
+  <meta name="twitter:description" content="Skeuomorphism — UI meniru objek nyata: tekstur kulit, tombol 3D, highlight mengkilap.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0 1px, transparent 1px 40px),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0 1px, transparent 1px 55px),
+        linear-gradient(160deg, #6b4226 0%, #5a3520 45%, #4a2c1a 100%);
+      color: #f5e9d6;
+      min-height: 100vh;
+    }
+
+    /* Stitched leather panel */
+    .leather {
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 6px),
+        linear-gradient(160deg, #7a4a2b, #5f3820);
+      border-radius: 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -3px 0 rgba(0,0,0,0.3), 0 12px 40px rgba(0,0,0,0.5);
+      border: 1px solid #3a2412;
+      position: relative;
+    }
+    /* Stitch dashes */
+    .leather::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 2px dashed rgba(245,233,214,0.35);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .logo {
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      color: #f5e9d6;
+      text-shadow: 0 2px 0 rgba(0,0,0,0.4);
+    }
+    .nav a {
+      color: #f5e9d6;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-left: 1.5rem;
+      padding: 0.5rem 1.1rem;
+      background: linear-gradient(#8a5a35, #5f3820);
+      border-radius: 8px;
+      border: 1px solid #3a2412;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 3px 0 #3a2412;
+      transition: all 0.15s;
+    }
+    .nav a:hover { transform: translateY(1px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 2px 0 #3a2412; }
+    .nav a:active { transform: translateY(3px); box-shadow: none; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .hero h1 {
+      font-weight: 900;
+      font-size: 2.9rem;
+      line-height: 1.12;
+      text-shadow: 0 3px 0 rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: normal; color: #ffd479; }
+    .hero p { font-size: 1.05rem; line-height: 1.7; opacity: 0.85; margin-bottom: 1.75rem; }
+
+    /* Glossy 3D button */
+    .btn-3d {
+      display: inline-block;
+      padding: 0.9rem 2.25rem;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+      background: linear-gradient(to bottom, #7cc242 0%, #5a9e2a 48%, #4d8a22 52%, #6cb839 100%);
+      border-radius: 10px;
+      border: 1px solid #3f701c;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -3px 0 rgba(0,0,0,0.25), 0 5px 0 #3f701c, 0 8px 15px rgba(0,0,0,0.4);
+      transition: all 0.12s;
+    }
+    .btn-3d:hover { filter: brightness(1.05); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 0 #3f701c; }
+
+    /* Wooden frame mockup */
+    .mockup {
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.25) 0 2px, transparent 2px 8px, rgba(0,0,0,0.25) 8px 10px, transparent 10px 14px),
+        repeating-linear-gradient(90deg, #a9743f 0 40px, #9a6837 40px 44px);
+      border: 1px solid #3a2412;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.55);
+    }
+    .mockup-screen {
+      background: linear-gradient(to bottom, #dbeafe, #bfdbfe);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid rgba(0,0,0,0.15);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .mockup-screen h3 { color: #1e3a5f; font-weight: 900; margin-bottom: 0.75rem; }
+    .mockup-btn {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+      border-radius: 6px;
+      border: 1px solid #1e40af;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 3px 0 #1e40af;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+    }
+    .card { padding: 1.75rem; }
+    .card i { font-size: 2rem; display: block; margin-bottom: 0.75rem; color: #ffd479; text-shadow: 0 2px 0 rgba(0,0,0,0.4); }
+    .card h3 { font-weight: 900; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.88rem; opacity: 0.8; line-height: 1.6; }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .spec { text-align: center; padding: 1.25rem; }
+    .spec h3 { font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; color: #ffd479; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.9rem; opacity: 0.85; }
+
+    .links {
+      text-align: center;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+    }
+    .links a {
+      color: rgba(245,233,214,0.7);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      background: linear-gradient(#8a5a35, #5f3820);
+      border: 1px solid #3a2412;
+      border-radius: 6px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 2px 0 #3a2412;
+      transition: all 0.15s;
+    }
+    .links a:hover { transform: translateY(1px); }
+    .links a.current { border-color: #ffd479; color: #ffd479; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; opacity: 0.6; letter-spacing: 0.1em; }
+    .footer-text a { color: #ffd479; text-decoration: none; }
+
+    @media (max-width: 780px) {
+      .header { flex-direction: column; gap: 1rem; }
+      .nav a { margin-left: 0.4rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="header">
+      <div class="logo">CRAFTLE</div>
+      <nav class="nav">
+        <a href="#">Beranda</a>
+        <a href="#">Koleksi</a>
+        <a href="#">Tentang</a>
+        <a href="#">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1 class="animate__animated animate__fadeInLeft">Terasa Nyata,<br><em>Seperti Objek Asli.</em></h1>
+        <p class="animate__animated animate__fadeInLeft" style="animation-delay:0.15s">Skeuomorphism menghadirkan kembali tekstur fisik: kulit, kayu, tombol timbul, dan kilau highlight — nostalgia era desain pra-flat.</p>
+        <a href="#" class="btn-3d animate__animated animate__fadeInLeft" style="animation-delay:0.25s"><i class="fas fa-thumbs-up"></i> Coba Sekarang</a>
+      </div>
+      <div class="mockup animate__animated animate__fadeInRight">
+        <div class="mockup-screen">
+          <h3>Dashboard CRAFTLE</h3>
+          <p style="font-size:0.85rem;color:#3b5b7d;margin-bottom:1rem;">Kelola koleksi kamu dalam panel kayu dan kulit premium.</p>
+          <span class="mockup-btn"><i class="fas fa-plus"></i> Tambah Item</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card leather">
+        <i class="fas fa-tools"></i>
+        <h3>Tekstur Nyata</h3>
+        <p>Gradien, noise, dan material dibuat menyerupai objek fisik sungguhan.</p>
+      </div>
+      <div class="card leather">
+        <i class="fas fa-mouse-pointer"></i>
+        <h3>Tombol Timbul</h3>
+        <p>Shadow ganda menciptakan ilusi tombol yang bisa ditekan secara fisik.</p>
+      </div>
+      <div class="card leather">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Highlight Glossy</h3>
+        <p>Kilau cahaya di tepi atas elemen meniru pencahayaan dunia nyata.</p>
+      </div>
+      <div class="card leather">
+        <i class="fas fa-layer-group"></i>
+        <h3>Depth & Material</h3>
+        <p>Kulit, kayu, logam — setiap elemen punya karakter materialnya sendiri.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec leather"><h3>Mood</h3><p>Premium, tactile, nostalgia</p></div>
+      <div class="spec leather"><h3>Era</h3><p>2007–2013 (era iOS lama)</p></div>
+      <div class="spec leather"><h3>Colors</h3><p>Cokelat kulit, emas, kayu</p></div>
+      <div class="spec leather"><h3>Typography</h3><p>Lato, sans-serif bold</p></div>
+      <div class="spec leather"><h3>Karakter</h3><p>3D, tekstur, highlight</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -13,6 +13,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/art_deco.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/art_nouveau.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/barbiecore.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -73,6 +85,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/cyberpunk.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/dada.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -80,6 +98,12 @@
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/de_stijl.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/flat_design.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -212,6 +236,12 @@
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/saccharine.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/skeuomorphism.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

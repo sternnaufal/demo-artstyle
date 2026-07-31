@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Nouveau — Web Landing</title>
+  <meta name="description" content="Art Nouveau — lekukan organik ala awal 1900-an: kurva whiplash, motif flora, palet muted sage-emas, dan ornamen halus.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/art_nouveau.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Art Nouveau — Web Landing">
+  <meta property="og:description" content="Art Nouveau — lekukan organik ala awal 1900-an: kurva whiplash, motif flora, palet muted sage-emas, dan ornamen halus.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/art_nouveau.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Art Nouveau — Web Landing">
+  <meta name="twitter:description" content="Art Nouveau — lekukan organik: kurva whiplash, motif flora, palet sage-emas.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background: #f5efe4;
+      color: #2f3a2f;
+      min-height: 100vh;
+    }
+    .accent { color: #a8863d; }
+
+    /* Whiplash curves decor */
+    .whiplash {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+    }
+    .whiplash-left { left: -80px; top: 10%; width: 300px; }
+    .whiplash-right { right: -80px; bottom: 5%; width: 300px; transform: scaleY(-1); }
+
+    .header {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(168,134,61,0.35);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.7rem;
+      color: #a8863d;
+      letter-spacing: 0.08em;
+    }
+    .nav a {
+      color: #2f3a2f;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+    .nav a:hover { color: #a8863d; }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero-ornament {
+      width: 140px; height: 40px;
+      margin: 0 auto 1.5rem;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 40'%3E%3Cpath d='M10 20 Q 35 0 70 20 Q 105 40 130 20' fill='none' stroke='%23a8863d' stroke-width='1.5'/%3E%3Ccircle cx='70' cy='20' r='3' fill='%23a8863d'/%3E%3C/svg%3E") no-repeat center;
+      background-size: contain;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 4rem;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: #a8863d; }
+    .hero p {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+      line-height: 1.8;
+      opacity: 0.75;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.5rem;
+      border: 1px solid #a8863d;
+      color: #a8863d;
+      text-decoration: none;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+    .btn:hover { background: #a8863d; color: #f5efe4; }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px; height: 1px;
+      margin: 0.75rem auto 0;
+      background: linear-gradient(90deg, transparent, #a8863d, transparent);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+    }
+    .feature {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: 50% 50% 8px 8px / 45% 45% 8px 8px;
+      background: linear-gradient(to bottom, rgba(168,134,61,0.06), transparent);
+      transition: transform 0.3s;
+    }
+    .feature:hover { transform: translateY(-5px); }
+    .feature .icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      color: #a8863d;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .feature h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .feature p { font-size: 0.88rem; opacity: 0.7; line-height: 1.7; }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(168,134,61,0.25);
+      padding-top: 2rem;
+    }
+    .spec { text-align: center; }
+    .spec h3 { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: #a8863d; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.9rem; opacity: 0.8; }
+
+    .links {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(168,134,61,0.25);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .links a {
+      color: #6b7366;
+      text-decoration: none;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid rgba(168,134,61,0.4);
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .links a:hover { background: #a8863d; color: #f5efe4; }
+    .links a.current { color: #a8863d; border-color: #a8863d; font-weight: 600; }
+    .footer-text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+    }
+    .footer-text a { color: #a8863d; text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .header { flex-direction: column; gap: 0.75rem; }
+      .nav a { margin-left: 0.75rem; font-size: 0.7rem; }
+      .hero { padding: 3rem 1.5rem; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <svg class="whiplash whiplash-left" viewBox="0 0 300 400"><path d="M20 30 C 260 40 300 150 180 200 C 80 240 40 330 150 390" fill="none" stroke="#2f3a2f" stroke-width="4"/><path d="M30 90 C 220 100 250 180 160 220 C 90 250 70 310 140 350" fill="none" stroke="#a8863d" stroke-width="2"/></svg>
+  <svg class="whiplash whiplash-right" viewBox="0 0 300 400"><path d="M20 30 C 260 40 300 150 180 200 C 80 240 40 330 150 390" fill="none" stroke="#2f3a2f" stroke-width="4"/><path d="M30 90 C 220 100 250 180 160 220 C 90 250 70 310 140 350" fill="none" stroke="#a8863d" stroke-width="2"/></svg>
+
+  <header class="header">
+    <div class="logo">FLEUR ET VIE</div>
+    <nav class="nav">
+      <a href="#">Accueil</a>
+      <a href="#">Collection</a>
+      <a href="#">Atelier</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-ornament animate__animated animate__fadeInDown"></div>
+    <h1 class="animate__animated animate__fadeIn">Keindahan yang<br><em>Mengalir Seperti Alam</em></h1>
+    <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Art Nouveau merayakan kurva organik, motif flora, dan keanggunan yang tak lekang waktu.</p>
+    <a href="#" class="btn animate__animated animate__fadeIn" style="animation-delay:0.3s">Jelajahi</a>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Esensi Gaya</h2>
+    <div class="features">
+      <div class="feature">
+        <span class="icon"><i class="fas fa-seedling"></i></span>
+        <h3>Motif Flora</h3>
+        <p>Daun, bunga, dan batang yang meliuk menjadi elemen dekoratif utama.</p>
+      </div>
+      <div class="feature">
+        <span class="icon"><i class="fas fa-wave-square"></i></span>
+        <h3>Kurva Whiplash</h3>
+        <p>Garis lengkung dinamis khas Nouveau yang mengalir seperti cambuk.</p>
+      </div>
+      <div class="feature">
+        <span class="icon"><i class="fas fa-palette"></i></span>
+        <h3>Palet Muted</h3>
+        <p>Sage, emas tua, dan krem — warna alami yang menenangkan.</p>
+      </div>
+      <div class="feature">
+        <span class="icon"><i class="fas fa-feather"></i></span>
+        <h3>Ornamen Halus</h3>
+        <p>Detail tipis yang elegan tanpa menenggelamkan konten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="specs">
+      <div class="spec"><h3>Mood</h3><p>Elegan, organik, tenang</p></div>
+      <div class="spec"><h3>Era</h3><p>1890–1910-an</p></div>
+      <div class="spec"><h3>Colors</h3><p>Sage, gold, cream</p></div>
+      <div class="spec"><h3>Typography</h3><p>Cormorant Garamond + Jost</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Whiplash, flora, asimetris</p></div>
+    </div>
+  </section>
+
+  <div class="links">
+    <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+    <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+    <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+    <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+    <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+  </div>
+  <footer class="footer-text">
+    &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
