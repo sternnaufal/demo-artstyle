@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cottagecore — Web Landing</title>
+  <meta name="description" content="Cottagecore — romansa pedesaan: motif bunga, warna krem pastel, tekstur tenun, dan kehidupan desa yang tenang dan hangat.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/cottagecore.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Cottagecore — Web Landing">
+  <meta property="og:description" content="Cottagecore — romansa pedesaan: motif bunga, krem pastel, tekstur tenun, kehidupan desa yang tenang.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/cottagecore.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cottagecore — Web Landing">
+  <meta name="twitter:description" content="Cottagecore — motif bunga, krem pastel, kehidupan desa tenang.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(196,164,132,0.1) 0 2px, transparent 2px 25px),
+        linear-gradient(180deg, #fbf6ee 0%, #f5ead9 100%);
+      color: #5a4632;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: #7a5c43; }
+    .nav-links a { color: #7a6a58; text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-left: 1.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #a3764f; }
+
+    .hero { text-align: center; padding: 3.5rem 1rem 4rem; position: relative; }
+    .hero .flower {
+      font-size: 1.8rem; color: #c49a6c; margin-bottom: 1rem; display: block;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      color: #5a4632;
+    }
+    .hero p { max-width: 540px; margin: 0 auto 2rem; color: #7a6a58; font-size: 1.05rem; line-height: 1.8; }
+    .btn-cottage {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      padding: 0.9rem 2.25rem;
+      background: #c49a6c;
+      color: #fbf6ee;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid #a3764f;
+      box-shadow: 0 4px 12px rgba(163,118,79,0.25);
+      transition: all 0.25s;
+    }
+    .btn-cottage:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(163,118,79,0.35); }
+
+    /* Floral border decor */
+    .floral-divider { text-align: center; color: #c49a6c; margin: 2rem auto 3rem; }
+    .floral-divider span { margin: 0 0.5rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: #fffdf8;
+      border: 2px solid #e8d9c3;
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .card:hover { border-color: #c49a6c; transform: translateY(-5px); box-shadow: 0 8px 25px rgba(163,118,79,0.15); }
+    .card .icon { font-size: 2.2rem; color: #c49a6c; display: block; margin-bottom: 1rem; }
+    .card h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem; color: #5a4632; }
+    .card p { font-size: 0.9rem; color: #8a7a68; line-height: 1.7; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .spec { background: #fffdf8; border: 2px solid #e8d9c3; border-radius: 14px; padding: 1.5rem; text-align: center; }
+    .spec h3 { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: #a3764f; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; color: #7a6a58; }
+
+    .quote { text-align: center; padding: 2.5rem 1rem; }
+    .quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; line-height: 1.5; color: #5a4632; max-width: 620px; margin: 0 auto; }
+    .quote cite { font-size: 0.75rem; color: #a3764f; letter-spacing: 0.2em; text-transform: uppercase; }
+
+    .links { text-align: center; padding: 1.5rem 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; border-top: 1px solid #e8d9c3; }
+    .links a { color: #7a6a58; text-decoration: none; font-weight: 600; padding: 0.35rem 0.9rem; border: 2px solid #e0cfb8; border-radius: 50px; transition: all 0.2s; }
+    .links a:hover { background: #c49a6c; color: #fff; border-color: #c49a6c; }
+    .links a.current { background: #c49a6c; color: #fff; border-color: #c49a6c; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #a08d78; }
+    .footer-text a { color: #a3764f; text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 2.5rem 0.5rem 3rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">Hearth &amp; Honey</div>
+      <div class="nav-links">
+        <a href="#">Kebun</a>
+        <a href="#">Dapur</a>
+        <a href="#">Tenun</a>
+        <a href="#">Cerita</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="flower animate__animated animate__fadeInDown"><i class="fas fa-seedling"></i></span>
+      <h1 class="animate__animated animate__fadeIn">Rumah Kecil,<br>Hati Lapang</h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Cottagecore merayakan hidup sederhana di pedesaan: kebun bunga, roti panggang, tenun tangan, dan sore yang tenang di bawah pohon.</p>
+      <a href="#" class="btn-cottage animate__animated animate__fadeIn" style="animation-delay:0.3s">Tinggal di Sini</a>
+    </section>
+
+    <div class="floral-divider"><span>&#10086;</span><span>&#10022;</span><span>&#10086;</span></div>
+
+    <section class="cards">
+      <div class="card">
+        <span class="icon"><i class="fas fa-leaf"></i></span>
+        <h3>Kebun Bunga</h3>
+        <p>Daisy, lavender, dan chamomile — warna alam yang menenangkan setiap hari.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-bread-slice"></i></span>
+        <h3>Dapur Hangat</h3>
+        <p>Roti buatan sendiri, teh herbal, dan aroma kayu manis memenuhi ruangan.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-spa"></i></span>
+        <h3>Tenun & Kerajinan</h3>
+        <p>Tekstur rajutan dan tenun tangan — benda yang dibuat dengan cinta.</p>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-feather"></i></span>
+        <h3>Kehidupan Pelan</h3>
+        <p>Hidup tidak terburu-buru — menikmati musim dan perubahan yang lembut.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Hangat, tenang, romantis</p></div>
+      <div class="spec"><h3>Era</h3><p>Pedesaan abadi</p></div>
+      <div class="spec"><h3>Colors</h3><p>Krem, cokelat, sage, pink</p></div>
+      <div class="spec"><h3>Typography</h3><p>Playfair Italic + Nunito</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Flora, tenun, vintage</p></div>
+    </section>
+
+    <section class="quote">
+      <blockquote>&ldquo;Di mana pun kamu menanam bunga, di situ kamu menanam harapan.&rdquo;</blockquote>
+      <cite>&mdash; Catatan Kebun</cite>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scandinavian — Web Landing</title>
+  <meta name="description" content="Scandinavian — hygge dan minimalisme Nordik: putih hangat, kayu terang, ruang lapang, dan kesederhanaan yang menenangkan.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/scandinavian.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Scandinavian — Web Landing">
+  <meta property="og:description" content="Scandinavian — hygge dan minimalisme Nordik: putih hangat, kayu terang, ruang lapang, kesederhanaan menenangkan.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/scandinavian.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scandinavian — Web Landing">
+  <meta name="twitter:description" content="Scandinavian — hygge, kayu terang, ruang lapang, kesederhanaan.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Prata&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f7f5f0;
+      color: #3a3a3a;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #e5e0d5; margin-bottom: 4rem; }
+    .logo { font-family: 'Prata', serif; font-size: 1.4rem; color: #2f2f2f; letter-spacing: 0.02em; }
+    .nav-links a { color: #6a6a6a; text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-left: 2rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #8a7a4f; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; }
+    .hero h1 {
+      font-family: 'Prata', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: #2f2f2f;
+    }
+    .hero h1 .hl { color: #8a7a4f; }
+    .hero p { color: #6a6a6a; line-height: 1.8; margin-bottom: 2rem; max-width: 460px; }
+    .btn-scandi {
+      display: inline-block;
+      font-weight: 500;
+      padding: 0.9rem 2.25rem;
+      background: #2f2f2f;
+      color: #f7f5f0;
+      text-decoration: none;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      transition: all 0.25s;
+    }
+    .btn-scandi:hover { background: #8a7a4f; }
+
+    /* Wood panel mockup */
+    .wood {
+      background:
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.04) 0 2px, transparent 2px 7px),
+        linear-gradient(180deg, #d9c4a0, #c4ab82);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 15px 40px rgba(90,70,40,0.15);
+      min-height: 300px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative;
+    }
+    .wood::before {
+      content: ''; position: absolute; inset: 0; border-radius: 14px;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.25), transparent 50%);
+    }
+    .wood .tag { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #5a4a30; margin-bottom: 0.5rem; position: relative; }
+    .wood .title { font-family: 'Prata', serif; font-size: 1.6rem; color: #3d3220; position: relative; }
+
+    .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.75rem; margin-bottom: 4rem; }
+    .principle { padding: 2rem 0; border-top: 1px solid #e5e0d5; }
+    .principle .n { font-size: 0.75rem; color: #8a7a4f; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 0.75rem; }
+    .principle h3 { font-family: 'Prata', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .principle p { color: #6a6a6a; font-size: 0.92rem; line-height: 1.7; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; padding: 2.5rem 0; border-top: 1px solid #e5e0d5; border-bottom: 1px solid #e5e0d5; margin-bottom: 3.5rem; }
+    .spec { text-align: center; }
+    .spec h3 { font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: #8a7a4f; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; color: #3a3a3a; }
+
+    .quote { text-align: center; padding: 2rem 1rem 3.5rem; }
+    .quote blockquote { font-family: 'Prata', serif; font-size: 1.4rem; line-height: 1.5; color: #3a3a3a; max-width: 600px; margin: 0 auto; }
+    .quote cite { font-size: 0.75rem; color: #8a7a4f; letter-spacing: 0.2em; text-transform: uppercase; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #6a6a6a; text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid #ddd; border-radius: 4px; transition: all 0.2s; }
+    .links a:hover { background: #2f2f2f; color: #f7f5f0; border-color: #2f2f2f; }
+    .links a.current { border-color: #2f2f2f; color: #2f2f2f; font-weight: 500; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #9a9a9a; }
+    .footer-text a { color: #8a7a4f; text-decoration: none; }
+
+    @media (max-width: 780px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.75rem; }
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">NORDVIND</div>
+      <div class="nav-links">
+        <a href="#">Hjem</a>
+        <a href="#">Koleksi</a>
+        <a href="#">Filosofi</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1 class="animate__animated animate__fadeInLeft">Hidup Sederhana,<br><span class="hl">Rasa Banyak.</span></h1>
+        <p class="animate__animated animate__fadeInLeft" style="animation-delay:0.15s">Scandinavian design mengusung hygge: kehangatan, cahaya alami, kayu terang, dan ruang yang membiarkanmu bernapas.</p>
+        <a href="#" class="btn-scandi animate__animated animate__fadeInLeft" style="animation-delay:0.25s">Jelajahi &rarr;</a>
+      </div>
+      <div class="wood animate__animated animate__fadeInRight">
+        <div class="tag">Interior 01</div>
+        <div class="title">Ruang dengan<br>Rasa Tenang</div>
+      </div>
+    </section>
+
+    <section class="principles">
+      <div class="principle">
+        <span class="n">01</span>
+        <h3>Light &amp; Air</h3>
+        <p>Putih hangat dan cahaya alami — ruang terasa lebih luas dan jernih.</p>
+      </div>
+      <div class="principle">
+        <span class="n">02</span>
+        <h3>Natural Materials</h3>
+        <p>Kayu terang, linen, wol — material alami menghangatkan setiap sudut.</p>
+      </div>
+      <div class="principle">
+        <span class="n">03</span>
+        <h3>Function First</h3>
+        <p>Setiap objek punya tujuan. Keindahan muncul dari fungsi yang jujur.</p>
+      </div>
+      <div class="principle">
+        <span class="n">04</span>
+        <h3>Hygge</h3>
+        <p>Kenyamanan adalah prioritas — desain yang membuatmu ingin tinggal lebih lama.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Tenang, hangat, lapang</p></div>
+      <div class="spec"><h3>Era</h3><p>1950-an &mdash; kini</p></div>
+      <div class="spec"><h3>Colors</h3><p>Putih hangat, beige, kayu</p></div>
+      <div class="spec"><h3>Typography</h3><p>Prata + DM Sans</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Minimal, natural, hygge</p></div>
+    </section>
+
+    <section class="quote">
+      <blockquote>&ldquo;Hygge bukan soal benda mewah — tapi kehangatan yang terasa di rumah.&rdquo;</blockquote>
+      <cite>&mdash; Filosofi Nordik</cite>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

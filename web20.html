@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web 2.0 — Web Landing</title>
+  <meta name="description" content="Web 2.0 — nostalgia mid-2000s: tombol glossy, rounded corner, gradien biru-putih, refleksi kaca, dan estetika social media awal.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/web20.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Web 2.0 — Web Landing">
+  <meta property="og:description" content="Web 2.0 — nostalgia mid-2000s: tombol glossy, rounded corner, gradien biru, refleksi kaca.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/web20.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web 2.0 — Web Landing">
+  <meta name="twitter:description" content="Web 2.0 — nostalgia mid-2000s: tombol glossy, rounded corner, gradien biru.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #eef6fc 0%, #fff 50%, #f0f8ff 100%);
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-weight: 900; font-size: 1.5rem; background: linear-gradient(90deg, #2a82f5, #6eacff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links a { color: #2a82f5; text-decoration: none; font-weight: 600; margin-left: 1.5rem; padding: 0.5rem 1rem; border-radius: 20px; background: rgba(42,130,245,0.1); transition: all 0.2s; }
+    .nav-links a:hover { background: #2a82f5; color: #fff; }
+
+    .hero { text-align: center; padding: 3rem 1rem 4rem; }
+    .hero .tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      padding: 0.4rem 1rem; border-radius: 50px; background: #ffcc00;
+      color: #1a1a2e; margin-bottom: 1.5rem; border: 2px solid #1a1a2e;
+    }
+    .hero h1 {
+      font-weight: 900; font-size: clamp(2.5rem, 6vw, 4.2rem);
+      line-height: 1.08; letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(90deg, #2a82f5, #6eacff);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { max-width: 560px; margin: 0 auto 2rem; font-size: 1.05rem; color: #4a4a6a; line-height: 1.7; }
+    .btn-web20 {
+      display: inline-block;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(180deg, #4da3ff 0%, #2a82f5 100%);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 0 #1a5fc9, 0 8px 20px rgba(42,130,245,0.3);
+      border: 2px solid #fff;
+      transition: all 0.2s;
+    }
+    .btn-web20:hover { transform: translateY(-3px); box-shadow: 0 6px 0 #1a5fc9, 0 12px 25px rgba(42,130,245,0.4); }
+
+    /* Glossy button effect */
+    .glossy-btn {
+      position: relative; overflow: hidden;
+    }
+    .glossy-btn::before {
+      content: ''; position: absolute; top: 0; left: -100%;
+      width: 100%; height: 50%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+      animation: shine 3s infinite;
+    }
+    @keyframes shine { 0% { left: -100%; } 100% { left: 100%; } }
+
+    /* Reflection floor */
+    .reflection {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto 3rem;
+    }
+    .reflection .card {
+      background: linear-gradient(180deg, #fff 0%, #eef6fc 40%, #fff 60%, transparent 100%);
+      border-radius: 16px; padding: 2rem;
+      box-shadow: 0 4px 20px rgba(42,130,245,0.15);
+    }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: #fff;
+      border: 1px solid #e0ebf5;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(42,130,245,0.1);
+      transition: all 0.2s;
+      position: relative;
+    }
+    .card::before {
+      content: ''; position: absolute; top: -2px; left: -2px; right: -2px; height: 4px;
+      background: linear-gradient(90deg, #2a82f5, #6eacff, #a5d6ff);
+      border-radius: 14px 14px 0 0;
+    }
+    .card:hover { box-shadow: 0 8px 25px rgba(42,130,245,0.2); transform: translateY(-4px); }
+    .card i { font-size: 2rem; color: #2a82f5; margin-bottom: 1rem; display: block; }
+    .card h3 { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.88rem; color: #5a5a7a; line-height: 1.6; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .spec { background: #fff; border: 1px solid #e0ebf5; border-radius: 14px; padding: 1.25rem; text-align: center; box-shadow: 0 2px 6px rgba(42,130,245,0.08); }
+    .spec h3 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #2a82f5; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.9rem; color: #4a4a6a; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #2a82f5; text-decoration: none; font-weight: 600; padding: 0.35rem 0.9rem; border: 2px solid #d0e3fa; border-radius: 20px; transition: all 0.2s; }
+    .links a:hover { background: #2a82f5; color: #fff; border-color: #2a82f5; }
+    .links a.current { background: #2a82f5; color: #fff; border-color: #2a82f5; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #8a8ab3; }
+    .footer-text a { color: #2a82f5; text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 2.5rem 1rem 3rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">WEB<span style="color:#ffcc00;">2</span>.0</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Friends</a>
+        <a href="#">Photos</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="tag animate__animated animate__fadeInDown">VERSION 2.0</span>
+      <h1 class="animate__animated animate__fadeIn">Selamat Datang di<br>Era <span style="color:#ffcc00;">Sosial</span></h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Nostalgia 2000-an: gradien biru cerah, rounded corner, tombol glossy, dan refleksi kaca — era di mana web jadi sosial.</p>
+      <a href="#" class="btn-web20 glossy-btn animate__animated animate__fadeIn" style="animation-delay:0.3s"><i class="fas fa-user-plus"></i> Daftar Gratis</a>
+    </section>
+
+    <section class="reflection">
+      <div class="card">
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Selamat Datang, User!</h3>
+        <p style="color:#6a6a8a;margin-bottom:1rem;">Anda memiliki <strong>3 notifikasi baru</strong> dan <strong>7 permintaan pertemanan</strong>.</p>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
+          <span style="background:#e8f0fe;color:#2a82f5;padding:0.3rem 0.8rem;border-radius:12px;font-size:0.8rem;border:1px solid #d0e3fa;">Foto</span>
+          <span style="background:#e8f0fe;color:#2a82f5;padding:0.3rem 0.8rem;border-radius:12px;font-size:0.8rem;border:1px solid #d0e3fa;">Pesan</span>
+          <span style="background:#e8f0fe;color:#2a82f5;padding:0.3rem 0.8rem;border-radius:12px;font-size:0.8rem;border:1px solid #d0e3fa;">Profil</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <i class="fas fa-user-circle"></i>
+        <h3>Profil Glossy</h3>
+        <p>Foto profil dengan border putih tebal, bayangan drop-shadow, dan background gradien biru.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-comments"></i>
+        <h3>Komentar & Wall</h3>
+        <p>Dinding pesan dengan balon chat rounded, avatar bulat, dan timestamp biru.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-image"></i>
+        <h3>Album Foto</h3>
+        <p>Thumbnail dengan border putih, hover zoom efek, dan caption di bawah.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>Pertemanan</h3>
+        <p>Tombol "Add Friend" glossy, status online hijau, dan sugggest friend.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Fun, cerah, sosial</p></div>
+      <div class="spec"><h3>Era</h3><p>2004–2010</p></div>
+      <div class="spec"><h3>Colors</h3><p>Biru gradien, putih, kuning</p></div>
+      <div class="spec"><h3>Typography</h3><p>Inter, rounded</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Glossy, rounded, refleksi</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

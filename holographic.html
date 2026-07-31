@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holographic — Web Landing</title>
+  <meta name="description" content="Holographic — kilau iridescent pelangi di atas permukaan kaca, gradien shimmer bergerak, dan kesan futuristic premium.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/holographic.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Holographic — Web Landing">
+  <meta property="og:description" content="Holographic — kilau iridescent pelangi di permukaan kaca, gradien shimmer bergerak, futuristik premium.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/holographic.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Holographic — Web Landing">
+  <meta name="twitter:description" content="Holographic — kilau iridescent pelangi di permukaan kaca, shimmer bergerak.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Sora', sans-serif;
+      background: linear-gradient(160deg, #0b0514 0%, #1a0b2e 50%, #0b1224 100%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated iridescent gradient blob */
+    .aura {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .aura-1 { width: 500px; height: 500px; top: -150px; right: -100px; background: linear-gradient(135deg, #ff2d95, #8b5cf6); animation: drift 16s ease-in-out infinite; }
+    .aura-2 { width: 400px; height: 400px; bottom: -120px; left: -80px; background: linear-gradient(135deg, #06b6d4, #f59e0b); animation: drift 20s ease-in-out infinite reverse; }
+    @keyframes drift {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(50px,-40px) scale(1.15); }
+    }
+
+    /* Iridescent shimmer text */
+    .holo-text {
+      background: linear-gradient(110deg, #ff2d95, #8b5cf6 25%, #06b6d4 50%, #f59e0b 75%, #ff2d95);
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+
+    .wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-weight: 800; font-size: 1.4rem; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 600; font-size: 0.88rem; margin-left: 1.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #8b5cf6; }
+
+    .hero { text-align: center; padding: 4rem 1rem 5rem; }
+    .hero .chip {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      background: linear-gradient(120deg, rgba(255,45,149,0.2), rgba(6,182,212,0.2));
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-weight: 800;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero p { max-width: 540px; margin: 0 auto 2rem; color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.7; }
+    .btn-holo {
+      display: inline-block;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      color: #0b0514;
+      background: linear-gradient(110deg, #ff2d95, #8b5cf6, #06b6d4);
+      background-size: 200% 100%;
+      animation: shimmer 5s linear infinite;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: transform 0.2s;
+    }
+    .btn-holo:hover { transform: translateY(-3px) scale(1.02); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      animation: shine 4s infinite;
+    }
+    @keyframes shine { 0% { left: -100%; } 60% { left: 100%; } 100% { left: 100%; } }
+    .card:hover { border-color: rgba(139,92,246,0.5); transform: translateY(-5px); }
+    .card i { font-size: 2rem; display: block; margin-bottom: 1rem; }
+    .card:nth-child(1) i { color: #ff2d95; text-shadow: 0 0 20px rgba(255,45,149,0.7); }
+    .card:nth-child(2) i { color: #8b5cf6; text-shadow: 0 0 20px rgba(139,92,246,0.7); }
+    .card:nth-child(3) i { color: #06b6d4; text-shadow: 0 0 20px rgba(6,182,212,0.7); }
+    .card:nth-child(4) i { color: #f59e0b; text-shadow: 0 0 20px rgba(245,158,11,0.7); }
+    .card h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .spec { text-align: center; padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px); }
+    .spec h3 { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.4rem; }
+    .spec:nth-child(1) h3 { color: #ff2d95; } .spec:nth-child(2) h3 { color: #8b5cf6; }
+    .spec:nth-child(3) h3 { color: #06b6d4; } .spec:nth-child(4) h3 { color: #f59e0b; }
+    .spec p { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; transition: all 0.2s; }
+    .links a:hover { border-color: #8b5cf6; color: #8b5cf6; }
+    .links a.current { border-color: #8b5cf6; color: #8b5cf6; font-weight: 700; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .footer-text a { color: #8b5cf6; text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 3rem 0.5rem 4rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="aura aura-1"></div>
+  <div class="aura aura-2"></div>
+
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo holo-text">PRISMATIC</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Koleksi</a>
+        <a href="#">Tentang</a>
+        <a href="#">Kontak</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="chip animate__animated animate__fadeInDown">NEW DROP &mdash; 2026</span>
+      <h1 class="animate__animated animate__fadeIn">Cahaya yang<br><span class="holo-text">Berubah Warna</span></h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Holographic aesthetic: gradien iridescent bergerak di atas permukaan kaca — kemewahan visual yang hidup dari setiap sudut.</p>
+      <a href="#" class="btn-holo animate__animated animate__fadeIn" style="animation-delay:0.3s">Jelajahi Koleksi</a>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <i class="fas fa-water"></i>
+        <h3>Iridescence</h3>
+        <p>Gradien pelangi multi-arah yang berubah mengikuti pergerakan dan sudut pandang.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-wand-magic-sparkles"></i>
+        <h3>Shimmer Animasi</h3>
+        <p>Background-position bergerak menciptakan kilau yang terus mengalir di permukaan.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-glass-water"></i>
+        <h3>Kaca & Blur</h3>
+        <p>Kartu glassmorphism dengan backdrop-blur menampilkan aura warna di belakangnya.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-gem"></i>
+        <h3>Futuristik Premium</h3>
+        <p>Kesan mewah dari perpaduan warna spektrum yang sulit ditiru desain lain.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Futuristik, mewah, dinamis</p></div>
+      <div class="spec"><h3>Era</h3><p>Kontemporer</p></div>
+      <div class="spec"><h3>Colors</h3><p>Pink, ungu, cyan, amber</p></div>
+      <div class="spec"><h3>Typography</h3><p>Sora, sans-serif</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Iridescent, shimmer, kaca</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

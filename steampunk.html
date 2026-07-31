@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steampunk — Web Landing</title>
+  <meta name="description" content="Steampunk — Victoria bertemu mesin uap: kuningan, tembaga, gerigi berputar, parchment, dan detail industri abad ke-19.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/steampunk.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Steampunk — Web Landing">
+  <meta property="og:description" content="Steampunk — Victoria bertemu mesin uap: kuningan, tembaga, gerigi berputar, parchment, detail industri.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/steampunk.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Steampunk — Web Landing">
+  <meta name="twitter:description" content="Steampunk — kuningan, tembaga, gerigi, mesin uap Victoria.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Crimson Text', serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(141,110,50,0.1) 0 2px, transparent 2px 30px),
+        linear-gradient(170deg, #2a2118 0%, #3d3222 50%, #2a2118 100%);
+      color: #e8dcc0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gear {
+      position: fixed;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .gear-1 { top: -80px; right: -80px; width: 260px; animation: spin 30s linear infinite; }
+    .gear-2 { bottom: -60px; left: -60px; width: 200px; animation: spin 40s linear infinite reverse; }
+    .gear-3 { top: 40%; right: -40px; width: 120px; animation: spin 25s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .brass {
+      background:
+        repeating-linear-gradient(90deg, rgba(0,0,0,0.08) 0 3px, transparent 3px 12px),
+        linear-gradient(180deg, #8a6a35, #6e5328);
+      border: 3px solid #4a3716;
+      border-radius: 12px;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -3px 0 rgba(0,0,0,0.3), 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .rivets { position: absolute; inset: 8px; border: 1px dashed rgba(232,220,192,0.3); border-radius: 8px; pointer-events: none; }
+    .rivet { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffd97a, #7a5a28); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .r1 { top: 16px; left: 16px; } .r2 { top: 16px; right: 16px; } .r3 { bottom: 16px; left: 16px; } .r4 { bottom: 16px; right: 16px; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; position: relative; padding: 1rem 1.5rem; }
+    .logo { font-family: 'Cinzel', serif; font-weight: 900; font-size: 1.5rem; color: #ffd97a; letter-spacing: 0.08em; text-shadow: 0 2px 0 rgba(0,0,0,0.4); }
+    .nav-links a { color: #e8dcc0; text-decoration: none; font-size: 0.9rem; font-weight: 600; margin-left: 1.75rem; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover { color: #ffd97a; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3rem; }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 .gold { color: #ffd97a; }
+    .hero p { font-size: 1.1rem; color: #c8b995; line-height: 1.7; margin-bottom: 1.75rem; max-width: 480px; }
+    .btn-steam {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      padding: 0.9rem 2.25rem;
+      background: linear-gradient(180deg, #a58540, #6e5328);
+      color: #fff;
+      border-radius: 6px;
+      border: 2px solid #4a3716;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,0.25), 0 4px 0 #4a3716, 0 8px 20px rgba(0,0,0,0.4);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-steam:hover { transform: translateY(-2px); filter: brightness(1.1); }
+    .btn-steam:active { transform: translateY(3px); box-shadow: inset 0 2px 0 rgba(255,255,255,0.25), 0 1px 0 #4a3716; }
+
+    .gauge { position: relative; padding: 2rem; }
+    .gauge-face {
+      width: 220px; height: 220px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f5ecd8 0%, #d8cbaa 70%, #b8a87e 100%);
+      border: 8px solid #6e5328;
+      box-shadow: 0 0 0 4px #4a3716, 0 10px 30px rgba(0,0,0,0.5), inset 0 4px 12px rgba(0,0,0,0.2);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .gauge-face::after {
+      content: ''; position: absolute;
+      width: 70%; height: 70%;
+      border-radius: 50%;
+      border: 2px solid #c8b995;
+      background: conic-gradient(#6e5328 0 220deg, #e8dcc0 220deg 360deg);
+      opacity: 0.15;
+    }
+    .gauge-val { position: relative; text-align: center; }
+    .gauge-val .v { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 900; color: #6e5328; }
+    .gauge-val .lbl { font-size: 0.7rem; letter-spacing: 0.2em; color: #8a6a35; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card { position: relative; padding: 1.75rem; }
+    .card i { font-size: 1.8rem; color: #ffd97a; display: block; margin-bottom: 0.75rem; }
+    .card h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: #ffe9b8; }
+    .card p { font-size: 0.92rem; color: #c8b995; line-height: 1.6; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .spec { position: relative; padding: 1.5rem; text-align: center; }
+    .spec h3 { font-size: 0.65rem; font-family: 'Cinzel', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #ffd97a; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; color: #e8dcc0; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #c8b995; text-decoration: none; padding: 0.35rem 0.9rem; border: 2px solid #6e5328; border-radius: 6px; transition: all 0.2s; }
+    .links a:hover { background: #6e5328; color: #fff; }
+    .links a.current { background: #6e5328; color: #fff; border-color: #ffd97a; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.78rem; color: #8a7a5a; }
+    .footer-text a { color: #ffd97a; text-decoration: none; }
+
+    @media (max-width: 780px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <svg class="gear gear-1" viewBox="0 0 200 200"><path fill="#e8dcc0" d="M100 10a90 90 0 0 1 90 90 90 90 0 0 1-90 90 90 90 0 0 1-90-90 90 90 0 0 1 90-90zm0 40a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm-90 45h-10v10h10v-10zm200 0h-10v10h10v-10zM100 0v10h10V0h-10zm0 190v10h10v-10h-10zM29 29l-7 7 7 7 7-7-7-7zm142 142l-7 7 7 7 7-7-7-7z"/></svg>
+  <svg class="gear gear-2" viewBox="0 0 200 200"><path fill="#e8dcc0" d="M100 20a80 80 0 0 1 80 80 80 80 0 0 1-80 80 80 80 0 0 1-80-80 80 80 0 0 1 80-80zm0 35a45 45 0 1 0 0 90 45 45 0 0 0 0-90z"/></svg>
+  <svg class="gear gear-3" viewBox="0 0 200 200"><path fill="#ffd97a" d="M100 30a70 70 0 0 1 70 70 70 70 0 0 1-70 70 70 70 0 0 1-70-70 70 70 0 0 1 70-70zm0 30a40 40 0 1 0 0 80 40 40 0 0 0 0-80z"/></svg>
+
+  <div class="wrap">
+    <nav class="nav brass">
+      <div class="rivets"><span class="rivet r1"></span><span class="rivet r2"></span><span class="rivet r3"></span><span class="rivet r4"></span></div>
+      <div class="logo">STEAMWORKS</div>
+      <div class="nav-links">
+        <a href="#">Boiler</a>
+        <a href="#">Mesin</a>
+        <a href="#">Atlas</a>
+        <a href="#">Kontak</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1 class="animate__animated animate__fadeInLeft">Tenaga<br><span class="gold">Uap &amp; Kuningan</span></h1>
+        <p class="animate__animated animate__fadeInLeft" style="animation-delay:0.15s">Victoria bertemu revolusi industri: mesin kuningan, gerigi berputar, dan estetika abad ke-19 yang penuh keanggunan mekanis.</p>
+        <a href="#" class="btn-steam animate__animated animate__fadeInLeft" style="animation-delay:0.25s">NYALAKAN MESIN</a>
+      </div>
+      <div class="gauge brass animate__animated animate__fadeInRight">
+        <div class="rivets"><span class="rivet r1"></span><span class="rivet r2"></span><span class="rivet r3"></span><span class="rivet r4"></span></div>
+        <div class="gauge-face">
+          <div class="gauge-val">
+            <div class="v">88</div>
+            <div class="lbl">PSI</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card brass">
+        <div class="rivets"><span class="rivet r1"></span><span class="rivet r2"></span><span class="rivet r3"></span><span class="rivet r4"></span></div>
+        <i class="fas fa-cogs"></i>
+        <h3>Mesin Gerigi</h3>
+        <p>Gear SVG berputar — simbol mekanisme yang hidup dan bekerja terus-menerus.</p>
+      </div>
+      <div class="card brass">
+        <div class="rivets"><span class="rivet r1"></span><span class="rivet r2"></span><span class="rivet r3"></span><span class="rivet r4"></span></div>
+        <i class="fas fa-fire"></i>
+        <h3>Tenaga Uap</h3>
+        <p>Palet cokelat tembaga dan kuningan menghangatkan setiap panel antarmuka.</p>
+      </div>
+      <div class="card brass">
+        <div class="rivets"><span class="rivet r1"></span><span class="rivet r2"></span><span class="rivet r3"></span><span class="rivet r4"></span></div>
+        <i class="fas fa-scroll"></i>
+        <h3>Parchment &amp; Serif</h3>
+        <p>Tekstur kertas tua dengan tipografi Cinzel yang monumental dan klasik.</p>
+      </div>
+      <div class="card brass">
+        <div class="rivets"><span class="rivet r1"></span><span class="rivet r2"></span><span class="rivet r3"></span><span class="rivet r4"></span></div>
+        <i class="fas fa-compass"></i>
+        <h3>Detail Industri</h3>
+        <p>Rivet di sudut panel dan gauge melengkapi nuansa mesin uap sungguhan.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec brass"><h3>Mood</h3><p>Klasik, mekanis, petualangan</p></div>
+      <div class="spec brass"><h3>Era</h3><p>Abad 19 alternatif</p></div>
+      <div class="spec brass"><h3>Colors</h3><p>Kuningan, tembaga, hitam</p></div>
+      <div class="spec brass"><h3>Typography</h3><p>Cinzel + Crimson Text</p></div>
+      <div class="spec brass"><h3>Karakter</h3><p>Gear, rivet, parchment</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
