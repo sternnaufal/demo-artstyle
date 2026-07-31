@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Minimal — Web Landing</title>
+  <meta name="description" content="Dark Mode Minimal — antarmuka gelap bersih: latar near-black, satu warna aksen, tipografi ringan, dan fokus penuh pada konten.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/dark_minimal.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Dark Mode Minimal — Web Landing">
+  <meta property="og:description" content="Dark Mode Minimal — antarmuka gelap bersih: latar near-black, satu warna aksen, tipografi ringan.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/dark_minimal.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dark Mode Minimal — Web Landing">
+  <meta name="twitter:description" content="Dark Mode Minimal — gelap bersih, satu aksen, tipografi ringan.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0b;
+      color: #e8e8ea;
+      min-height: 100vh;
+      font-weight: 300;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #1f1f22;
+      margin-bottom: 4rem;
+    }
+    .logo { font-weight: 600; font-size: 1.15rem; letter-spacing: 0.04em; }
+    .logo .dot { color: #7c8cff; }
+    .nav-links a {
+      color: #8a8a92;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      margin-left: 2rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e8e8ea; }
+    .nav-links a.active { color: #7c8cff; }
+
+    .hero { padding: 3rem 0 4rem; max-width: 680px; }
+    .hero .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #7c8cff;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-weight: 300;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 strong { font-weight: 500; color: #fff; }
+    .hero p { color: #8a8a92; font-size: 1.05rem; line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .btn-dark {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.9rem 2.25rem;
+      background: #7c8cff;
+      color: #0a0a0b;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-dark:hover { background: #96a3ff; transform: translateY(-2px); }
+    .btn-dark.ghost {
+      background: transparent;
+      color: #e8e8ea;
+      border: 1px solid #2a2a2e;
+      margin-left: 0.75rem;
+    }
+    .btn-dark.ghost:hover { border-color: #7c8cff; color: #7c8cff; background: transparent; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .feature {
+      border: 1px solid #1f1f22;
+      border-radius: 14px;
+      padding: 2rem;
+      background: #0e0e10;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .feature:hover { border-color: #7c8cff; transform: translateY(-4px); }
+    .feature .n { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #7c8cff; display: block; margin-bottom: 1rem; }
+    .feature h3 { font-weight: 500; font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .feature p { color: #8a8a92; font-size: 0.88rem; line-height: 1.7; }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      padding: 2rem 0;
+      border-top: 1px solid #1f1f22;
+      border-bottom: 1px solid #1f1f22;
+      margin-bottom: 3rem;
+    }
+    .spec h3 { font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; color: #8a8a92; margin-bottom: 0.5rem; }
+    .spec p { font-size: 0.95rem; color: #e8e8ea; }
+
+    .quote { padding: 2rem 0 3rem; text-align: center; }
+    .quote blockquote {
+      font-weight: 300;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #b8b8c0;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .quote cite { font-size: 0.75rem; color: #7c8cff; font-style: normal; font-family: 'JetBrains Mono', monospace; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #8a8a92; text-decoration: none; font-weight: 400; padding: 0.35rem 0.9rem; border: 1px solid #2a2a2e; border-radius: 6px; transition: all 0.2s; }
+    .links a:hover { color: #7c8cff; border-color: #7c8cff; }
+    .links a.current { color: #7c8cff; border-color: #7c8cff; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #5c5c64; }
+    .footer-text a { color: #7c8cff; text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 2rem 0 3rem; }
+      .btn-dark { display: block; text-align: center; margin-bottom: 0.75rem; }
+      .btn-dark.ghost { margin-left: 0; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">noir<span class="dot">.</span></div>
+      <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">Work</a>
+        <a href="#">Studio</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="label animate__animated animate__fadeIn">&sol;&sol; DESIGN STUDIO</span>
+      <h1 class="animate__animated animate__fadeIn">Kurang lebih.<br><strong>Justru lebih.</strong></h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.15s">Dark minimal bukan soal gelap semata — ia soal menyisakan hanya yang penting. Satu aksen, satu fokus, nol gangguan.</p>
+      <div class="animate__animated animate__fadeIn" style="animation-delay:0.25s">
+        <a href="#" class="btn-dark">Mulai Proyek</a>
+        <a href="#" class="btn-dark ghost">Lihat Karya</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <span class="n">01</span>
+        <h3>Near-Black Canvas</h3>
+        <p>Latar #0a0a0b bukan hitam pekat — ia punya kedalaman yang nyaman di mata.</p>
+      </div>
+      <div class="feature">
+        <span class="n">02</span>
+        <h3>Satu Warna Aksen</h3>
+        <p>Satu hue yang dipakai hemat menandai interaksi, tanpa berteriak.</p>
+      </div>
+      <div class="feature">
+        <span class="n">03</span>
+        <h3>Tipografi Ringan</h3>
+        <p>Font weight 300-500 — tipis tapi terbaca, elegan tapi fungsional.</p>
+      </div>
+      <div class="feature">
+        <span class="n">04</span>
+        <h3>Whitespace Gelap</h3>
+        <p>Ruang kosong memberi napas — konten jadi bintang satu-satunya.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Fokus, tenang, premium</p></div>
+      <div class="spec"><h3>Era</h3><p>Kontemporer</p></div>
+      <div class="spec"><h3>Colors</h3><p>Near-black + 1 aksen</p></div>
+      <div class="spec"><h3>Typography</h3><p>Inter + JetBrains Mono</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Minimal, gelap, presisi</p></div>
+    </section>
+
+    <section class="quote">
+      <blockquote>&ldquo;Desain selesai bukan saat tak ada yang bisa ditambah, melainkan saat tak ada yang bisa dikurangi.&rdquo;</blockquote>
+      <cite>&mdash; NOIR STUDIO</cite>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

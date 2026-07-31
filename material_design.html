@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material Design — Web Landing</title>
+  <meta name="description" content="Material Design — bahasa desain Google: elevation shadow, kartu, warna primary-bold, dan komponen berprinsip material fisik.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/material_design.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Material Design — Web Landing">
+  <meta property="og:description" content="Material Design — bahasa desain Google: elevation shadow, kartu, warna primary-bold, prinsip material fisik.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/material_design.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Material Design — Web Landing">
+  <meta name="twitter:description" content="Material Design — elevation, kartu, warna primary-bold ala Google.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f6f7f9;
+      color: #1f1f1f;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    /* Material app bar */
+    .appbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #6200ee;
+      color: #fff;
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.2);
+      margin-bottom: 2rem;
+    }
+    .appbar .logo { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.02em; }
+    .appbar .actions a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.9rem; margin-left: 1.5rem; opacity: 0.9; transition: opacity 0.2s; }
+    .appbar .actions a:hover { opacity: 1; }
+    .appbar .fab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      background: #fff;
+      color: #6200ee;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      font-size: 1.1rem;
+      margin-left: 1.5rem;
+    }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3rem; }
+    .hero h1 { font-weight: 900; font-size: 3.2rem; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .hero h1 .hl { color: #6200ee; }
+    .hero p { font-size: 1.05rem; color: #49454f; line-height: 1.7; margin-bottom: 1.75rem; max-width: 480px; }
+
+    .btn-material {
+      display: inline-block;
+      background: #6200ee;
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.9rem 2.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.2), 0 3px 10px rgba(0,0,0,0.25);
+      transition: all 0.2s;
+    }
+    .btn-material:hover { box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 6px 16px rgba(0,0,0,0.3); transform: translateY(-1px); }
+    .btn-material.outline {
+      background: transparent;
+      color: #6200ee;
+      box-shadow: none;
+      border: 1px solid #6200ee;
+      margin-left: 0.75rem;
+    }
+    .btn-material.outline:hover { background: rgba(98,0,238,0.08); box-shadow: none; }
+
+    /* Material card with elevation */
+    .hero-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.14);
+      position: relative;
+    }
+    .hero-card .chip { display: inline-block; background: #e8def8; color: #4a4458; font-size: 0.8rem; font-weight: 500; padding: 0.3rem 0.9rem; border-radius: 50px; margin-bottom: 1rem; }
+    .hero-card .stat-row { display: flex; justify-content: space-around; text-align: center; margin: 1.5rem 0; }
+    .hero-card .stat .num { font-size: 1.8rem; font-weight: 900; color: #6200ee; }
+    .hero-card .stat .lbl { font-size: 0.75rem; color: #79747e; }
+
+    .section-title { font-weight: 700; font-size: 1.4rem; margin-bottom: 1.5rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.1);
+      transition: all 0.25s;
+    }
+    .card:hover { box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.16); transform: translateY(-3px); }
+    .card .banner { height: 90px; }
+    .card .body { padding: 1.25rem 1.5rem 1.5rem; }
+    .card h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.88rem; color: #49454f; line-height: 1.6; }
+    .card .tag { display: inline-block; font-size: 0.7rem; font-weight: 500; background: #f3edf7; color: #4a4458; padding: 0.2rem 0.7rem; border-radius: 6px; margin-top: 0.75rem; }
+    .b1 { background: linear-gradient(135deg, #6200ee, #b388ff); }
+    .b2 { background: linear-gradient(135deg, #00696d, #4dd0e1); }
+    .b3 { background: linear-gradient(135deg, #8c4d00, #ffb74d); }
+    .b4 { background: linear-gradient(135deg, #b00020, #ff8a80); }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .spec { background: #fff; border-radius: 14px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.1); }
+    .spec h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #6200ee; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.95rem; color: #49454f; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #49454f; text-decoration: none; font-weight: 500; padding: 0.35rem 0.9rem; border: 1px solid #cac4d0; border-radius: 8px; transition: all 0.2s; }
+    .links a:hover { background: #6200ee; color: #fff; border-color: #6200ee; }
+    .links a.current { background: #6200ee; color: #fff; border-color: #6200ee; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.78rem; color: #79747e; }
+    .footer-text a { color: #6200ee; text-decoration: none; }
+
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; }
+      .appbar { flex-direction: column; gap: 0.75rem; }
+      .appbar .actions a { margin-left: 0.6rem; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="appbar">
+      <div class="logo">MATERIA</div>
+      <div class="actions">
+        <a href="#">Home</a>
+        <a href="#">Komponen</a>
+        <a href="#">Tema</a>
+        <a href="#">Dokumentasi</a>
+        <span class="fab">+</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1 class="animate__animated animate__fadeInLeft">Material.<br><span class="hl">Terstruktur.</span></h1>
+        <p class="animate__animated animate__fadeInLeft" style="animation-delay:0.15s">Bahasa desain Google yang mengubah layar datar menjadi kanvas material fisik — dengan elevation, gerak, dan warna yang bermakna.</p>
+        <div class="animate__animated animate__fadeInLeft" style="animation-delay:0.25s">
+          <a href="#" class="btn-material">Mulai</a>
+          <a href="#" class="btn-material outline">Komponen</a>
+        </div>
+      </div>
+      <div class="hero-card animate__animated animate__fadeInRight">
+        <span class="chip">Material 3</span>
+        <div class="stat-row">
+          <div class="stat"><div class="num">3</div><div class="lbl">Elevation</div></div>
+          <div class="stat"><div class="num">8</div><div class="lbl">Komponen</div></div>
+          <div class="stat"><div class="num">5</div><div class="lbl">Skala Tema</div></div>
+        </div>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <div style="flex:1;height:44px;background:#e8def8;border-radius:22px;"></div>
+          <div style="width:120px;height:44px;background:#6200ee;border-radius:22px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Prinsip Material</h2>
+    <section class="cards">
+      <div class="card">
+        <div class="banner b1"></div>
+        <div class="body">
+          <h3>Elevation</h3>
+          <p>Shadow berlapis menandakan kedalaman — kartu yang lebih dekat memiliki bayangan lebih besar.</p>
+          <span class="tag">Surface</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="banner b2"></div>
+        <div class="body">
+          <h3>Gerak Bermakna</h3>
+          <p>Animasi tidak acak — ia menjelaskan hubungan antar elemen dan arah navigasi.</p>
+          <span class="tag">Motion</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="banner b3"></div>
+        <div class="body">
+          <h3>Warna Sistem</h3>
+          <p>Palet tonal dari satu warna seed — dari terang ke gelap dengan harmoni terjaga.</p>
+          <span class="tag">Color</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="banner b4"></div>
+        <div class="body">
+          <h3>Bentuk Responsif</h3>
+          <p>Kontainer yang menyesuaikan lebar layar dengan radius dan padding konsisten.</p>
+          <span class="tag">Shape</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Bersih, sistematis, modern</p></div>
+      <div class="spec"><h3>Era</h3><p>2014 &mdash; kini</p></div>
+      <div class="spec"><h3>Colors</h3><p>Primary bold + tonal</p></div>
+      <div class="spec"><h3>Typography</h3><p>Roboto</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Elevation, kartu, gerak</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

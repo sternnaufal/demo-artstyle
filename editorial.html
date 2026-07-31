@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial — Web Landing</title>
+  <meta name="description" content="Editorial — layout majalah: grid ketat, headline serif besar, tipografi hierarkis, dan whitespace elegan ala publikasi premium.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/editorial.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Editorial — Web Landing">
+  <meta property="og:description" content="Editorial — layout majalah: grid ketat, headline serif besar, hierarki tipografi, whitespace elegan.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/editorial.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Editorial — Web Landing">
+  <meta name="twitter:description" content="Editorial — layout majalah, headline serif besar, grid ketat.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: #faf9f7;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; letter-spacing: -0.02em; }
+    .masthead .meta { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #888; }
+    .masthead .meta strong { color: #1a1a1a; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.75rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    .nav-links a { color: #1a1a1a; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #b08d3e; }
+
+    /* Cover layout */
+    .cover {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+      align-items: start;
+    }
+    .cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .cover h1 em { font-style: italic; color: #b08d3e; }
+    .cover .dek {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #444;
+      max-width: 460px;
+      border-left: 3px solid #b08d3e;
+      padding-left: 1.25rem;
+    }
+    .cover-side { border-top: 4px solid #1a1a1a; padding-top: 1rem; }
+    .cover-side .issue { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; color: #b08d3e; margin-bottom: 0.75rem; }
+    .cover-side .stat { display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 0.75rem 0; font-size: 0.9rem; }
+    .cover-side .stat strong { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+
+    /* Feature cards — editorial grid */
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 2px solid #1a1a1a; border-left: 1px solid #ddd; margin-bottom: 3rem; }
+    .feature { border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 2rem; transition: background 0.2s; }
+    .feature:hover { background: #fff; }
+    .feature .kicker { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.25em; color: #b08d3e; margin-bottom: 0.75rem; }
+    .feature h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .feature p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+    .feature .byline { font-size: 0.75rem; color: #999; margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; padding: 2rem 0; border-top: 2px solid #1a1a1a; border-bottom: 2px solid #1a1a1a; margin-bottom: 2.5rem; }
+    .spec h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.3em; color: #b08d3e; margin-bottom: 0.4rem; }
+    .spec p { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+
+    .quote { text-align: center; padding: 3rem 2rem; margin-bottom: 2.5rem; }
+    .quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: 1.4;
+      max-width: 720px;
+      margin: 0 auto 1rem;
+    }
+    .quote cite { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.25em; color: #888; }
+
+    .cta-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; border: 2px solid #1a1a1a; padding: 2.5rem; margin-bottom: 2.5rem; }
+    .cta-row h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; }
+    .btn-editorial {
+      display: inline-block;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      background: #1a1a1a;
+      color: #faf9f7;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .btn-editorial:hover { background: #b08d3e; }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: #666; text-decoration: none; padding: 0.3rem 0.9rem; border: 1px solid #ccc; transition: all 0.2s; }
+    .links a:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+    .links a.current { border-color: #1a1a1a; color: #1a1a1a; font-weight: 600; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: #999; letter-spacing: 0.1em; }
+    .footer-text a { color: #1a1a1a; text-decoration: none; }
+
+    @media (max-width: 800px) {
+      .cover { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .cta-row { grid-template-columns: 1fr; text-align: center; }
+      .masthead { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <div class="logo">MONOGRAPH</div>
+      <div class="meta">Edisi <strong>N°07</strong> — Desain &amp; Kultur Digital</div>
+    </header>
+
+    <nav class="nav-links">
+      <a href="#">Utama</a>
+      <a href="#">Esai</a>
+      <a href="#">Liputan</a>
+      <a href="#">Riset</a>
+      <a href="#">Arsip</a>
+    </nav>
+
+    <section class="cover">
+      <div>
+        <h1 class="animate__animated animate__fadeIn">Seni Menata<br><em>Ruang Kosong</em></h1>
+        <p class="dek animate__animated animate__fadeIn" style="animation-delay:0.2s">Editorial design mempercayai tipografi sebagai suara utama. Grid, hierarki, dan ruang — bukan dekorasi — yang membuat konten berbicara.</p>
+      </div>
+      <aside class="cover-side animate__animated animate__fadeIn" style="animation-delay:0.3s">
+        <div class="issue">Profil Edisi</div>
+        <div class="stat"><span>Tipografi</span><strong>Serif + Sans</strong></div>
+        <div class="stat"><span>Grid</span><strong>12 Kolom</strong></div>
+        <div class="stat"><span>Palet</span><strong>Mono + Emas</strong></div>
+        <div class="stat"><span>Mood</span><strong>Tenang, otoritatif</strong></div>
+      </aside>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <div class="kicker">Esai 01</div>
+        <h3>Hierarki Typografi</h3>
+        <p>Headline serif besar, body sans kecil — kontras ukuran menuntun mata pembaca melalui alur yang disengaja.</p>
+        <div class="byline">Penata Huruf</div>
+      </article>
+      <article class="feature">
+        <div class="kicker">Esai 02</div>
+        <h3>Grid yang Tegas</h3>
+        <p>Kolom konsisten menciptakan ritme. Penyimpangan kecil menjadi penekanan — bukan kekacauan.</p>
+        <div class="byline">Arsitek Layout</div>
+      </article>
+      <article class="feature">
+        <div class="kicker">Esai 03</div>
+        <h3>Whitespace Elegan</h3>
+        <p>Ruang kosong bukan pemborosan — ia memberi napas pada setiap elemen dan menaikkan persepsi nilai.</p>
+        <div class="byline">Penjaga Ruang</div>
+      </article>
+      <article class="feature">
+        <div class="kicker">Esai 04</div>
+        <h3>Emas sebagai Aksen</h3>
+        <p>Satu warna aksen cukup. Dipakai hemat, emas mengangkat hierarki tanpa menenggelamkan konten.</p>
+        <div class="byline">Warna &amp; Nuansa</div>
+      </article>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Tenang, premium, otoritatif</p></div>
+      <div class="spec"><h3>Era</h3><p>Klasik &mdash; abadi</p></div>
+      <div class="spec"><h3>Colors</h3><p>Mono, krem, emas</p></div>
+      <div class="spec"><h3>Typography</h3><p>Playfair Display + Source Sans</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Grid ketat, hierarki kuat</p></div>
+    </section>
+
+    <section class="quote">
+      <blockquote>&ldquo;Desain editorial adalah tentang membuat pembaca merasa konten itu penting.&rdquo;</blockquote>
+      <cite>&mdash; Manifesto MONOGRAPH</cite>
+    </section>
+
+    <section class="cta-row">
+      <h2>Cerita butuh ruang yang layak.</h2>
+      <a href="#" class="btn-editorial">Langganan</a>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

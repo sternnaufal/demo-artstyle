@@ -5,6 +5,7 @@ FOLDER = os.path.dirname(os.path.abspath(__file__))
 INDEX = os.path.join(FOLDER, 'index.html')
 
 DESCRIPTIONS = {
+    'acid': 'Gradien neon ekstrem, blur glow, bentuk cair psychedelic',
     'aero_frutiger': 'Efek transparan, gradien aqua, estetika mid-2000an futuristik',
     'art_deco': 'Geometri sunburst, emas-hitam-ivory, kemewahan 1920-an',
     'art_nouveau': 'Kurva whiplash, motif flora, palet sage-emas organik',
@@ -19,7 +20,9 @@ DESCRIPTIONS = {
     'corporate_memphis': 'Ilustrasi blobby flat, warna pastel cerah',
     'cyberpunk': 'Neon cyan-magenta, glitch, grid perspektif dystopia',
     'dada': 'Anti-art absurd, kolase chaos',
+    'dark_minimal': 'Gelap bersih, satu aksen, tipografi ringan fokus konten',
     'de_stijl': 'Neoplasticism: garis, kotak merah-biru-kuning',
+    'editorial': 'Layout majalah, headline serif besar, grid ketat',
     'flat_design': 'Warna solid cerah, bentuk sederhana, tanpa bayangan',
     'glassmorphism': 'Efek kaca transparan dengan backdrop-blur',
     'gothic': 'Lengkung lancip, warna gelap, emas, tekstur batu',
@@ -30,6 +33,7 @@ DESCRIPTIONS = {
     'maximalism': 'Penuh warna, layer bertumpuk, tekstur berlebihan',
     'medieval': 'Huruf Gothic, tekstur perkamen, warna tanah dan emas',
     'memphis': 'Pola geometris 80-an, warna neon, bentuk abstrak',
+    'material_design': 'Elevation shadow, kartu, warna primary bold ala Google',
     'minimal_horror': 'Minimalis seram: gelap, whitespace kosong',
     'minimalistic_futuristic': 'UI futuristik bersih: gradien gelap, garis neon',
     'mystical_forest': 'Hutan ajaib: hijau tua, cahaya firefly',
@@ -43,6 +47,7 @@ DESCRIPTIONS = {
     'saccharine': 'Manis berlebihan: pastel pink-ungu, nuansa dongeng',
     'skeuomorphism': 'Tekstur kulit jahitan, tombol timbul 3D, highlight glossy',
     'slasher': 'Horror film: darah merah, font serif tebal',
+    'solarpunk': 'Masa depan hijau cerah: panel surya, taman vertikal, energi bersih',
     'surreal': 'Gaya mimpi: objek tidak masuk akal',
     'swiss_style': 'Grid-based, Helvetica, hierarki bersih, minimal',
     'terminal': 'CLI: monospace hijau di atas hitam, teks ASCII',
@@ -55,19 +60,20 @@ DESCRIPTIONS = {
 }
 
 NAMES = {
-    'aero_frutiger': 'Aero Frutiger', 'art_deco': 'Art Deco', 'art_nouveau': 'Art Nouveau',
+    'acid': 'Acid', 'aero_frutiger': 'Aero Frutiger', 'art_deco': 'Art Deco', 'art_nouveau': 'Art Nouveau',
     'barbiecore': 'Barbiecore', 'bauhaus': 'Bauhaus',
     'bento_ui': 'Bento UI', 'biopunk': 'Biopunk', 'brutalism': 'Brutalism',
     'candy_pop': 'Candy Pop', 'claymorphism': 'Claymorphism', 'constructivism': 'Constructivism',
-    'corporate_memphis': 'Corporate Memphis', 'cyberpunk': 'Cyberpunk', 'dada': 'Dada', 'de_stijl': 'De Stijl',
-    'flat_design': 'Flat Design', 'glassmorphism': 'Glassmorphism', 'gothic': 'Gothic', 'grunge': 'Grunge',
+    'corporate_memphis': 'Corporate Memphis', 'cyberpunk': 'Cyberpunk', 'dada': 'Dada',
+    'dark_minimal': 'Dark Mode Minimal', 'de_stijl': 'De Stijl',
+    'editorial': 'Editorial', 'flat_design': 'Flat Design', 'glassmorphism': 'Glassmorphism', 'gothic': 'Gothic', 'grunge': 'Grunge',
     'isometric': 'Isometric', 'liminal_space': 'Liminal Space', 'manga': 'Manga / Anime',
     'maximalism': 'Maximalism', 'medieval': 'Medieval', 'memphis': 'Memphis',
-    'minimal_horror': 'Minimal Horror', 'minimalistic_futuristic': 'Minimalistic Futuristic',
+    'material_design': 'Material Design', 'minimal_horror': 'Minimal Horror', 'minimalistic_futuristic': 'Minimalistic Futuristic',
     'mystical_forest': 'Mystical Forest', 'neumorphism': 'Neumorphism', 'oceanic': 'Oceanic',
     'old_web': 'Old Web', 'pixelated': 'Pixelated', 'pop_art': 'Pop Art',
     'psychedelic': 'Psychedelic', 'rococo': 'Rococo', 'saccharine': 'Saccharine',
-    'skeuomorphism': 'Skeuomorphism', 'slasher': 'Slasher', 'surreal': 'Surreal', 'swiss_style': 'Swiss Style',
+    'skeuomorphism': 'Skeuomorphism', 'slasher': 'Slasher', 'solarpunk': 'Solarpunk', 'surreal': 'Surreal', 'swiss_style': 'Swiss Style',
     'terminal': 'Terminal', 'techno_baroque': 'Techno Baroque', 'typodriven': 'Typodriven',
     'ukiyo_e': 'Ukiyo-e', 'vaporwave': 'Vaporwave', 'western': 'Western', 'y2k': 'Y2K',
 }

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6Y4Y3XVGQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R6Y4Y3XVGQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acid — Web Landing</title>
+  <meta name="description" content="Acid — gradien neon ekstrem, efek blur glow menyala, bentuk cair, dan tipografi besar dengan warna acid-psych.">
+  <link rel="canonical" href="https://demo.naufalrakha.my.id/acid.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="favicon-180x180.png">
+
+  <meta property="og:title" content="Acid — Web Landing">
+  <meta property="og:description" content="Acid — gradien neon ekstrem, blur glow menyala, bentuk cair, tipografi besar acid-psych.">
+  <meta property="og:url" content="https://demo.naufalrakha.my.id/acid.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://demo.naufalrakha.my.id/og-image.png">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Demo Artstyle Gallery">
+  <meta property="og:logo" content="https://demo.naufalrakha.my.id/logo-512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Acid — Web Landing">
+  <meta name="twitter:description" content="Acid — gradien neon ekstrem, blur glow, bentuk cair.">
+  <meta name="twitter:image" content="https://demo.naufalrakha.my.id/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #0a0118;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated liquid blobs */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.55;
+      pointer-events: none;
+      z-index: 0;
+      animation: liquid 14s ease-in-out infinite;
+    }
+    .blob-1 { width: 420px; height: 420px; top: -80px; left: -80px; background: #ff2d78; }
+    .blob-2 { width: 380px; height: 380px; bottom: -100px; right: -60px; background: #00f0ff; animation-delay: -5s; }
+    .blob-3 { width: 300px; height: 300px; top: 40%; left: 55%; background: #a855f7; animation-delay: -9s; }
+    @keyframes liquid {
+      0%, 100% { transform: translate(0,0) scale(1); border-radius: 50%; }
+      33% { transform: translate(60px,-40px) scale(1.15); border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%; }
+      66% { transform: translate(-40px,50px) scale(0.9); border-radius: 55% 45% 40% 60% / 60% 50% 50% 40%; }
+    }
+
+    .wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .logo { font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 1.5rem; background: linear-gradient(90deg, #ff2d78, #ffd500, #00f0ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-left: 1.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #ffd500; }
+
+    .hero { text-align: center; padding: 3rem 1rem 4rem; }
+    .hero .eyebrow {
+      display: inline-block;
+      font-family: 'Unbounded', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      margin-bottom: 1.75rem;
+      color: #ffd500;
+      backdrop-filter: blur(10px);
+    }
+    .hero h1 {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(90deg, #ff2d78, #ffd500 40%, #00f0ff);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 30px rgba(255,45,120,0.35));
+    }
+    .hero p { max-width: 540px; margin: 0 auto 2rem; color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.7; }
+    .btn-acid {
+      display: inline-block;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      padding: 1.1rem 2.5rem;
+      border-radius: 50px;
+      color: #0a0118;
+      background: linear-gradient(90deg, #ffd500, #00f0ff);
+      text-decoration: none;
+      box-shadow: 0 0 40px rgba(255,213,0,0.4), 0 0 80px rgba(0,240,255,0.2);
+      transition: all 0.3s;
+    }
+    .btn-acid:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 60px rgba(255,213,0,0.6), 0 0 100px rgba(255,45,120,0.3); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s;
+    }
+    .card:hover { transform: translateY(-6px); border-color: rgba(255,213,0,0.4); }
+    .card i { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+    .card:nth-child(1) i { color: #ff2d78; text-shadow: 0 0 20px rgba(255,45,120,0.8); }
+    .card:nth-child(2) i { color: #ffd500; text-shadow: 0 0 20px rgba(255,213,0,0.8); }
+    .card:nth-child(3) i { color: #00f0ff; text-shadow: 0 0 20px rgba(0,240,255,0.8); }
+    .card:nth-child(4) i { color: #a855f7; text-shadow: 0 0 20px rgba(168,85,247,0.8); }
+    .card h3 { font-family: 'Unbounded', sans-serif; font-size: 1rem; margin-bottom: 0.6rem; }
+    .card p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+    .spec { text-align: center; padding: 1.25rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+    .spec h3 { font-size: 0.65rem; font-family: 'Unbounded', sans-serif; letter-spacing: 0.25em; text-transform: uppercase; background: linear-gradient(90deg, #ff2d78, #00f0ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.4rem; }
+    .spec p { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+
+    .links { text-align: center; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; font-size: 0.8rem; }
+    .links a { color: rgba(255,255,255,0.6); text-decoration: none; padding: 0.35rem 0.9rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; transition: all 0.2s; }
+    .links a:hover { background: rgba(255,213,0,0.15); color: #ffd500; border-color: #ffd500; }
+    .links a.current { color: #ffd500; border-color: #ffd500; font-weight: 700; }
+    .footer-text { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .footer-text a { color: #00f0ff; text-decoration: none; }
+
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; gap: 0.75rem; }
+      .nav-links a { margin-left: 0.6rem; }
+      .hero { padding: 2rem 0.5rem 3rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">ACID//WAVE</div>
+      <div class="nav-links">
+        <a href="#">HOME</a>
+        <a href="#">TRIP</a>
+        <a href="#">FREQ</a>
+        <a href="#">TUNE</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="eyebrow animate__animated animate__fadeInDown">WELCOME TO THE OTHER SIDE</span>
+      <h1 class="animate__animated animate__fadeIn">Cair. Menyala.<br><span class="grad">Berantakan Indah.</span></h1>
+      <p class="animate__animated animate__fadeIn" style="animation-delay:0.2s">Acid aesthetic: gradien neon yang berdenyut, blur glow, dan tipografi besar — pengalaman visual yang gak bisa kamu abaikan.</p>
+      <a href="#" class="btn-acid animate__animated animate__fadeIn" style="animation-delay:0.3s">MASUK &rarr;</a>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <i class="fas fa-blender"></i>
+        <h3>Gradien Acid</h3>
+        <p>Transisi warna ekstrem pink-ungu-kuning-cyan yang terasa hidup.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-cloud-rain"></i>
+        <h3>Blur & Glow</h3>
+        <p>Blob blur raksasa melayang + text-shadow menyala menciptakan kedalaman.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-water"></i>
+        <h3>Bentuk Cair</h3>
+        <p>Animasi liquid mengubah bentuk organik secara halus dan hipnotis.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Tipografi Teriak</h3>
+        <p>Font Unbounded besar dengan gradient clip — headline yang menjerit.</p>
+      </div>
+    </section>
+
+    <section class="specs">
+      <div class="spec"><h3>Mood</h3><p>Psych, futuristik, liar</p></div>
+      <div class="spec"><h3>Era</h3><p>Web3 / 2020-an</p></div>
+      <div class="spec"><h3>Colors</h3><p>Neon pink, cyan, kuning</p></div>
+      <div class="spec"><h3>Typography</h3><p>Unbounded + Space Grotesk</p></div>
+      <div class="spec"><h3>Karakter</h3><p>Blob, glow, gradien</p></div>
+    </section>
+
+    <div class="links">
+      <a href="https://naufalrakha.my.id" target="_blank">Root</a>
+      <a href="https://digital.naufalrakha.my.id" target="_blank">Digital</a>
+      <a href="https://demo.naufalrakha.my.id" class="current" target="_blank">Demo Artstyle</a>
+      <a href="https://webapps.naufalrakha.my.id" target="_blank">WebApps</a>
+      <a href="https://blog.naufalrakha.my.id" target="_blank">Blog</a>
+    </div>
+    <footer class="footer-text">
+      &copy; <span id="year">2025</span> <a href="https://naufalrakha.my.id">Naufal Rakha Putra</a> — Pure CSS, tanpa gambar.
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
