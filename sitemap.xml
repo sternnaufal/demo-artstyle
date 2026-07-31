@@ -1,236 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://demo.naufalrakha.my.id/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://demo.naufalrakha.my.id/about.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/aero_frutiger.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/barbiecore.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/bauhaus.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/bento_ui.html</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/biopunk.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/brutalism.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/candy_pop.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/claymorphism.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/constructivism.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/contact.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/corporate_memphis.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/dada.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/de_stijl.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/glassmorphism.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/gothic.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/grunge.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/index.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/isometric.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/liminal_space.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/manga.html</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/maximalism.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/medieval.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/memphis.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/minimal_horror.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/minimalistic_futuristic.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/mystical_forest.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/neumorphism.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/oceanic.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/old_web.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/pixelated.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/pop_art.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://demo.naufalrakha.my.id/privacy.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://demo.naufalrakha.my.id/psychedelic.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/rococo.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/saccharine.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/slasher.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/surreal.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/swiss_style.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/techno_baroque.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/terminal.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/typodriven.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/ukiyo_e.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/vaporwave.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.naufalrakha.my.id/western.html</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demo.naufalrakha.my.id/y2k.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
