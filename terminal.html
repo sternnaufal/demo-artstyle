@@ -202,8 +202,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
-<a href="index.html" title="Kembali ke Gallery" style="position:fixed;top:12px;left:12px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:50px;background:rgba(0,0,0,0.5);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,0.3);transition:all .2s;">&#8592; Gallery</a>
-  <div class="terminal animate__animated animate__fadeIn">
+<div class="terminal animate__animated animate__fadeIn">
     <div class="term-header">
       <div class="dot red"></div>
       <div class="dot yellow"></div>
@@ -288,14 +287,15 @@
 </div>
 
 <!-- Design Spec Section -->
-<section class="design-spec" style="max-width:760px;margin:2.5rem auto;padding:1.75rem;border:1px solid currentColor;border-radius:12px;font-family:inherit;">
-  <a href="index.html" style="display:inline-block;margin-bottom:1rem;font-size:0.8rem;text-decoration:none;opacity:0.6;">&larr; Kembali ke Gallery</a>
-  <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;opacity:0.5;">Cocok Untuk</div>
-      <p id="cocokUntuk" style="margin:0.35rem 0 0;font-size:0.95rem;line-height:1.6;">Brand dev, CLI tools, hacker</p>
-    </div>
-    <button type="button" onclick="copyDesignMD(this)" style="padding:0.7rem 1.4rem;border-radius:8px;border:1px solid currentColor;background:transparent;font-weight:600;font-size:0.85rem;cursor:pointer;transition:all .2s;">&#128209; Copy Design.md</button>
+<section class="design-spec" style="max-width:760px;margin:2.5rem auto;padding:0;border:2px solid #00ff41;border-radius:4px;font-family:monospace;background:#0a0a0a;">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1rem;background:#00ff41;color:#0a0a0a;font-weight:bold;letter-spacing:0.1em;font-size:0.85rem;">
+    <span>// DESIGN_SPEC.TXT</span>
+    <a href="index.html" style="color:#0a0a0a;text-decoration:underline;">&lt;- GALLERY</a>
+  </div>
+  <div style="padding:1.25rem 1.5rem;">
+    <div style="color:#00ff41;margin-bottom:0.4rem;">$ cat cocok_untuk.md</div>
+    <p id="cocokUntuk" style="margin:0 0 1.25rem;color:#39ff14;line-height:1.6;">Brand dev, CLI tools, hacker</p>
+    <button type="button" onclick="copyDesignMD(this)" style="padding:0.7rem 1.4rem;background:#00ff41;color:#0a0a0a;border:none;font-family:monospace;font-weight:bold;font-size:0.9rem;cursor:pointer;">&gt; COPY_DESIGN.MD</button>
   </div>
 </section>
 <script type="application/json" id="designData">{"title": "Terminal", "description": "Terminal — estetika CLI: font monospace hijau di atas hitam, cursor berkedip, dan teks ASCII.", "palette": ["#00ff41", "#0a0a0a", "#39ff14"], "best": "Brand dev, CLI tools, hacker", "css": "Monospace hijau + cursor berkedip + teks ASCII"}</script>

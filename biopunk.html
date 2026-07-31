@@ -368,8 +368,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 </head>
 <body>
-<a href="index.html" title="Kembali ke Gallery" style="position:fixed;top:12px;left:12px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:50px;background:rgba(0,0,0,0.5);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,0.3);transition:all .2s;">&#8592; Gallery</a>
-  <div class="glitch-line"></div>
+<div class="glitch-line"></div>
   <div class="veins">
     <div class="vein" style="top:10%;left:0;width:200px;animation-delay:0s;"></div>
     <div class="vein" style="top:30%;right:0;width:150px;animation-delay:1s;"></div>
@@ -443,6 +442,17 @@
         <div class="spec-card"><h3>Characteristics</h3><p>DNA helixes, cellular patterns, vein networks, biological scanlines, wetware metaphors, organic-mechanical hybrids.</p></div>
       </div>
     </section>
+<!-- Design Spec Section -->
+<section class="design-spec" style="max-width:760px;margin:2.5rem auto;padding:1.75rem;border:1px solid currentColor;border-radius:12px;font-family:inherit;">
+  <a href="index.html" style="display:inline-block;margin-bottom:1rem;font-size:0.8rem;text-decoration:none;opacity:0.6;">&larr; Kembali ke Gallery</a>
+  <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+    <div>
+      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;opacity:0.5;">Cocok Untuk</div>
+      <p id="cocokUntuk" style="margin:0.35rem 0 0;font-size:0.95rem;line-height:1.6;">Biotech, game sci-fi, brand futuristik organik</p>
+    </div>
+    <button type="button" onclick="copyDesignMD(this)" style="padding:0.75rem 1.5rem;border-radius:8px;border:2px solid #333;background:#fff;color:#111;font-weight:700;font-size:0.85rem;cursor:pointer;box-shadow:3px 3px 0 #333;transition:all .15s;">&#128209; Copy Design.md</button>
+  </div>
+</section>
 <footer>
       <span>// CULTIVATED WITH INTENT // v2.0.1 //</span>
     </footer>
@@ -458,17 +468,7 @@
   </div>
 </div>
 
-<!-- Design Spec Section -->
-<section class="design-spec" style="max-width:760px;margin:2.5rem auto;padding:1.75rem;border:1px solid currentColor;border-radius:12px;font-family:inherit;">
-  <a href="index.html" style="display:inline-block;margin-bottom:1rem;font-size:0.8rem;text-decoration:none;opacity:0.6;">&larr; Kembali ke Gallery</a>
-  <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;opacity:0.5;">Cocok Untuk</div>
-      <p id="cocokUntuk" style="margin:0.35rem 0 0;font-size:0.95rem;line-height:1.6;">Biotech, game sci-fi, brand futuristik organik</p>
-    </div>
-    <button type="button" onclick="copyDesignMD(this)" style="padding:0.7rem 1.4rem;border-radius:8px;border:1px solid currentColor;background:transparent;font-weight:600;font-size:0.85rem;cursor:pointer;transition:all .2s;">&#128209; Copy Design.md</button>
-  </div>
-</section>
+
 <script type="application/json" id="designData">{"title": "Biopunk", "description": "Biopunk — estetika futuristik organic dengan elemen bioluminesensi, hijau neon, dan tekstur biomassa.", "palette": ["#00ff85", "#0a1f14", "#1b5e3a"], "best": "Biotech, game sci-fi, brand futuristik organik", "css": "Neon hijau glow + tekstur biomassa + gradient organik"}</script>
 <script>
 function copyDesignMD(btn){
