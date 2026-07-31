@@ -293,5 +293,36 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+<!-- Design Spec Section -->
+<section class="design-spec" style="max-width:760px;margin:2.5rem auto;padding:1.75rem;border:1px solid currentColor;border-radius:12px;font-family:inherit;">
+  <a href="index.html" style="display:inline-block;margin-bottom:1rem;font-size:0.8rem;text-decoration:none;opacity:0.6;">&larr; Kembali ke Gallery</a>
+  <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+    <div>
+      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;opacity:0.5;">Cocok Untuk</div>
+      <p id="cocokUntuk" style="margin:0.35rem 0 0;font-size:0.95rem;line-height:1.6;">Fashion, kecantikan, brand wanita muda</p>
+    </div>
+    <button type="button" onclick="copyDesignMD(this)" style="padding:0.7rem 1.4rem;border-radius:8px;border:1px solid currentColor;background:transparent;font-weight:600;font-size:0.85rem;cursor:pointer;transition:all .2s;">&#128209; Copy Design.md</button>
+  </div>
+</section>
+<script type="application/json" id="designData">{"title": "Barbiecore", "description": "Barbiecore — estetika hot pink bold, feminin, dan playful untuk landing page modern.", "palette": ["#ff2d78", "#ffd9e8", "#ffffff"], "best": "Fashion, kecantikan, brand wanita muda", "css": "Palet hot pink bold + bentuk rounded + playful"}</script>
+<script>
+function copyDesignMD(btn){
+  var data = JSON.parse(document.getElementById('designData').textContent);
+  var specs = '';
+  document.querySelectorAll('.spec, .spec-card').forEach(function(s){
+    var k = s.querySelector('h3'), v = s.querySelector('p');
+    if (k && v) specs += '- **' + k.textContent + '**: ' + v.textContent + '\n';
+  });
+  var md = '# ' + data.title + '\n\n' + data.description + '\n\n## Palet Warna\n' +
+    data.palette.map(function(c){ return '- `' + c + '`'; }).join('\n') + '\n' +
+    (specs ? '\n## Spesifikasi\n' + specs : '') +
+    '\n## Cocok Untuk\n' + data.best + '\n\n## Teknik CSS Kunci\n' + data.css + '\n';
+  navigator.clipboard.writeText(md).then(function(){
+    var old = btn.textContent; btn.textContent = '&#10003; Copied!';
+    setTimeout(function(){ btn.textContent = old; }, 2000);
+  }).catch(function(){ alert('Gagal menyalin'); });
+}
+</script>
 </body>
 </html>

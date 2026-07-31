@@ -1,5 +1,5 @@
 # regen-index.py — rebuild index.html gallery grid with consistent descriptions + search
-import os, re, glob
+import os, re, glob, sys
 
 FOLDER = os.path.dirname(os.path.abspath(__file__))
 INDEX = os.path.join(FOLDER, 'index.html')
@@ -102,12 +102,18 @@ style_files = sorted(
 
 total = len(style_files)
 
+sys.path.insert(0, FOLDER)
+from style_data import DESIGN
+
 def build_grid():
     cards = []
     for slug in style_files:
         name = NAMES.get(slug, slug.replace('_', ' ').title())
         desc = DESCRIPTIONS.get(slug, '')
-        cards.append(f'''    <a href="{slug}.html" class="demo">
+        pal = DESIGN.get(slug, ['#ccc', '#eee', '#999'])
+        swatches = ''.join(f'<span style="flex:1;height:100%;background:{c};" title="{c}"></span>' for c in pal)
+        cards.append(f'''    <a href="{slug}.html" class="demo" onclick="openPreview(event,'{slug}.html','{name}')">
+      <div class="swatches" style="display:flex;height:10px;border-radius:4px;overflow:hidden;margin-bottom:0.6rem;">{swatches}</div>
       <div class="name">{name}</div>
       <div class="info">{desc}</div>
     </a>''')
@@ -125,6 +131,21 @@ new_grid = f'''  <div style="max-width:720px;margin:0 auto 1.5rem;">
     <p style="font-size:1.2rem;font-weight:600;margin-bottom:0.5rem;">Tidak ada style yang cocok</p>
     <p style="font-size:0.85rem;">Coba kata kunci lain</p>
   </div>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);" onclick="closePreview(event)">
+    <div style="position:relative;width:min(1100px,94vw);height:min(85vh,90vw);margin:5vh auto;background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;" onclick="event.stopPropagation()">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1rem;background:#f8f9fa;border-bottom:1px solid #e5e5e5;font-family:'Inter',sans-serif;">
+        <span id="previewTitle" style="font-weight:600;font-size:0.95rem;color:#333;"></span>
+        <div style="display:flex;gap:0.5rem;">
+          <a id="previewOpen" href="#" target="_blank" style="padding:0.4rem 0.9rem;background:#333;color:#fff;text-decoration:none;border-radius:6px;font-size:0.8rem;">Buka Penuh &#8599;</a>
+          <button onclick="closePreview()" style="padding:0.4rem 0.9rem;background:#eee;border:1px solid #ddd;border-radius:6px;font-size:0.8rem;cursor:pointer;">&#10005; Tutup</button>
+        </div>
+      </div>
+      <iframe id="previewFrame" src="about:blank" style="flex:1;width:100%;border:none;" loading="lazy"></iframe>
+    </div>
+  </div>
+
   <script>
   function filterStyles(q){{
     q = (q||'').toLowerCase().trim();
@@ -138,6 +159,22 @@ new_grid = f'''  <div style="max-width:720px;margin:0 auto 1.5rem;">
     }});
     document.getElementById('noResults').style.display = (visible === 0 && q) ? 'block' : 'none';
   }}
+  function openPreview(e, href, name){{
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    document.getElementById('previewTitle').textContent = name + ' — Preview';
+    document.getElementById('previewOpen').href = href;
+    document.getElementById('previewFrame').src = href;
+    document.getElementById('previewModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }}
+  function closePreview(e){{
+    if (e && e.target !== document.getElementById('previewModal')) return;
+    document.getElementById('previewModal').style.display = 'none';
+    document.getElementById('previewFrame').src = 'about:blank';
+    document.body.style.overflow = '';
+  }}
+  document.addEventListener('keydown', function(e){{ if (e.key === 'Escape') closePreview(); }});
   </script>'''
 
 with open(INDEX, 'r', encoding='utf-8') as fh:
